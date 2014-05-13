@@ -1,0 +1,4 @@
+* Thema: Crouzeix-Raviart FEM for Stokes problem (Warum ist die nicht konforme Methode besser?)
+* Termin: 30.6.2014 14:00 Uhr
+* Vortrag an der Tafel, Dauer ungefähr 60 Minuten
+* Erster Vortrag am 2.6.2014
