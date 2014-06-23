@@ -20,8 +20,28 @@
      "thm:1"
      "eq:5"
      "eq:6"
-     "sec:exist-von-losung")
+     "sec:exist-von-losung"
+     "thm:2"
+     "eq:8"
+     "sec:stabilitat-der-crfem"
+     "sec:motivation"
+     "sec:beschr-der-diskr"
+     "eq:9"
+     "problem:3"
+     "eq:10"
+     "eq:11"
+     "eq:12"
+     "sec:stabilitat-der-cr"
+     "def:1"
+     "eq:14"
+     "def:2"
+     "eq:15"
+     "eq:13"
+     "lem:1"
+     "eq:16"
+     "eq:17")
     (TeX-add-symbols
+     '("set" 1)
      '("hnorm" 1)
      '("norm" 1)
      '("vnorm" 1)
@@ -30,8 +50,12 @@
      "fbold"
      "Hzero"
      "Ltwo"
+     "crfem"
+     "mesh"
+     "edges"
      "dx")
     (TeX-run-style-hooks
+     "esint"
      "xcolor"
      "draftwatermark"
      "bbold"

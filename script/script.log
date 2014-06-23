@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.4.8)  23 JUN 2014 12:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.4.8)  23 JUN 2014 19:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -495,26 +495,29 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
+(/usr/local/texlive/2013/texmf-dist/tex/latex/esint/esint.sty
+Package: esint 
+\symlargesymbolsA=\mathgroup6
+)
 \c@theorem=\count106
 \c@lemma=\count107
 \c@definition=\count108
 \c@modellproblem=\count109
-
-(./script.aux)
+ (./script.aux)
 \openout1 = `script.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
 
 (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -579,30 +582,35 @@ e
 ))
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/sc' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 52.
+(Font)              using `OT1/cmss/bx/n' instead on input line 63.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 52.
+LaTeX Font Info:    Try loading font information for U+msa on input line 63.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 52.
+LaTeX Font Info:    Try loading font information for U+msb on input line 63.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 77--81
+LaTeX Font Info:    Try loading font information for U+esint on input line 63.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/esint/uesint.fd
+File: uesint.fd 
+)
+Underfull \hbox (badness 10000) in paragraph at lines 88--92
 
  []
 
 
-Overfull \hbox (4.30849pt too wide) in paragraph at lines 82--85
+Overfull \hbox (4.30849pt too wide) in paragraph at lines 93--96
 \OT1/cmr/m/n/10.95 Prob-lem mit ho-mo-ge-nen Randbe-d-i-n-un-gen auf einem zwei
  di-men-sion-alen Lipschitz-Gebiet: 
  []
 
-LaTeX Font Info:    Try loading font information for U+bbold on input line 87.
+LaTeX Font Info:    Try loading font information for U+bbold on input line 98.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/bbold/Ubbold.fd)
-Overfull \hbox (14.08986pt too wide) in paragraph at lines 114--121
+Overfull \hbox (14.08986pt too wide) in paragraph at lines 125--132
 \OT1/cmr/m/n/10.95 Gesucht wer-den also der Geschwindigkeitsvek-tor $\OML/cmm/m
 /it/10.95 u \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 V$ \OT1/cmr/m/n/10.95 der
  Fl^^?ussigkeit und der dazugeh^^?orige
@@ -610,18 +618,18 @@ Overfull \hbox (14.08986pt too wide) in paragraph at lines 114--121
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <142.26378> not available
-(Font)              size <24.88> substituted on input line 121.
+(Font)              size <24.88> substituted on input line 132.
 
 [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 122--125
+Underfull \hbox (badness 10000) in paragraph at lines 133--136
 
  []
 
 [2]
-Overfull \hbox (1.8752pt too wide) in paragraph at lines 188--194
+Overfull \hbox (1.8752pt too wide) in paragraph at lines 199--205
 \OT1/cmr/m/n/10.95 Wir be-merken, dass wir statt der El-lip-tizit^^?at der Bi-l
 in-ear-form $\OML/cmm/m/it/10.95 b\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^A\O
 ML/cmm/m/it/10.95 ; \OMS/cmsy/m/n/10.95 ^^A\OT1/cmr/m/n/10.95 )$ die inf-sup-Be
@@ -629,16 +637,59 @@ dingung
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--194
+Underfull \hbox (badness 10000) in paragraph at lines 199--205
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--203
+Underfull \hbox (badness 10000) in paragraph at lines 210--216
 
  []
 
-[3] (./script.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--241
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 272--276
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 281.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 281.
+ [4]
+Overfull \hbox (7.21338pt too wide) in paragraph at lines 344--346
+[]\OT1/cmr/m/n/10.95 Motivation: Warum eigentlich CR-NCFEM? $\OMS/cmsy/m/n/10.9
+5 )$ \OT1/cmr/m/n/10.95 ein-fache Struk-tur, inf-sup-Stabilit^^?at,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 352--356
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--364
+
+ []
+
+
+Overfull \hbox (23.63159pt too wide) in paragraph at lines 392--394
+[]\OT1/cmr/m/n/10.95 Der nicht-
+ []
+
+[5]
+Overfull \hbox (13.96169pt too wide) in paragraph at lines 413--415
+[]\OT1/cmr/m/it/10.95 Es gel-ten die fol-gen-den Mit-tel-w-erteigen-
+ []
+
+[6] (./script.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 117.38377pt have occurred.
@@ -648,11 +699,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 5259 strings out of 493315
- 76395 string characters out of 6137905
- 168855 words of memory out of 5000000
- 8604 multiletter control sequences out of 15000+600000
- 13583 words of font info for 53 fonts, out of 8000000 for 9000
+ 5376 strings out of 493315
+ 78035 string characters out of 6137905
+ 171210 words of memory out of 5000000
+ 8708 multiletter control sequences out of 15000+600000
+ 14980 words of font info for 62 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  47i,11n,47p,267b,428s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pf
@@ -660,20 +711,23 @@ b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
-r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
-local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
-cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
-l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
-exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
-ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/tex
-live/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
-ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texliv
-e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on script.pdf (3 pages, 152276 bytes).
+usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
+r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
+local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
+l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
+texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
+live/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texliv
+e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texli
+ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
+2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2
+013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/201
+3/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb>
+Output written on script.pdf (6 pages, 197302 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
+ 95 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

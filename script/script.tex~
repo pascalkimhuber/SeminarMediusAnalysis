@@ -1,6 +1,6 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper]{scrartcl}
 
-%--------------------------------------- Packages
+% --------------------------------------- Packages
 \usepackage[utf8]{inputenc}
 \usepackage{mathtools}
 \usepackage{amssymb}
@@ -10,7 +10,7 @@
 \usepackage{draftwatermark}
 \usepackage{xcolor}
 
-%--------------------------------------- Definitions
+% --------------------------------------- Definitions
 
 \newcommand{\real}{\mathbb{R}}
 
@@ -21,13 +21,16 @@
 \newcommand{\Ltwo}{L^2}
 
 \newcommand{\dx}{\,dx}
+\newcommand{\vnorm}[1]{\left\lVert#1\right\rVert_V}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\hnorm}[1]{\left\lVert#1\right\rVert_h}
 
 \DeclareMathOperator{\divOp}{div}
 \DeclareMathOperator{\divh}{div_h}
 \DeclareMathOperator{\nablah}{\nabla_h}
 
 
-%--------------------------------------- Environments
+% --------------------------------------- Environments
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
@@ -37,10 +40,10 @@
 \theoremstyle{remark}
 \newtheorem*{remark*}{Remark}
 
-%--------------------------------------- Some settings
+% --------------------------------------- Some settings
 \SetWatermarkScale{4}
 
-%--------------------------------------- Document
+% --------------------------------------- Document
 \begin{document}
 \title{\textsc{CRFEM for the Stokes Problem}}
 \author{Pascal Huber}
@@ -50,71 +53,48 @@
 \section{Motivation und Einleitung}
 \label{sec:motiv-und-einl}
 
+{\color{red}
+  \begin{enumerate}
+  \item Was wir bisher gelernt haben
+  \item Was ich heute machen möchte
+  \item Was wir dazu benutzen werden
+  \end{enumerate}
+}
+
+\noindent Wir beginnen mit einem kleinen Überblick zu den Stokes Gleichungen. 
 
 \section{Das Stokes Problem}
 \label{sec:das-stokes-problem}
 
-In diesem Abschnitt soll zunächst eine Beschreibung des Stokes Problems
-gegeben werden. \\
+\paragraph{Schwache Formulierung des Stokes Problems}
+\label{sec:schw-form-des}
 
-\noindent Dazu beginnen wir mit der starken Formulierung des Problems
-und geben anschließend eine gemischte Variationsformulierung an, die
-dann später auch als Grundlage für die Diskretisierung mit Hilfe des
-Crouzeix-Raviart Elements dienen soll.  
-
-
-\subsection{Starke Formulierung des Stokes Problems}
-\label{sec:starke-form-der}
-
-Die Stokesschen Gleichungen beschreiben die Bewegungen einer
-inkompressiblen Flüssigkeit in einem Körper. \\
-
-\noindent Als Modellproblem betrachten wir das Stokes Problem mit
-homogenen Dirichletbedingungen auf einem polygonalem
-Lipschitz-Gebiet. 
-
-\begin{modellproblem} \label{problem:1}
-  Sei \(\Omega \subset \real^2\) ein polygonales Lipschitz-Gebiet und
-  \(\fbold \in C^0(\Omega; \real^2)\). \\
-  Finde \(\ubold \in C^2(\Omega; \real^2) \cap C^0(\bar{\Omega}; \real^2)\)
-  und \(p \in C^1(\Omega)\) so dass gilt: 
-  \begin{equation} 
-    \label{eq:1}
-    \begin{cases}
-      - \Delta \ubold + \nabla p = \fbold  & \text{ in } \Omega, \\
-      \divOp \ubold = 0 & \text{ in } \Omega, \\
-      \ubold = 0 & \text{ auf } \partial \Omega. 
-    \end{cases}
+Das Stokes Problem 
+\begin{equation}
+  \label{eq:1}
+  -\Delta u + \nabla p = f \text{ in } \Omega \quad \text{ und }
+  \quad \divOp u = 0 \text{ in } \Omega
 \end{equation}
-Da durch diese Angaben der Druck \(p\) nur bis auf eine Konstante
-festgelegt wird, fordern wir zusätzlich
-\[\int_\Omega p(x) \dx = 0.\]\\
+dient der Beschreibung von inkompressiblen
+Flüssigkeiten mit hoher Viskosität (und ist damit eine linearisierte
+Vereinfachung der Navier-Stokes-Gleichungen).\\ 
 
-\noindent Dabei beschreibt \(\ubold\) den Geschwindigkeitsvektor der
-Flüssigkeit und \(p\) den Druck. Die Funktion \(\fbold\) ist die gegebene
-äußere Kraftdichte. 
-\end{modellproblem}
+\noindent Im Folgenden betrachten wir als Grundlage für unsere spätere
+Diskretisierung das Stokes Problem mit homogenen Randbedinungen auf
+einem zwei dimensionalen Lipschitz-Gebiet: 
 
-
-\subsection{Gemischte Variationsformulierung des Stokes Problems}
-\label{sec:gemischte-vari-des}
-
-Durch Multiplikation mit geeigneten Testfunktionen und Integration
-über das Gebiet \(\Omega\) erhält man die schwache Formulierung des
-Modellproblems \ref{problem:1}.  
-
-\begin{modellproblem} \label{problem:2}
-  Sei \(\Omega \subset \real^2\) ein polygonales Lipschitz-Gebiet und
-  \(f\in \Ltwo(\Omega; \real^2)\). Wir
-  definieren die Räume
+\begin{modellproblem}[Schwache Formulierung des Stokes Problems] \label{problem:1}
+  Sei \(\Omega \subset \real^2\) ein polygonales beschränktes
+  Lipschitz-Gebiet und \(f\in \Ltwo(\Omega; \real^2)\). Wir definieren
+  die Räume 
   \[V \coloneqq \Hzero(\Omega; \real^2) \text{ und } Q \coloneqq
   \Ltwo_0(\Omega) \coloneqq \{q \in \Ltwo(\Omega): \int_\Omega q(x)
   \dx = 0\},\]
-  sowie die Bilinearformen \(a: V\times V \rightarrow \real\)
-  und \(b: V\times Q \rightarrow \real\) durch
+  sowie die Bilinearformen \(a \colon V\times V \rightarrow \real\)
+  und \(b \colon V\times Q \rightarrow \real\) durch
   \begin{equation}
     \label{eq:2}
-    a(u,v) \coloneqq \int_\Omega \nabla u \colon \nabla v \dx 
+    a(u,v) \coloneqq \int_\Omega \nabla u : \nabla v \dx 
     \text{ und }
     b(v,q) \coloneqq \int_\Omega \divOp v \cdot q \dx. 
   \end{equation}
@@ -130,11 +110,216 @@ Modellproblems \ref{problem:1}.
   \end{equation}
 \end{modellproblem}
 
-\noindent Ein Problem von der Form (\ref{eq:3}) bezeichnet man auch als
-Sattelpunkt-Problem. \textcolor{red}{Warum??}
+{\color{blue}
+  \noindent Gesucht werden also der Geschwindigkeitsvektor \(u \in V\) der
+  Flüssigkeit und der dazugehörige Druck \(p \in Q\). Die Funktion \(f
+  \in \Ltwo(\Omega, \real^2)\) beschreibt die gegebene äußere
+  Kraftdichte, die auf die Flüssigkeit wirkt. \\
+  Wir bemerken, dass es sich im Gegensatz zu den bisherigen Vorträgen um
+  ein vektorwertiges Problem handelt. \\
+}
 
-\noindent Die Existenz und Eindeutigkeit der Lösung \((u,p)\) lässt
-sich mit Hilfe des Splitting-Theorems von Brezzi zeigen. 
+\noindent Ein Problem von der Form (\ref{eq:3}) wird als Sattelpunktproblem
+bezeichnet. Dabei wird die Gleichung \(b(u,q) = 0 \) als Nebenbedinung
+zur eigentlichen Minimi\-sierungs\-aufgabe verstanden. \\ 
+
+\paragraph{Existenz und Eindeutigkeit für Lösungen von Sattelpunktproblemen}
+\label{sec:exist-und-eind}
+
+\noindent Bevor wir zur Diskretisierung des Problems mit Hilfe von
+Crouzeix-Raviart Elementen übergehen, widmen wir uns kurz der Existenz
+und Eindeutigkeit einer Lösung \((u,p) \in V\times Q\) für das Modellproblem
+\ref{problem:1}.\\
+Da es sich hier um ein ``gemischtes Problem'' handelt, ist der
+gewöhnliche Ansatz für den Existenzbeweis mit Hilfe des Lemmas von
+Lax-Milgram nicht möglich. Stattdessen verwenden wir das
+Splitting-Theorem von Brezzi, das notwendige und hinreichende
+Bedingungen für die Existenz einer eindeutigen Lösung liefert. Dazu
+betrachten wir eine etwas allgemeinere Fassung unseres Modellproblems.
+
+\begin{modellproblem}[Sattelpunktproblem] \label{problem:2}
+  Seien \((V,\vnorm{\cdot})\)  und \((Q,\norm{\cdot}_Q)\) zwei
+  Hilbert-Räume und 
+  \[a\colon V\times V \rightarrow \real 
+  \quad \text{ und } \quad
+  b\colon V\times Q \rightarrow \real\]
+  zwei stetige Bilinearformen. Wir nehmen an, dass \(a(\cdot, \cdot)\) symmetrisch
+  ist und definieren den abgeschlossenen Unterraum 
+  \begin{equation}
+    \label{eq:7}
+    Z \coloneqq \left\{v \in V: b(v,q) = 0 \text{ for all } q\in Q\right\}.
+  \end{equation}
+  Weiter seien \(F \in V'\) und \(G \in Q'\)\\
+  Finde \((u,p) \in V\times Q\), sodass folgende Gleichungen erfüllt
+  sind: 
+  \begin{equation}
+    \label{eq:4}
+    \begin{cases}
+      a(u,v) - b(v,p) = F(v) & \text{ für alle } v \in V \\
+      b(u,q) = G(q) & \text{ für alle } q \in Q.
+    \end{cases}
+  \end{equation}
+\end{modellproblem}
+
+\noindent Der folgende Satz garantiert Existenz und Eindeutigkeit der Lösung für
+Modellproblem \ref{problem:2}. 
+
+\begin{theorem}[Brezzis Splitting-Theorem] \label{thm:1}
+  Die Abbildung \(L\colon V\times Q \rightarrow V' \times Q'\), die
+  jedem Paar \((u,p) \in V\times Q\) gemäß dem Sattelpunktproblem
+  (\ref{eq:4}) das Paar \((F,G) \in V'\times Q'\) zuordnet, ist genau
+  dann ein Isomorphismus, wenn die beiden folgenden Bedingungen erfüllt
+  sind: 
+  \begin{enumerate}[label=(\roman*)]
+  \item Die Bilinearform \(a(\cdot, \cdot)\) ist \(Z\)-elliptisch:
+    \begin{equation}\label{eq:5}
+      \exists \alpha > 0: \forall z \in Z: a(z,z) \geq \alpha \vnorm{z}^2.
+    \end{equation}
+
+  \item Die Bilinearform \(b(\cdot, \cdot)\) erfüllt die
+    inf-sup-Bedingung: 
+    \begin{equation}
+      \label{eq:6}
+      \exists \beta > 0: \inf_{q\in Q} \sup_{v\in V} \frac{b(v,q)}{\vnorm{v}\norm{q}_Q} \geq \beta.
+    \end{equation}
+  \end{enumerate}
+\end{theorem}
+
+\noindent Der Beweis dieses Satzes nutzt das \emph{closed range theorem} und
+wird hier nicht angegeben. \\
+Wir bemerken, dass wir statt der Elliptizität der Bilinearform \(b(\cdot,
+\cdot)\) die inf-sup-Bedingung für Satz \ref{thm:1} fordern
+müssen. Desweiteren weisen wir darauf hin, dass die Elliptizität von
+\(a(\cdot, \cdot)\) nur auf dem Unterraum \(Z\) gefordert wird. \\
+
+
+\paragraph{Existenz von Lösungen für das Stokes Problem}
+\label{sec:exist-von-losung}
+
+Zum Beweis der Existenz und Eindeutigkeit von Lösungen für das Stokes
+Problem \ref{problem:1} genügt es also nach Theorem \ref{thm:1} die
+\(Z\)-Elliptizität von \(a(\cdot, \cdot)\) und die 
+inf-sup-Bedingung für \(b(\cdot, \cdot)\) nachweisen. (Die Stetigkeit
+der beiden Bilinearformen folgt direkt aus der Cauchy-Schwarz
+Ungleichung.)\\
+
+\noindent Wie bereits in den letzten Vorträgen gesehen, folgt die
+Elliptizität von \(a(\cdot, \cdot)\) auf ganz \(\Hzero(\Omega)\) aus der Friedrichs-Ungleichung. \\ 
+Zum Beweis der inf-sup-Bedingung benötigen wir ein tiefgreifendes
+analytisches Resultat, bekannt als Lady\u{z}enskaya Abschätzung: 
+
+\begin{theorem}[Lady\u{z}enskaya Ungleichung] \label{thm:2}
+  Sei \(\Omega \subset \real^d\) ein beschränktes
+  Lipschitz-Gebiet. Dann ist die Abbildung 
+  \[\divOp \colon Z^\perp \rightarrow \Ltwo_0(\Omega), \quad v \mapsto
+  \divOp v\]
+  ein Isomorphismus und es exisitiert ein Konstante \(c = c(\Omega) >
+  0\), so dass gilt: 
+  \[\forall q \in \Ltwo_0(\Omega)\colon \exists v_q \in Z^\perp \colon 
+  \divOp v_q = q \text{ und } \norm{v_q}_{\Hzero(\Omega; \real^2)} \leq c \norm{q}_{\Ltwo(\Omega)}.\]
+\end{theorem}
+
+\noindent Aus Theorem \ref{thm:2} folgt unmittelbar die
+inf-sup-Bedingung für \(b(\cdot, \cdot)\): Für alle \(q\in Q\) gilt: 
+\begin{equation}
+  \label{eq:8}
+  \sup_{v\in V} \frac{b(v,q)}{\normv{v}} \geq \frac{b(v_q,q)}{\normv{v_q}}
+\end{equation}
+
+
+
+
+
+{\color{red}
+  \begin{enumerate}
+  \item Normen von \(V\) und \(Q\) angeben?
+  \item Definition von \(A:B\) angeben?
+  \item Was genau bedeuted die inf-sup-Bedingung?
+  \end{enumerate}
+
+}
+
+% In diesem Abschnitt soll zunächst eine Beschreibung des Stokes Problems
+% gegeben werden. \\
+
+% \noindent Dazu beginnen wir mit der starken Formulierung des Problems
+% und geben anschließend eine gemischte Variationsformulierung an, die
+% dann später auch als Grundlage für die Diskretisierung mit Hilfe des
+% Crouzeix-Raviart Elements dienen soll.  
+
+
+% \subsection{Starke Formulierung des Stokes Problems}
+% \label{sec:starke-form-der}
+
+% Die Stokesschen Gleichungen beschreiben die Bewegungen einer
+% inkompressiblen Flüssigkeit in einem Körper. \\
+
+% \noindent Als Modellproblem betrachten wir das Stokes Problem mit
+% homogenen Dirichletbedingungen auf einem polygonalem
+% Lipschitz-Gebiet. 
+
+% \begin{modellproblem} \label{problem:1}
+%   Sei \(\Omega \subset \real^2\) ein polygonales Lipschitz-Gebiet und
+%   \(\fbold \in C^0(\Omega; \real^2)\). \\
+%   Finde \(\ubold \in C^2(\Omega; \real^2) \cap C^0(\bar{\Omega}; \real^2)\)
+%   und \(p \in C^1(\Omega)\) so dass gilt: 
+%   \begin{equation} 
+%     \label{eq:1}
+%     \begin{cases}
+%       - \Delta \ubold + \nabla p = \fbold  & \text{ in } \Omega, \\
+%       \divOp \ubold = 0 & \text{ in } \Omega, \\
+%       \ubold = 0 & \text{ auf } \partial \Omega. 
+%     \end{cases}
+%   \end{equation}
+%   Da durch diese Angaben der Druck \(p\) nur bis auf eine Konstante
+%   festgelegt wird, fordern wir zusätzlich
+%   \[\int_\Omega p(x) \dx = 0.\]\\
+
+%   \noindent Dabei beschreibt \(\ubold\) den Geschwindigkeitsvektor der
+%   Flüssigkeit und \(p\) den Druck. Die Funktion \(\fbold\) ist die gegebene
+%   äußere Kraftdichte. 
+% \end{modellproblem}
+
+
+% \subsection{Gemischte Variationsformulierung des Stokes Problems}
+% \label{sec:gemischte-vari-des}
+
+% Durch Multiplikation mit geeigneten Testfunktionen und Integration
+% über das Gebiet \(\Omega\) erhält man die schwache Formulierung des
+% Modellproblems \ref{problem:1}.  
+
+% \begin{modellproblem} \label{problem:2}
+%   Sei \(\Omega \subset \real^2\) ein polygonales Lipschitz-Gebiet und
+%   \(f\in \Ltwo(\Omega; \real^2)\). Wir
+%   definieren die Räume
+%   \[V \coloneqq \Hzero(\Omega; \real^2) \text{ und } Q \coloneqq
+%   \Ltwo_0(\Omega) \coloneqq \{q \in \Ltwo(\Omega): \int_\Omega q(x)
+%   \dx = 0\},\]
+%   sowie die Bilinearformen \(a: V\times V \rightarrow \real\)
+%   und \(b: V\times Q \rightarrow \real\) durch
+%   \begin{equation}
+%     \label{eq:2}
+%     a(u,v) \coloneqq \int_\Omega \nabla u \colon \nabla v \dx 
+%     \text{ und }
+%     b(v,q) \coloneqq \int_\Omega \divOp v \cdot q \dx. 
+%   \end{equation}
+%   Finde \((u,p) \in V\times Q\), sodass folgende Gleichungen erfüllt
+%   sind: 
+%   \begin{equation}
+%     \label{eq:3}
+%     \begin{cases}
+%       a(u,v) - b(v,p) = \langle f, v \rangle_{\Ltwo(\Omega;\real^2)} &
+%       \text{ für alle } v \in V \\
+%       b(u,q) = 0 & \text{ für alle } q \in Q.
+%     \end{cases}
+%   \end{equation}
+% \end{modellproblem}
+
+% \noindent Ein Problem von der Form (\ref{eq:3}) bezeichnet man auch als
+% Sattelpunktproblem. \textcolor{red}{Warum??}
+
+% \noindent Die Existenz und Eindeutigkeit der Lösung \((u,p)\) lässt
+% sich mit Hilfe des Splitting-Theorems von Brezzi zeigen. 
 
 
 \end{document}

@@ -9,6 +9,7 @@
 \usepackage{bbold}
 \usepackage{draftwatermark}
 \usepackage{xcolor}
+\usepackage{esint}
 
 % --------------------------------------- Definitions
 
@@ -19,15 +20,25 @@
 
 \newcommand{\Hzero}{H_0^1}
 \newcommand{\Ltwo}{L^2}
+\newcommand{\crfem}{\operatorname{CR}_0^1}
+
+\newcommand{\mesh}{\mathcal{T}_h}
+\newcommand{\edges}{\mathcal{E}}
 
 \newcommand{\dx}{\,dx}
 \newcommand{\vnorm}[1]{\left\lVert#1\right\rVert_V}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\hnorm}[1]{\left\lVert#1\right\rVert_h}
+\newcommand{\set}[1]{\left\{#1\right\}}
 
 \DeclareMathOperator{\divOp}{div}
 \DeclareMathOperator{\divh}{div_h}
-\DeclareMathOperator{\nablah}{\nabla_h}
+\DeclareMathOperator{\nablah}{\nabla_{\emph{h}}}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\midOp}{mid}
+\DeclareMathOperator{\intOp}{I_{NC}}
+\DeclareMathOperator{\LtwoOp}{\Pi_0}
+
 
 
 % --------------------------------------- Environments
@@ -84,9 +95,9 @@ Diskretisierung das Stokes Problem mit homogenen Randbedinungen auf
 einem zwei dimensionalen Lipschitz-Gebiet: 
 
 \begin{modellproblem}[Schwache Formulierung des Stokes Problems] \label{problem:1}
-  Sei \(\Omega \subset \real^2\) ein polygonales Lipschitz-Gebiet und
-  \(f\in \Ltwo(\Omega; \real^2)\). Wir
-  definieren die Räume
+  Sei \(\Omega \subset \real^2\) ein polygonales beschränktes
+  Lipschitz-Gebiet und \(f\in \Ltwo(\Omega; \real^2)\). Wir definieren
+  die Räume 
   \[V \coloneqq \Hzero(\Omega; \real^2) \text{ und } Q \coloneqq
   \Ltwo_0(\Omega) \coloneqq \{q \in \Ltwo(\Omega): \int_\Omega q(x)
   \dx = 0\},\]
@@ -197,21 +208,231 @@ müssen. Desweiteren weisen wir darauf hin, dass die Elliptizität von
 \label{sec:exist-von-losung}
 
 Zum Beweis der Existenz und Eindeutigkeit von Lösungen für das Stokes
-Problem \ref{problem:1} müssen wir also nach Theorem \ref{thm:1} die
-\(Z\)-Elliptizität von \(a(\cdot, \cdot)\) und die inf-sup-Bedingung
-für \(b(\cdot, \cdot)\) nachweisen. \\
+Problem \ref{problem:1} genügt es also nach Theorem \ref{thm:1} die
+\(Z\)-Elliptizität von \(a(\cdot, \cdot)\) und die 
+inf-sup-Bedingung für \(b(\cdot, \cdot)\) nachweisen. (Die Stetigkeit
+der beiden Bilinearformen folgt direkt aus der Cauchy-Schwarz
+Ungleichung.)\\
 
+\noindent Wie bereits in den letzten Vorträgen gesehen, folgt die
+Elliptizität von \(a(\cdot, \cdot)\) auf ganz \(\Hzero(\Omega)\) aus der Friedrichs-Ungleichung. \\ 
+Zum Beweis der inf-sup-Bedingung benötigen wir ein tiefgreifendes
+analytisches Resultat, bekannt als Lady\u{z}enskaya Abschätzung: 
 
+\begin{theorem}[Lady\u{z}enskaya Ungleichung] \label{thm:2}
+  Sei \(\Omega \subset \real^d\) ein beschränktes
+  Lipschitz-Gebiet. Dann ist die Abbildung 
+  \[\divOp \colon Z^\perp \rightarrow \Ltwo_0(\Omega), \quad v \mapsto
+  \divOp v\]
+  ein Isomorphismus und es exisitiert ein Konstante \(c = c(\Omega) >
+  0\), so dass gilt: 
+  \[\forall q \in \Ltwo_0(\Omega)\colon \exists v_q \in Z^\perp \colon 
+  \divOp v_q = q \text{ und } \norm{v_q}_{\Hzero(\Omega; \real^2)} \leq c \norm{q}_{\Ltwo(\Omega)}.\]
+\end{theorem}
 
-
+\noindent Aus Theorem \ref{thm:2} folgt unmittelbar die
+inf-sup-Bedingung für \(b(\cdot, \cdot)\): Für alle \(q\in Q\) gilt: 
+\begin{equation}
+  \label{eq:8}
+  \sup_{v\in V} \frac{b(v,q)}{\vnorm{v}} \geq \frac{b(v_q,q)}{\vnorm{v_q}} = \frac{\norm{q}^2_Q}{\vnorm{v_q}} \geq \frac{1}{c} \norm{q}_Q,  
+\end{equation}
+wobei wir im vorletzten Schritt die explizite Definition von
+\(b(\cdot, \cdot)\)  ausgenutzt haben. \\
 
 {\color{red}
+  \noindent Fragen: 
   \begin{enumerate}
   \item Normen von \(V\) und \(Q\) angeben?
   \item Definition von \(A:B\) angeben?
   \item Was genau bedeuted die inf-sup-Bedingung?
+  \item Soll ich die Ladyzenskaya Ungleichung rauslassen? 
   \end{enumerate}
+}
 
+
+\section{Stabilität der CRFEM für das Stokes Problem}
+\label{sec:stabilitat-der-crfem}
+
+\subsection{Motivation}
+\label{sec:motivation}
+
+{\color{red}
+  \begin{enumerate}
+  \item Was ist die generelle Schwierigkeit bei der Diskretisierung
+    des Stokes-Problems?
+  \item Warum scheint das CR-Element gut geeignet zu sein? (Das könnte
+    ich auch nach der Definition des diskreten Problems machen...)
+  \end{enumerate}
+}
+
+
+\subsection{Beschreibung der Diskretisierung}
+\label{sec:beschr-der-diskr}
+
+Nachdem wir nun die Existenz und Eindeutigkeit einer Lösung für das
+Stokes Problem sichergestellt haben, wollen wir im Folgenden die
+Diskretisierung von Modellproblem \ref{problem:1} mit Hilfe des
+Crouzeix-Raviart Elements beschreiben. \\
+
+\noindent Sei dazu \(\mesh\) ein quasi-uniforme Triangulierung von
+\(\Omega\). Zur Beschreibung der Triangulierung benutzen wir folgende
+Bezeichnungen: 
+\begin{itemize}
+\item \(h \coloneqq \max\{h_T\colon T \in \mesh\}\) mit \(h_T \coloneqq \diam(T)\) für \(T\in \mesh\)
+\item \(\edges\) bezeichnet die Menge aller Kanten von \(\mesh\)
+\item \(\midOp(E)\) bezeichnet den Kantenmittelpunkt von \(E \in
+  \edges\), \(\midOp(\edges)\) die Menge aller Kantenmittelpunkte in \(\mesh\)
+\end{itemize}
+
+\noindent Zur Definitionen der Ansatzräume für die Diskretisierung
+benötigen wir noch folgende endlich-dimensionalen Funktionenräume: \\
+Es bezeichne 
+\[P_k(\mesh) \coloneqq \set{v_h \in \Ltwo(\Omega)\colon \forall T \in
+  \mesh\colon v_h|_T \in P_k(T)}\]
+den Raum aller stückweiser Polynome vom Grad höchstens \(k\) bezüglich
+der Triangulierung \(\mesh\). Wir definieren den \emph{Crouzeix-Raviart
+FE-Raum} durch 
+\begin{equation}
+  \label{eq:9}
+  \crfem(\mesh) \coloneqq \set{v_h \in P_1(\mesh)\colon v_h \text{ stetig in } \midOp(\edges), v_h(\midOp(E)) = 0 \text{ für } E \in \partial\Omega\cap\edges}.
+\end{equation}
+
+\noindent Mit Hilfe dieser Definitionen sind wir nun in der Lage die
+nicht-konforme Crouzeix-Raviart Diskretisierung des Modellproblems
+\ref{problem:1} anzugeben. 
+
+\begin{modellproblem}[CR-NCFEM für das Stokes
+  Modellproblem] \label{problem:3}
+  Wir definieren die Ansatzräume \(V_h \coloneqq \crfem(\mesh) \times
+  \crfem(\mesh)\) und \(Q_h \coloneqq \Ltwo_0(\Omega) \cap
+  P_0(\mesh)\) zusammen mit den Normen 
+  \begin{equation}
+    \label{eq:10}
+    \norm{q_h} \coloneqq \norm{q_h}_{\Ltwo(\Omega)} \text{ auf } Q_h
+    \quad \text{ und } \quad
+    \hnorm{v_h} \coloneqq \norm{\nablah v_h} \text{ auf } V_h. 
+  \end{equation}
+  Weiter seien die diskreten Bilinearformen \(a_h\colon V_h \times V_h
+  \rightarrow \real\) und \(b_h\colon V_h \times Q_h \rightarrow
+  \real\) definiert durch
+  \begin{equation}
+    \label{eq:11}
+    a_h(u_h, v_h) \coloneqq \int_\Omega \nablah u : \nablah v \dx
+    \quad \text{ und } \quad b_h(v_h, q_h) \coloneqq \int_\Omega q_h\divh v_h \dx. 
+  \end{equation}
+  Für gegebenes \(f \in \Ltwo(\Omega; \real^2)\) finde \((u_h, p_h)
+  \in V_h \times Q_h\), sodass folgende Gleichungen gelten: 
+  \begin{equation}
+    \label{eq:12}
+    \begin{cases}
+      a_h(u_h, v_h) - b_h(v_h, p_h) = \langle f, v_h \rangle_{\Ltwo(\Omega; \real^2)} & \text{ für alle } v_h \in V_h \\
+      b_h(u_h, q_h) = 0 & \text{ für alle } q_h \in Q_h. 
+    \end{cases}
+  \end{equation}
+  \end{modellproblem}
+
+{\color{red}
+\noindent Fehlende Bemerkungen: 
+\begin{itemize}
+\item Definition von \(\nablah\) und \(\divh\).
+\item \(\hnorm{\cdot}\) heißt Energienorm und ist tatsächlich eine
+  Norm auf \(V_h\) (siehe Benjamins Vortrag).
+\item Auf \(\Hzero(\Omega; \real^2)\) stimmt \(\hnorm{\cdot}\) mit
+  \(\norm{\cdot}_{\Hzero}\) überein.
+\item Die Methode ist nicht-konform, da offensichtlich \(V_h
+  \not\subseteq V\).
+\item Motivation: Warum eigentlich CR-NCFEM? \(\Rightarrow\) einfache Struktur,
+  inf-sup-Stabilität, Approximationseigenschaften
+\end{itemize}
+}
+
+\subsection{Stabilität der CR-NCFEM}
+\label{sec:stabilitat-der-cr}
+
+Bevor wir mit der Fehlerabschätzung für die
+Crouzeix-Raviart-Diskretisierung beginnen können, muss noch gezeigt
+werden, dass im Modellproblem \ref{problem:3} auch tatsächlich eine
+eindeutige Lösung \((u_h,p_h)\) exisitiert. \\
+
+\noindent Dazu verwenden wir wie auch schon für das kontinuierliche Problem die
+Aussage von Theorem \ref{thm:1}. Man kann sich leicht davon
+überzeugen, dass durch die Wahl der Normen \(\hnorm{\cdot}\) und
+\(\norm{\cdot}\) die Stetigkeit beider Bilinearformen und auch die
+Elliptizität von \(a(\cdot, \cdot)\) auf dem Unterraum \(Z_h \coloneqq
+\set{v_h \in V_h\colon \forall q_h \in Q_h\colon b_h(v_h, q_h) = 0}\)
+(mit einer von \(h\) unabhängingen Konstante) gewährleistet ist. \\
+
+\noindent Also besteht das eigentliche Kriterium für die Existenz
+einer eindeutigen Lösung wie schon im ursprünglichen Problem in der
+inf-sup-Bedingung. Auch darüber hinaus spielt die inf-sup-Bedingung
+in der Praxis für die Stabilität bei der numerischen Berechnung eine
+wichtige Rolle. Dies motiviert die folgende Defintion: 
+
+\begin{definition}[Stabilität von FEM für das Stokes Problem] \label{def:1}
+  Eine FE-Diskretisierung \(V_h\times Q_h\) für das Modellproblem
+  \ref{problem:1} heißt \emph{inf-sup-stabil} (oder einfach nur
+  \emph{stabil}), falls die diskrete inf-sup-Bedingung erfüllt ist,
+  d.h. es existiert \(\beta > 0\) (unabhänging von der Gitterweite
+  \(h\)), sodass 
+  \begin{equation}
+    \label{eq:14}
+    \inf_{q_h \in Q_h} \sup_{v_h \in V_h} \frac{b_h(v_h, q_h)}{\hnorm{v_h} \norm{q_h}} \geq \beta. 
+  \end{equation}
+  \end{definition}
+
+\noindent Im Folgenden wollen wir nun zeigen, dass die Stabilität für die
+Crouzeix-Raviart-FEM gegeben ist. Dazu verwenden wir das sogenannte
+\emph{Fortin-Kriterium}, indem wir einen geeigneten nicht-konformen
+Interpolationsoperator definieren. {\color{red}(Diesen werden wir auch noch im
+Laufe der Medius-Analyse benötigen...)}
+
+\begin{definition}[Nicht-konformer Interpolationsoperator und
+  \(\Ltwo\)-Projektion] \label{def:2}
+  \begin{enumerate}[label=\emph{(\roman*)}]
+  \item Der nicht-konformen Interpolationsoperator \(\intOp\colon
+    \Hzero(\Omega) \rightarrow \crfem(\mesh)\) ist definiert durch
+    \begin{equation}
+      \label{eq:15}
+      (\intOp v)(\midOp(E)) \coloneqq \fint_E v \,ds \qquad \text{für } E \in \edges. 
+    \end{equation}
+  \item Wir definieren \(\LtwoOp \colon \Ltwo(\Omega) \rightarrow
+    P_0(\mesh)\) durch 
+    \begin{equation}
+      \label{eq:13}
+      (\LtwoOp f)|_T \coloneqq \fint_T f \dx \qquad \text{für } T\in \mesh. 
+    \end{equation}
+  \end{enumerate}
+\end{definition}
+
+Die Besonderheit von \(\intOp\) und \(\LtwoOp\) liegt vor allem
+darin, dass sie jeweils die Bestapproximation ihres Arguments im
+Bildraum darstellen: 
+
+\begin{lemma}[Eigenschaften von \(\intOp\) und \(\LtwoOp\)] \label{lem:1}
+  \begin{enumerate}[label=(\roman*)]
+  \item Es gelten die folgenden Mittelwerteigenschaften für alle 
+    \(T\in\mesh\) und \(v\in V\), \(f\in\Ltwo(\Omega)\): 
+    \begin{equation}
+      \label{eq:16}
+      \fint_T \nabla v \dx = \fint_T \nabla(\intOp v) \dx \quad \text{und} \quad
+      \fint_T f \dx = \fint_T \Ltwo f \dx 
+    \end{equation}
+  \item Seien \(v\in V\) und \(f\in \Ltwo(\Omega)\) gegeben. Dann gilt
+    für alle \(w\in P_0(\mesh)^2\) und alle \(g\in P_0(\mesh)\): 
+    \begin{equation}
+      \label{eq:17}
+      \norm{\nablah(v-\intOp v)} \leq \norm{\nablah - w} \quad
+      \text{und} \quad \norm{f-\LtwoOp f} \leq \norm{f-g}. 
+    \end{equation}
+  \end{enumerate}
+\end{lemma}
+
+{\color{red}
+  \begin{itemize}
+  \item Erwähne dass für vektorwertige Funktionen die Anwendung
+    komponentenweise geschieht.
+  \item Was ist mit dem Beweis von Lemma \ref{lem:1}? 
+  \end{itemize}
 }
 
 % In diesem Abschnitt soll zunächst eine Beschreibung des Stokes Problems
