@@ -1,0 +1,140 @@
+\documentclass[a4paper]{article}
+
+%--------------------------------------- Packages
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{bbold}
+\usepackage{draftwatermark}
+\usepackage{xcolor}
+
+%--------------------------------------- Definitions
+
+\newcommand{\real}{\mathbb{R}}
+
+\newcommand{\ubold}{\boldsymbol{u}}
+\newcommand{\fbold}{\boldsymbol{f}}
+
+\newcommand{\Hzero}{H_0^1}
+\newcommand{\Ltwo}{L^2}
+
+\newcommand{\dx}{\,dx}
+
+\DeclareMathOperator{\divOp}{div}
+\DeclareMathOperator{\divh}{div_h}
+\DeclareMathOperator{\nablah}{\nabla_h}
+
+
+%--------------------------------------- Environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{modellproblem}{Modellproblem}
+\theoremstyle{remark}
+\newtheorem*{remark*}{Remark}
+
+%--------------------------------------- Some settings
+\SetWatermarkScale{4}
+
+%--------------------------------------- Document
+\begin{document}
+\title{\textsc{CRFEM for the Stokes Problem}}
+\author{Pascal Huber}
+\date{June, 30, 2014}
+\maketitle
+
+\section{Motivation und Einleitung}
+\label{sec:motiv-und-einl}
+
+
+\section{Das Stokes Problem}
+\label{sec:das-stokes-problem}
+
+In diesem Abschnitt soll zunächst eine Beschreibung des Stokes Problems
+gegeben werden. \\
+
+\noindent Dazu beginnen wir mit der starken Formulierung des Problems
+und geben anschließend eine gemischte Variationsformulierung an, die
+dann später auch als Grundlage für die Diskretisierung mit Hilfe des
+Crouzeix-Raviart Elements dienen soll.  
+
+
+\subsection{Starke Formulierung des Stokes Problems}
+\label{sec:starke-form-der}
+
+Die Stokesschen Gleichungen beschreiben die Bewegungen einer
+inkompressiblen Flüssigkeit in einem Körper. \\
+
+\noindent Als Modellproblem betrachten wir das Stokes Problem mit
+homogenen Dirichletbedingungen auf einem polygonalem
+Lipschitz-Gebiet. 
+
+\begin{modellproblem} \label{problem:1}
+  Sei \(\Omega \subset \real^2\) ein polygonales Lipschitz-Gebiet und
+  \(\fbold \in C^0(\Omega; \real^2)\). \\
+  Finde \(\ubold \in C^2(\Omega; \real^2) \cap C^0(\bar{\Omega}; \real^2)\)
+  und \(p \in C^1(\Omega)\) so dass gilt: 
+  \begin{equation} 
+    \label{eq:1}
+    \begin{cases}
+      - \Delta \ubold + \nabla p = \fbold  & \text{ in } \Omega, \\
+      \divOp \ubold = 0 & \text{ in } \Omega, \\
+      \ubold = 0 & \text{ auf } \partial \Omega. 
+    \end{cases}
+\end{equation}
+Da durch diese Angaben der Druck \(p\) nur bis auf eine Konstante
+festgelegt wird, fordern wir zusätzlich
+\[\int_\Omega p(x) \dx = 0.\]\\
+
+\noindent Dabei beschreibt \(\ubold\) den Geschwindigkeitsvektor der
+Flüssigkeit und \(p\) den Druck. Die Funktion \(\fbold\) ist die gegebene
+äußere Kraftdichte. 
+\end{modellproblem}
+
+
+\subsection{Gemischte Variationsformulierung des Stokes Problems}
+\label{sec:gemischte-vari-des}
+
+Durch Multiplikation mit geeigneten Testfunktionen und Integration
+über das Gebiet \(\Omega\) erhält man die schwache Formulierung des
+Modellproblems \ref{problem:1}.  
+
+\begin{modellproblem} \label{problem:2}
+  Sei \(\Omega \subset \real^2\) ein polygonales Lipschitz-Gebiet und
+  \(f\in \Ltwo(\Omega; \real^2)\). Wir
+  definieren die Räume
+  \[V \coloneqq \Hzero(\Omega; \real^2) \text{ und } Q \coloneqq
+  \Ltwo_0(\Omega) \coloneqq \{q \in \Ltwo(\Omega): \int_\Omega q(x)
+  \dx = 0\},\]
+  sowie die Bilinearformen \(a: V\times V \rightarrow \real\)
+  und \(b: V\times Q \rightarrow \real\) durch
+  \begin{equation}
+    \label{eq:2}
+    a(u,v) \coloneqq \int_\Omega \nabla u \colon \nabla v \dx 
+    \text{ und }
+    b(v,q) \coloneqq \int_\Omega \divOp v \cdot q \dx. 
+  \end{equation}
+  Finde \((u,p) \in V\times Q\), sodass folgende Gleichungen erfüllt
+  sind: 
+  \begin{equation}
+    \label{eq:3}
+    \begin{cases}
+      a(u,v) - b(v,p) = \langle f, v \rangle_{\Ltwo(\Omega;\real^2)} &
+      \text{ für alle } v \in V \\
+      b(u,q) = 0 & \text{ für alle } q \in Q.
+    \end{cases}
+  \end{equation}
+\end{modellproblem}
+
+\noindent Ein Problem von der Form (\ref{eq:3}) bezeichnet man auch als
+Sattelpunkt-Problem. \textcolor{red}{Warum??}
+
+\noindent Die Existenz und Eindeutigkeit der Lösung \((u,p)\) lässt
+sich mit Hilfe des Splitting-Theorems von Brezzi zeigen. 
+
+
+\end{document}
