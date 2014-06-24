@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.4.8)  23 JUN 2014 19:30
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.4.8)  24 JUN 2014 09:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -689,7 +689,7 @@ Overfull \hbox (13.96169pt too wide) in paragraph at lines 413--415
 []\OT1/cmr/m/it/10.95 Es gel-ten die fol-gen-den Mit-tel-w-erteigen-
  []
 
-[6] (./script.aux)
+[6] [7] (./script.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 117.38377pt have occurred.
@@ -699,13 +699,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 5376 strings out of 493315
- 78035 string characters out of 6137905
- 171210 words of memory out of 5000000
- 8708 multiletter control sequences out of 15000+600000
+ 5378 strings out of 493315
+ 78049 string characters out of 6137905
+ 172230 words of memory out of 5000000
+ 8710 multiletter control sequences out of 15000+600000
  14980 words of font info for 62 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 47i,11n,47p,267b,428s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,13n,47p,267b,428s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pf
 b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
@@ -724,10 +724,10 @@ e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
 2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2
 013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/201
 3/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb>
-Output written on script.pdf (6 pages, 197302 bytes).
+Output written on script.pdf (7 pages, 202068 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 100 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

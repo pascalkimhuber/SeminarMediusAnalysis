@@ -39,7 +39,10 @@
      "eq:13"
      "lem:1"
      "eq:16"
-     "eq:17")
+     "eq:17"
+     "thm:3"
+     "align:2"
+     "eq:18")
     (TeX-add-symbols
      '("set" 1)
      '("hnorm" 1)

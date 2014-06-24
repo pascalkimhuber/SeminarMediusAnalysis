@@ -33,7 +33,7 @@
 
 \DeclareMathOperator{\divOp}{div}
 \DeclareMathOperator{\divh}{div_h}
-\DeclareMathOperator{\nablah}{\nabla_{\emph{h}}}
+\DeclareMathOperator{\nablah}{\nabla_{\textit{h}}}
 \DeclareMathOperator{\diam}{diam}
 \DeclareMathOperator{\midOp}{mid}
 \DeclareMathOperator{\intOp}{I_{NC}}
@@ -49,7 +49,7 @@
 \newtheorem{definition}{Definition}
 \newtheorem{modellproblem}{Modellproblem}
 \theoremstyle{remark}
-\newtheorem*{remark*}{Remark}
+\newtheorem*{remark*}{Bemerkung}
 
 % --------------------------------------- Some settings
 \SetWatermarkScale{4}
@@ -415,17 +415,37 @@ Bildraum darstellen:
     \begin{equation}
       \label{eq:16}
       \fint_T \nabla v \dx = \fint_T \nabla(\intOp v) \dx \quad \text{und} \quad
-      \fint_T f \dx = \fint_T \Ltwo f \dx 
+      \fint_T f \dx = \fint_T \LtwoOp f \dx 
     \end{equation}
   \item Seien \(v\in V\) und \(f\in \Ltwo(\Omega)\) gegeben. Dann gilt
     für alle \(w\in P_0(\mesh)^2\) und alle \(g\in P_0(\mesh)\): 
     \begin{equation}
       \label{eq:17}
-      \norm{\nablah(v-\intOp v)} \leq \norm{\nablah - w} \quad
+      \norm{\nablah(v-\intOp v)} \leq \norm{\nabla v - w} \quad
       \text{und} \quad \norm{f-\LtwoOp f} \leq \norm{f-g}. 
     \end{equation}
   \end{enumerate}
 \end{lemma}
+
+\begin{proof}[Beweis.]
+  \begin{enumerate}[label=\emph{(\roman*)}]
+  \item Die Gleichheit der Mittelwerte in (\ref{eq:16}) folgt für
+    \(\LtwoOp\) direkt aus der Definition. Für \(\intOp\) erhält man die
+    Aussage mit Hilfe von partieller Integration (bemerke, dass wir hier
+    den Spursatz verwenden).
+  \item Wir zeigen die Approximationseigenschaft für \(\intOp\): Sei
+    \(v \in V\), \(w\in P_0(\mesh)^2\). Dann gilt: 
+    \begin{align}
+      \norm{\nabla v - w}^2 =& \int_\Omega \left(\nablah(v - \intOp v)\right)^2 + \left(\nablah \intOp v - w\right)^2 \dx \nonumber \\ 
+      & + \int_\Omega \left(\nablah(v - \intOp v)\right) \cdot \left(\nablah \intOp v - w\right) \dx. \nonumber
+    \end{align}
+    Da aber \(\left(\nablah \intOp v - w\right)\) stückweise konstant
+    ist, folgt mit der Mittelwerteigenschaft von (\ref{eq:16}) die
+    Behauptung. \\
+    Die Ungleichung für \(\LtwoOp\) geht analog. 
+\end{enumerate}
+\end{proof}
+
 
 {\color{red}
   \begin{itemize}
@@ -434,6 +454,55 @@ Bildraum darstellen:
   \item Was ist mit dem Beweis von Lemma \ref{lem:1}? 
   \end{itemize}
 }
+
+\noindent Wir können nun den nicht-konformen Interpolationsoperator \(\intOp\)
+verwenden, um die Stabilität der Crouzeix-Raviart FE-Räume zu zeigen. 
+
+\begin{theorem}[Stabilität von CR-NCFEM]\label{thm:3}
+  Die Crouzeix-Raviart Diskretisierung des Stokes Problems \(V_h \times Q_h =
+  \crfem(\mesh)^2 \times (\Ltwo_0(\Omega)\cap P_0(\mesh))\) aus
+  Modellproblem \ref{problem:3}  ist stabil. 
+\end{theorem}
+
+\begin{proof}[Beweis.]
+  Für den Beweis zeigen, wir dass der nicht-konforme
+  Interpolationsoperator ein \emph{Fortin-Operator} ist, d.h. wir
+  zeigen: 
+ \begin{align}     
+   &(i) \quad \exists c > 0 \text{ (unabhängig von } h\text{)} \colon
+   \hnorm{\intOp v} \leq c \vnorm{v} \text{ für alle } v \in V \nonumber\\ 
+   &(ii) \quad \forall v \in V, \forall q_h \in Q_h\colon b_h(\intOp v, q_h) = b(v, q_h) \nonumber
+   \label{align:2} 
+  \end{align}
+  Daraus folgt dann die inf-sup-Bedingung. \\
+  Da \(\nablah (\intOp v)\) stückweise konstant ist, folgt mit
+  (\ref{eq:16})
+  \begin{equation}
+    \label{eq:18}
+    \int_\Omega \nablah (\intOp v) : \nablah (\intOp v) \dx = 
+    \int_\Omega \nabla v : \nablah (\intOp v) \dx \leq \norm{\nabla v}\hnorm{\intOp v}
+  \end{equation}
+  und damit \emph{(i)}. Analog folgt \emph{(ii)} auch aus
+  der Mittelwerteigenschaft, da \(q_h \in Q_h\) stückweise konstant
+  ist. \\ 
+  Sei nun \(q_h \in Q_h\) beliebig. Dann erhält man aus der
+  inf-sup-Bedingung von \(b(\cdot, \cdot)\) und \emph{(i), (ii)}: 
+  \begin{align}
+    \beta \norm{q_h} 
+    &\leq \sup_{v\in V} \frac{b(v,q_h)}{\vnorm{v}}
+    \overset{\emph(ii)}{=} \sup_{v\in V} \frac{b_h(\intOp v,q_h)}{\vnorm{v}}
+    \overset{\emph(i)}{\leq} \sup_{v\in V} \frac{b_h(\intOp v,q_h)}{\hnorm{\intOp v}} \nonumber 
+    \leq \sup_{v_h\in V_h} \frac{b_h(v_h,q_h)}{\hnorm{v_h}}. \nonumber
+  \end{align}
+\end{proof}
+
+\begin{remark*}
+  Wir haben gesehen, dass die Ungleichung in \emph{(i)} mit der
+  bestmöglichen Konstante \(c=1\) für den nicht-konformen
+  Interpolationsoperator \(\intOp\) gilt. Dies ist auch Hinweis
+  darauf, dass das CR-Element sehr gut für das Stokes-Problem geeignet
+  ist. 
+\end{remark*}
 
 % In diesem Abschnitt soll zunächst eine Beschreibung des Stokes Problems
 % gegeben werden. \\
