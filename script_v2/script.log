@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.4.8)  25 JUN 2014 21:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.4.8)  26 JUN 2014 21:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -506,18 +506,18 @@ Package: esint
  (./script.aux)
 \openout1 = `script.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
 
 (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -582,145 +582,127 @@ e
 ))
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/sc' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 69.
+(Font)              using `OT1/cmss/bx/n' instead on input line 73.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 69.
+LaTeX Font Info:    Try loading font information for U+msa on input line 73.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 69.
+LaTeX Font Info:    Try loading font information for U+msb on input line 73.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+esint on input line 69.
+LaTeX Font Info:    Try loading font information for U+esint on input line 73.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/esint/uesint.fd
 File: uesint.fd 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 94--98
+Overfull \hbox (8.85577pt too wide) in paragraph at lines 78--83
+\OT1/cmr/m/n/10.95 Nachdem wir in den let-zten Vortr^^?agen die nicht-konforme 
+Crouzeix-Raviart Diskretisierung
+ []
+
+
+Overfull \hbox (29.4985pt too wide) in paragraph at lines 87--93
+[]\OT1/cmr/m/n/10.95 verwenden. Im Gegen-satz zur Pois-songle-ichung ist f^^?ur
+ die Stokes Gle-ichung eine Diskretisierung
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--93
 
  []
 
 
-Overfull \hbox (4.30849pt too wide) in paragraph at lines 99--102
-\OT1/cmr/m/n/10.95 Prob-lem mit ho-mo-ge-nen Randbe-d-i-n-un-gen auf einem zwei
- di-men-sion-alen Lipschitz-Gebiet: 
+Overfull \hbox (12.24727pt too wide) in paragraph at lines 114--117
+\OT1/cmr/m/n/10.95 Druck und das Geschwindigkeits-feld von inkom-press-iblen Fl
+^^?ussigkeiten mit ho-her Viskosit^^?at
  []
 
-LaTeX Font Info:    Try loading font information for U+bbold on input line 104.
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--117
+
+ []
+
+
+Overfull \hbox (0.7953pt too wide) in paragraph at lines 118--120
+\OT1/cmr/m/n/10.95 Die schwache For-mulierung des Stokes Prob-lem f^^?uhrt math
+-e-ma-tisch zu einem Sat-telpunk-
+ []
+
+LaTeX Font Info:    Try loading font information for U+bbold on input line 123.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/bbold/Ubbold.fd)
-Overfull \hbox (14.08986pt too wide) in paragraph at lines 131--138
-\OT1/cmr/m/n/10.95 Gesucht wer-den also der Geschwindigkeitsvek-tor $\OML/cmm/m
-/it/10.95 u \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 V$ \OT1/cmr/m/n/10.95 der
- Fl^^?ussigkeit und der dazugeh^^?orige
- []
-
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <142.26378> not available
-(Font)              size <24.88> substituted on input line 138.
+(Font)              size <24.88> substituted on input line 135.
 
 [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 139--142
+Underfull \hbox (badness 10000) in paragraph at lines 163--166
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--201
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--210
 
  []
 
 [2]
-Overfull \hbox (1.8752pt too wide) in paragraph at lines 205--211
-\OT1/cmr/m/n/10.95 Wir be-merken, dass wir statt der El-lip-tizit^^?at der Bi-l
-in-ear-form $\OML/cmm/m/it/10.95 b\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^A\O
-ML/cmm/m/it/10.95 ; \OMS/cmsy/m/n/10.95 ^^A\OT1/cmr/m/n/10.95 )$ die inf-sup-Be
-dingung
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 205--211
+Underfull \hbox (badness 10000) in paragraph at lines 211--217
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 216--222
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 244--247
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 278--282
-
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 287.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 242.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 287.
- [4]
-Overfull \hbox (7.21338pt too wide) in paragraph at lines 350--352
-[]\OT1/cmr/m/n/10.95 Motivation: Warum eigentlich CR-NCFEM? $\OMS/cmsy/m/n/10.9
-5 )$ \OT1/cmr/m/n/10.95 ein-fache Struk-tur, inf-sup-Stabilit^^?at,
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 242.
+
+Overfull \hbox (0.46082pt too wide) in paragraph at lines 266--268
+\OT1/cmr/m/n/10.95 Mit diesen Beze-ich-nun-gen k^^?onnen wir nun das diskrete M
+od-ell-prob-lem zu (2[]) for-mulieren: 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 360--364
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 365--372
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 298--301
 
  []
 
 
-Overfull \hbox (23.63159pt too wide) in paragraph at lines 400--402
-[]\OT1/cmr/m/n/10.95 Der nicht-
+Overfull \hbox (11.80331pt too wide) in paragraph at lines 333--334
+[]\OT1/cmr/bx/n/10.95 Definition 2 \OT1/cmr/m/n/10.95 (Nicht-kon-former In-ter-
+po-la-tion-sop-er-a-tor und $\OML/cmm/m/it/10.95 L[]$\OT1/cmr/m/n/10.95 -Projek
+tion)\OT1/cmr/bx/n/10.95 . []\OT1/cmr/m/n/10.95 Wir definieren: 
  []
 
-[5]
-Overfull \hbox (13.96169pt too wide) in paragraph at lines 421--423
-[]\OT1/cmr/m/it/10.95 Es gel-ten die fol-gen-den Mit-tel-w-erteigen-
+
+Underfull \hbox (badness 10000) in paragraph at lines 343--345
+
  []
 
-[6]
-Overfull \hbox (33.91916pt too wide) in paragraph at lines 523--530
+[4]
+Overfull \hbox (33.91916pt too wide) in paragraph at lines 428--435
 \OT1/cmr/m/n/10.95 In den vo-r-ange-gan-gen Ab-schnit-ten haben wir gese-hen, d
 ass die Crouzeix-Raviart Diskretisierung
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 523--530
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 531--536
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 461--464
 
  []
 
-[7]
-Overfull \hbox (0.46075pt too wide) in paragraph at lines 571--580
-\OT1/cmr/m/n/10.95 Diese stellt einen Zusam-men-hang zwis-chen dem nicht-konfor
-men Crouzeix-Raviart Raum
- []
-
-
-Overfull \hbox (2.8052pt too wide) in paragraph at lines 582--585
-[]\OT1/cmr/bx/n/10.95 Definition 3 \OT1/cmr/m/n/10.95 (Kon-forme Be-gleitab-bil
--dung $\OML/cmm/m/it/10.95 J[]$\OT1/cmr/m/n/10.95 )\OT1/cmr/bx/n/10.95 . []\OT1
-/cmr/m/n/10.95 Sei $\OMS/cmsy/m/n/10.95 T[]$ \OT1/cmr/m/n/10.95 eine quasi-unif
-orme Tri-an-gulierung
- []
-
-[8] [9] [10] [11] (./script.aux)
+[6] [7] [8] (./script.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 117.38377pt have occurred.
@@ -730,13 +712,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 5405 strings out of 493315
- 78287 string characters out of 6137905
- 172489 words of memory out of 5000000
- 8737 multiletter control sequences out of 15000+600000
+ 5397 strings out of 493315
+ 78170 string characters out of 6137905
+ 172405 words of memory out of 5000000
+ 8729 multiletter control sequences out of 15000+600000
  14980 words of font info for 62 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 47i,13n,47p,267b,428s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,12n,47p,267b,431s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pf
 b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
@@ -756,10 +738,10 @@ e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
 013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/201
 3/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/local/texlive/201
 3/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on script.pdf (11 pages, 229859 bytes).
+Output written on script.pdf (8 pages, 219182 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 83 compressed objects within 1 object stream
+ 107 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

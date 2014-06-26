@@ -1,4 +1,4 @@
-(TeX-add-style-hook "script"
+(TeX-add-style-hook "_region_"
  (lambda ()
     (LaTeX-add-environments
      "theorem"
@@ -53,19 +53,9 @@
      "sec:best-der-crfem"
      "thm:4"
      "eq:19"
-     "eq:21"
-     "eq:20"
-     "eq:22"
-     "al:1"
-     "eq:23"
-     "eq:24"
-     "eq:25"
-     "eq:26"
-     "eq:27"
-     "eq:28")
+     "eq:20")
     (TeX-add-symbols
      '("set" 1)
-     '("scpr" 2)
      '("hnorm" 1)
      '("norm" 1)
      '("vnorm" 1)

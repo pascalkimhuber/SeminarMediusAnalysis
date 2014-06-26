@@ -1,0 +1,3505 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=prv_script 2014.6.24)  24 JUN 2014 22:57
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**&prv_script _region_.tex
+(./_region_.tex
+LaTeX2e <2011/06/27>
+Babel <3.9f> and hyphenation patterns for 78 languages loaded.
+CUSTOMISED FORMAT. Preloaded files:
+        .
+scrartcl.cls    2012/07/29 v3.11b KOMA-Script document class (article)
+scrkbase.sty    2012/07/29 v3.11b KOMA-Script package (KOMA-Script-dependent ba
+sics and keyval usage)
+ scrbase.sty    2012/07/29 v3.11b KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+  keyval.sty    1999/03/16 v1.13 key=value parser (DPC)
+scrlfile.sty    2012/06/15 v3.12 KOMA-Script package (loading files)
+tocbasic.sty    2012/04/04 v3.10b KOMA-Script package (handling toc-files)
+scrsize11pt.clo    2012/07/29 v3.11b KOMA-Script font size class option (11pt)
+typearea.sty    2012/07/29 v3.11b KOMA-Script package (type area)
+inputenc.sty    2008/03/30 v1.1d Input encoding file
+    utf8.def    2008/04/05 v1.1m UTF-8 support for inputenc
+   t1enc.dfu    2008/04/05 v1.1m UTF-8 support for inputenc
+  ot1enc.dfu    2008/04/05 v1.1m UTF-8 support for inputenc
+  omsenc.dfu    2008/04/05 v1.1m UTF-8 support for inputenc
+mathtools.sty    2013/02/12 v1.13 mathematical typesetting tools
+    calc.sty    2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+ mhsetup.sty    2010/01/21 v1.2a programming setup (MH)
+ amsmath.sty    2013/01/14 v2.14 AMS math features
+ amstext.sty    2000/06/29 v2.01
+  amsgen.sty    1999/11/30 v2.0
+  amsbsy.sty    1999/11/29 v1.2d
+  amsopn.sty    1999/12/14 v2.01 operator names
+ amssymb.sty    2013/01/14 v3.01 AMS font symbols
+amsfonts.sty    2013/01/14 v3.01 Basic AMSFonts support
+  amsthm.sty    2004/08/06 v2.20
+enumitem.sty    2011/09/28 v3.5.2 Customized lists
+   bbold.sty    1994/04/06 Bbold symbol package
+draftwatermark.sty    2006/06/30 1.0 Put a gray textual watermark on document p
+ages
+everypage.sty    2007/06/20 1.1 Hooks to run on every page
+graphicx.sty    1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+graphics.sty    2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+    trig.sty    1999/03/16 v1.09 sin cos tan (DPC)
+graphics.cfg    2010/04/23 v1.9 graphics configuration of TeX Live
+  pdftex.def    2011/05/27 v0.06d Graphics/color for pdfTeX
+infwarerr.sty    2010/04/08 v1.3 Providing info/warning/error messages (HO)
+ ltxcmds.sty    2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+   color.sty    1999/02/16
+   color.cfg    2007/01/18 v1.5 color configuration of teTeX/TeXLive
+  xcolor.sty    2007/01/21 v2.11 LaTeX color extensions (UK)
+   color.cfg    2007/01/18 v1.5 color configuration of teTeX/TeXLive
+   esint.sty    
+    umsa.fd    2013/01/14 v3.01 AMS symbols A
+    umsb.fd    2013/01/14 v3.01 AMS symbols B
+  uesint.fd    
+        .
+No file _region_.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+(/Users/pascal/.emacs.d/elpa/auctex-11.87.5/latex/preview.sty
+Package: preview 2010-02-14 CVS-1.126 (AUCTeX/preview-latex)
+
+(/Users/pascal/.emacs.d/elpa/auctex-11.87.5/latex/prtightpage.def
+\PreviewBorder=\dimen124
+)
+(/Users/pascal/.emacs.d/elpa/auctex-11.87.5/latex/prauctex.def
+No auxiliary output files.
+
+
+\hbadness=\count110
+\hfuzz=\dimen125
+(/Users/pascal/.emacs.d/elpa/auctex-11.87.5/latex/prauctex.cfg))
+(/Users/pascal/.emacs.d/elpa/auctex-11.87.5/latex/prfootnotes.def)
+\pr@snippet=\count111
+\pr@box=\box30
+\pr@output=\toks29
+
+Preview: Fontsize 10.95pt
+Preview: PDFoutput 1
+)
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   -
+l.63 \begin{document}
+                     
+I was expecting to see `<', `=', or `>'. Didn't.
+
+(/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count112
+\scratchdimen=\dimen126
+\scratchbox=\box31
+\nofMPsegments=\count113
+\nofMParguments=\count114
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count115
+\MPscratchDim=\dimen127
+\MPnumerator=\count116
+\makeMPintoPDFobject=\count117
+\everyMPtoPDFconversion=\toks31
+) (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+ !name(script.tex) !offset(-3) 
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <142.26378> not available
+(Font)              size <24.88> substituted on input line 71.
+
+! Preview: Snippet 1 started.
+<-><->
+      
+l.72 \section
+             {Motivation und Einleitung}
+Not a real error.
+
+Preview: Tightpage -32891 -32891 32891 32891
+! Preview: Snippet 1 ended.(655359+183500x27410796).
+<-><->
+      
+l.72 \section{Motivation und Einleitung}
+                                        
+Not a real error.
+
+[1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+]
+! Preview: Snippet 2 started.
+<-><->
+      
+l.85 \section
+             {Das Stokes Problem}
+Not a real error.
+
+! Preview: Snippet 2 ended.(655359+0x27410796).
+<-><->
+      
+l.85 \section{Das Stokes Problem}
+                                 
+Not a real error.
+
+[2
+
+]
+! Preview: Snippet 3 started.
+<-><->
+      
+l.88 \paragraph
+               {Schwache Formulierung des Stokes Problems}
+Not a real error.
+
+! Preview: Snippet 3 ended.(498346+139537x14802748).
+<-><->
+      
+l.88 ...Schwache Formulierung des Stokes Problems}
+                                                  
+Not a real error.
+
+[3
+
+]
+! Preview: Snippet 4 started.
+<-><->
+      
+l.92 \begin{equation}
+                     
+Not a real error.
+
+! Preview: Snippet 4 ended.(717618+0x27410796).
+<-><->
+      
+l.96 \end{equation}
+                   
+Not a real error.
+
+[4
+
+]
+! Preview: Snippet 5 started.
+<-><->
+      
+l.106   Sei \(
+              \Omega \subset \real^2\) ein polygonales beschränktes
+Not a real error.
+
+LaTeX Font Info:    Try loading font information for U+bbold on input line 106.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/bbold/Ubbold.fd)
+! Preview: Snippet 5 ended.(598293+28057x2244881).
+<-><->
+      
+l.106   Sei \(\Omega \subset \real^2\)
+                                       ein polygonales beschränktes
+Not a real error.
+
+[5]
+! Preview: Snippet 6 started.
+<-><->
+      
+l.107   Lipschitz-Gebiet und \(
+                               f\in \Ltwo(\Omega; \real^2)\). Wir definieren
+Not a real error.
+
+! Preview: Snippet 6 ended.(598293+179404x4270495).
+<-><->
+      
+l.107 ...ebiet und \(f\in \Ltwo(\Omega; \real^2)\)
+                                                  . Wir definieren
+Not a real error.
+
+[6]
+! Preview: Snippet 7 started.
+<-><->
+      
+l.109   \[
+          V \coloneqq \Hzero(\Omega; \real^2) \text{ und } Q \coloneqq
+Not a real error.
+
+! Preview: Snippet 7 ended.(1627494+0x23831947).
+<-><->
+      
+l.111   \dx = 0\},\]
+                    
+Not a real error.
+
+[7]
+! Preview: Snippet 8 started.
+<-><->
+      
+l.112   sowie die Bilinearformen \(
+                                   a \colon V\times V \rightarrow \real\)
+Not a real error.
+
+! Preview: Snippet 8 ended.(490372+59802x4505622).
+<-><->
+      
+l.112 ... \(a \colon V\times V \rightarrow \real\)
+                                                  
+Not a real error.
+
+[8]
+! Preview: Snippet 9 started.
+<-><->
+      
+l.113   und \(
+              b \colon V\times Q \rightarrow \real\) durch
+Not a real error.
+
+! Preview: Snippet 9 ended.(498346+139537x4423509).
+<-><->
+      
+l.113 ... \(b \colon V\times Q \rightarrow \real\)
+                                                   durch
+Not a real error.
+
+[9]
+! Preview: Snippet 10 started.
+<-><->
+      
+l.114   \begin{equation}
+                        
+Not a real error.
+
+! Preview: Snippet 10 ended.(1627494+0x27410796).
+<-><->
+      
+l.119   \end{equation}
+                      
+Not a real error.
+
+[10
+
+]
+! Preview: Snippet 11 started.
+<-><->
+      
+l.120   Finde \(
+                (u,p) \in V\times Q\), sodass folgende Gleichungen erfüllt
+Not a real error.
+
+! Preview: Snippet 11 ended.(538214+179404x4548517).
+<-><->
+      
+l.120   Finde \((u,p) \in V\times Q\)
+                                     , sodass folgende Gleichungen erfüllt
+Not a real error.
+
+[11]
+! Preview: Snippet 12 started.
+<-><->
+      
+l.122   \begin{equation}
+                        
+Not a real error.
+
+! Preview: Snippet 12 ended.(2152878+0x27410796).
+<-><->
+      
+l.129   \end{equation}
+                      
+Not a real error.
+
+[12
+
+]
+! Preview: Snippet 13 started.
+<-><->
+      
+l.133 ...werden also der Geschwindigkeitsvektor \(
+                                                  u \in V\) der
+Not a real error.
+
+! Preview: Snippet 13 ended.(490372+28057x1865972).
+<-><->
+      
+l.133 ...so der Geschwindigkeitsvektor \(u \in V\)
+                                                   der
+Not a real error.
+
+[13]
+! Preview: Snippet 14 started.
+<-><->
+      
+l.134 ...üssigkeit und der dazugehörige Druck \(
+                                                  p \in Q\). Die Funktion \(f
+Not a real error.
+
+! Preview: Snippet 14 ended.(490372+139537x1805453).
+<-><->
+      
+l.134 ...t und der dazugehörige Druck \(p \in Q\)
+                                                  . Die Funktion \(f
+Not a real error.
+
+[14]
+! Preview: Snippet 15 started.
+<-><->
+      
+l.134 ...örige Druck \(p \in Q\). Die Funktion \(
+                                                  f
+Not a real error.
+
+! Preview: Snippet 15 ended.(598293+179404x4270495).
+<-><->
+      
+l.135   \in \Ltwo(\Omega, \real^2)\)
+                                     beschreibt die gegebene äußere
+Not a real error.
+
+[15]
+
+LaTeX Warning: Reference `eq:3' on page 2 undefined on input line 141.
+
+! Preview: Snippet 16 started.
+<-><->
+      
+l.142 bezeichnet. Dabei wird die Gleichung \(
+                                             b(u,q) = 0 \) als Nebenbedinung
+Not a real error.
+
+! Preview: Snippet 16 ended.(538214+179404x3257606).
+<-><->
+      
+l.142 ... Dabei wird die Gleichung \(b(u,q) = 0 \)
+                                                   als Nebenbedinung
+Not a real error.
+
+[16]
+! Preview: Snippet 17 started.
+<-><->
+      
+l.145 \paragraph
+                {Existenz und Eindeutigkeit für Lösungen von Sattelpunktpr...
+
+Not a real error.
+
+! Preview: Snippet 17 ended.(498346+139537x22140837).
+<-><->
+      
+l.145 ... für Lösungen von Sattelpunktproblemen}
+                                                  
+Not a real error.
+
+[17
+
+]
+! Preview: Snippet 18 started.
+<-><->
+      
+l.150 und Eindeutigkeit einer Lösung \(
+                                        (u,p) \in V\times Q\) für das Model...
+
+Not a real error.
+
+! Preview: Snippet 18 ended.(538214+179404x4548517).
+<-><->
+      
+l.150 ...eit einer Lösung \((u,p) \in V\times Q\)
+                                                   für das Modellproblem
+Not a real error.
+
+[18]
+
+LaTeX Warning: Reference `problem:1' on page 2 undefined on input line 151.
+
+! Preview: Snippet 19 started.
+<-><->
+      
+l.160   Seien \(
+                (V,\vnorm{\cdot})\)  und \((Q,\norm{\cdot}_Q)\) zwei
+Not a real error.
+
+! Preview: Snippet 19 ended.(538214+212173x2733495).
+<-><->
+      
+l.160   Seien \((V,\vnorm{\cdot})\)
+                                     und \((Q,\norm{\cdot}_Q)\) zwei
+Not a real error.
+
+[19]
+! Preview: Snippet 20 started.
+<-><->
+      
+l.160   Seien \((V,\vnorm{\cdot})\)  und \(
+                                           (Q,\norm{\cdot}_Q)\) zwei
+Not a real error.
+
+! Preview: Snippet 20 ended.(538214+314118x2832284).
+<-><->
+      
+l.160 ...orm{\cdot})\)  und \((Q,\norm{\cdot}_Q)\)
+                                                   zwei
+Not a real error.
+
+[20]
+! Preview: Snippet 21 started.
+<-><->
+      
+l.162   \[
+          a\colon V\times V \rightarrow \real
+Not a real error.
+
+! Preview: Snippet 21 ended.(637883+0x19724808).
+<-><->
+      
+l.164   b\colon V\times Q \rightarrow \real\]
+                                             
+Not a real error.
+
+[21]
+! Preview: Snippet 22 started.
+<-><->
+      
+l.165 ...ge Bilinearformen. Wir nehmen an, dass \(
+                                                  a(\cdot, \cdot)\) symmetrisch
+
+Not a real error.
+
+! Preview: Snippet 22 ended.(538214+179404x1655094).
+<-><->
+      
+l.165 .... Wir nehmen an, dass \(a(\cdot, \cdot)\)
+                                                   symmetrisch
+Not a real error.
+
+[22]
+! Preview: Snippet 23 started.
+<-><->
+      
+l.167   \begin{equation}
+                        
+Not a real error.
+
+! Preview: Snippet 23 ended.(717619+0x27410796).
+<-><->
+      
+l.170   \end{equation}
+                      
+Not a real error.
+
+[23
+
+]
+! Preview: Snippet 24 started.
+<-><->
+      
+l.171   Weiter seien \(
+                       F \in V'\) und \(G \in Q'\)\\
+Not a real error.
+
+! Preview: Snippet 24 ended.(551690+28057x2200170).
+<-><->
+      
+l.171   Weiter seien \(F \in V'\)
+                                  und \(G \in Q'\)\\
+Not a real error.
+
+[24]
+! Preview: Snippet 25 started.
+<-><->
+      
+l.171   Weiter seien \(F \in V'\) und \(
+                                        G \in Q'\)\\
+Not a real error.
+
+! Preview: Snippet 25 ended.(551690+139537x2192493).
+<-><->
+      
+l.171   Weiter seien \(F \in V'\) und \(G \in Q'\)
+                                                  \\
+Not a real error.
+
+[25]
+! Preview: Snippet 26 started.
+<-><->
+      
+l.172   Finde \(
+                (u,p) \in V\times Q\), sodass folgende Gleichungen erfüllt
+Not a real error.
+
+! Preview: Snippet 26 ended.(538214+179404x4548517).
+<-><->
+      
+l.172   Finde \((u,p) \in V\times Q\)
+                                     , sodass folgende Gleichungen erfüllt
+Not a real error.
+
+[26]
+! Preview: Snippet 27 started.
+<-><->
+      
+l.174   \begin{equation}
+                        
+Not a real error.
+
+! Preview: Snippet 27 ended.(2152878+0x27410796).
+<-><->
+      
+l.180   \end{equation}
+                      
+Not a real error.
+
+[27
+
+]
+
+LaTeX Warning: Reference `problem:2' on page 3 undefined on input line 184.
+
+! Preview: Snippet 28 started.
+<-><->
+      
+l.187   Die Abbildung \(
+                        L\colon V\times Q \rightarrow V' \times Q'\), die
+Not a real error.
+
+! Preview: Snippet 28 ended.(551690+139537x6535646).
+<-><->
+      
+l.187 ...olon V\times Q \rightarrow V' \times Q'\)
+                                                  , die
+Not a real error.
+
+[28]
+! Preview: Snippet 29 started.
+<-><->
+      
+l.188   jedem Paar \(
+                     (u,p) \in V\times Q\) gemäß dem Sattelpunktproblem
+Not a real error.
+
+! Preview: Snippet 29 ended.(538214+179404x4548517).
+<-><->
+      
+l.188   jedem Paar \((u,p) \in V\times Q\)
+                                           gemäß dem Sattelpunktproblem
+Not a real error.
+
+[29]
+
+LaTeX Warning: Reference `eq:4' on page 3 undefined on input line 189.
+
+! Preview: Snippet 30 started.
+<-><->
+      
+l.189   (\ref{eq:4}) das Paar \(
+                                (F,G) \in V'\times Q'\) zuordnet, ist genau
+Not a real error.
+
+! Preview: Snippet 30 ended.(551690+179404x5190019).
+<-><->
+      
+l.189 ...eq:4}) das Paar \((F,G) \in V'\times Q'\)
+                                                   zuordnet, ist genau
+Not a real error.
+
+[30]
+! Preview: Snippet 31 started.
+<-><->
+      
+l.193   \item Die Bilinearform \(
+                                 a(\cdot, \cdot)\) ist \(Z\)-elliptisch:
+Not a real error.
+
+! Preview: Snippet 31 ended.(538214+179404x1655094).
+<-><->
+      
+l.193   \item Die Bilinearform \(a(\cdot, \cdot)\)
+                                                   ist \(Z\)-elliptisch:
+Not a real error.
+
+[31]
+! Preview: Snippet 32 started.
+<-><->
+      
+l.193 ...e Bilinearform \(a(\cdot, \cdot)\) ist \(
+                                                  Z\)-elliptisch:
+Not a real error.
+
+! Preview: Snippet 32 ended.(490372+0x541204).
+<-><->
+      
+l.193 ...ilinearform \(a(\cdot, \cdot)\) ist \(Z\)
+                                                  -elliptisch:
+Not a real error.
+
+[32]
+! Preview: Snippet 33 started.
+<-><->
+      
+l.194     \begin{equation}
+                          \label{eq:5}
+Not a real error.
+
+! Preview: Snippet 33 ended.(880730+0x27410796).
+<-><->
+      
+l.196     \end{equation}
+                        
+Not a real error.
+
+[33
+
+]
+! Preview: Snippet 34 started.
+<-><->
+      
+l.198   \item Die Bilinearform \(
+                                 b(\cdot, \cdot)\) erfüllt die
+Not a real error.
+
+! Preview: Snippet 34 ended.(538214+179404x1583746).
+<-><->
+      
+l.198   \item Die Bilinearform \(b(\cdot, \cdot)\)
+                                                   erfüllt die
+Not a real error.
+
+[34]
+! Preview: Snippet 35 started.
+<-><->
+      
+l.200     \begin{equation}
+                          
+Not a real error.
+
+! Preview: Snippet 35 ended.(1830057+0x27410796).
+<-><->
+      
+l.203     \end{equation}
+                        
+Not a real error.
+
+[35
+
+]
+! Preview: Snippet 36 started.
+<-><->
+      
+l.209 ...att der Elliptizität der Bilinearform \(
+                                                  b(\cdot,
+Not a real error.
+
+! Preview: Snippet 36 ended.(538214+179404x1583746).
+<-><->
+      
+l.210 \cdot)\)
+               die inf-sup-Bedingung für Satz \ref{thm:1} fordern
+Not a real error.
+
+[36]
+
+LaTeX Warning: Reference `thm:1' on page 3 undefined on input line 210.
+
+! Preview: Snippet 37 started.
+<-><->
+      
+l.212 \(
+        a(\cdot, \cdot)\) nur auf dem Unterraum \(Z\) gefordert wird. \\
+Not a real error.
+
+! Preview: Snippet 37 ended.(538214+179404x1655094).
+<-><->
+      
+l.212 \(a(\cdot, \cdot)\)
+                          nur auf dem Unterraum \(Z\) gefordert wird. \\
+Not a real error.
+
+[37]
+! Preview: Snippet 38 started.
+<-><->
+      
+l.212 \(a(\cdot, \cdot)\) nur auf dem Unterraum \(
+                                                  Z\) gefordert wird. \\
+Not a real error.
+
+! Preview: Snippet 38 ended.(490372+0x541204).
+<-><->
+      
+l.212 ...dot, \cdot)\) nur auf dem Unterraum \(Z\)
+                                                   gefordert wird. \\
+Not a real error.
+
+[38]
+! Preview: Snippet 39 started.
+<-><->
+      
+l.215 \paragraph
+                {Existenz von Lösungen für das Stokes Problem}
+Not a real error.
+
+! Preview: Snippet 39 ended.(498346+139537x15410337).
+<-><->
+      
+l.215 ...nz von Lösungen für das Stokes Problem}
+                                                  
+Not a real error.
+
+[39
+
+]
+
+LaTeX Warning: Reference `problem:1' on page 3 undefined on input line 219.
+
+
+LaTeX Warning: Reference `thm:1' on page 3 undefined on input line 219.
+
+! Preview: Snippet 40 started.
+<-><->
+      
+l.220 \(
+        Z\)-Elliptizität von \(a(\cdot, \cdot)\) und die
+Not a real error.
+
+! Preview: Snippet 40 ended.(490372+0x541204).
+<-><->
+      
+l.220 \(Z\)
+           -Elliptizität von \(a(\cdot, \cdot)\) und die
+Not a real error.
+
+[40]
+! Preview: Snippet 41 started.
+<-><->
+      
+l.220 \(Z\)-Elliptizität von \(
+                                a(\cdot, \cdot)\) und die
+Not a real error.
+
+! Preview: Snippet 41 ended.(538214+179404x1655094).
+<-><->
+      
+l.220 \(Z\)-Elliptizität von \(a(\cdot, \cdot)\)
+                                                  und die
+Not a real error.
+
+[41]
+! Preview: Snippet 42 started.
+<-><->
+      
+l.221 inf-sup-Bedingung für \(
+                               b(\cdot, \cdot)\) nachweisen. (Die Stetigkeit
+Not a real error.
+
+! Preview: Snippet 42 ended.(538214+179404x1583746).
+<-><->
+      
+l.221 inf-sup-Bedingung für \(b(\cdot, \cdot)\)
+                                                 nachweisen. (Die Stetigkeit
+Not a real error.
+
+[42]
+! Preview: Snippet 43 started.
+<-><->
+      
+l.226 Elliptizität von \(
+                          a(\cdot, \cdot)\) auf ganz \(\Hzero(\Omega)\) aus ...
+
+Not a real error.
+
+! Preview: Snippet 43 ended.(538214+179404x1655094).
+<-><->
+      
+l.226 Elliptizität von \(a(\cdot, \cdot)\)
+                                            auf ganz \(\Hzero(\Omega)\) aus ...
+
+Not a real error.
+
+[43]
+! Preview: Snippet 44 started.
+<-><->
+      
+l.226 ...ität von \(a(\cdot, \cdot)\) auf ganz \(
+                                                  \Hzero(\Omega)\) aus der F...
+
+Not a real error.
+
+! Preview: Snippet 44 ended.(598293+192273x2042557).
+<-><->
+      
+l.226 ...dot, \cdot)\) auf ganz \(\Hzero(\Omega)\)
+                                                   aus der Friedrichs-Unglei...
+
+Not a real error.
+
+[44]
+! Preview: Snippet 45 started.
+<-><->
+      
+l.231   Sei \(
+              \Omega \subset \real^d\) ein beschränktes
+Not a real error.
+
+! Preview: Snippet 45 ended.(624507+28057x2252981).
+<-><->
+      
+l.231   Sei \(\Omega \subset \real^d\)
+                                       ein beschränktes
+Not a real error.
+
+[45]
+! Preview: Snippet 46 started.
+<-><->
+      
+l.233   \[
+          \divOp \colon Z^\perp \rightarrow \Ltwo_0(\Omega), \quad v \mapsto
+Not a real error.
+
+! Preview: Snippet 46 ended.(839792+0x18468878).
+<-><->
+      
+l.234   \divOp v\]
+                  
+Not a real error.
+
+[46]
+! Preview: Snippet 47 started.
+<-><->
+      
+l.235 ...hismus und es exisitiert ein Konstante \(
+                                                  c = c(\Omega) >
+Not a real error.
+
+! Preview: Snippet 47 ended.(538214+179404x3969989).
+<-><->
+      
+l.236   0\)
+           , so dass gilt:
+Not a real error.
+
+[47]
+! Preview: Snippet 48 started.
+<-><->
+      
+l.237   \[
+          \forall q \in \Ltwo_0(\Omega)\colon \exists v_q \in Z^\perp \colon
+Not a real error.
+
+! Preview: Snippet 48 ended.(1069932+0x23960338).
+<-><->
+      
+l.238 ...al^2)} \leq c \norm{q}_{\Ltwo(\Omega)}.\]
+                                                  
+Not a real error.
+
+[48]
+
+LaTeX Warning: Reference `thm:2' on page 3 undefined on input line 241.
+
+! Preview: Snippet 49 started.
+<-><->
+      
+l.242 inf-sup-Bedingung für \(
+                               b(\cdot, \cdot)\): Für alle \(q\in Q\) gilt:
+Not a real error.
+
+! Preview: Snippet 49 ended.(538214+179404x1583746).
+<-><->
+      
+l.242 inf-sup-Bedingung für \(b(\cdot, \cdot)\)
+                                                : Für alle \(q\in Q\) gilt:
+Not a real error.
+
+[49]
+! Preview: Snippet 50 started.
+<-><->
+      
+l.242 ...ng für \(b(\cdot, \cdot)\): Für alle \(
+                                                  q\in Q\) gilt:
+Not a real error.
+
+! Preview: Snippet 50 ended.(490372+139537x1790503).
+<-><->
+      
+l.242 ...\(b(\cdot, \cdot)\): Für alle \(q\in Q\)
+                                                   gilt:
+Not a real error.
+
+[50]
+! Preview: Snippet 51 started.
+<-><->
+      
+l.243 \begin{equation}
+                      
+Not a real error.
+
+! Preview: Snippet 51 ended.(1997149+0x27410796).
+<-><->
+      
+l.246 \end{equation}
+                    
+Not a real error.
+
+[51
+
+]
+! Preview: Snippet 52 started.
+<-><->
+      
+l.248 \(
+        b(\cdot, \cdot)\)  ausgenutzt haben. \\
+Not a real error.
+
+! Preview: Snippet 52 ended.(538214+179404x1583746).
+<-><->
+      
+l.248 \(b(\cdot, \cdot)\)
+                           ausgenutzt haben. \\
+Not a real error.
+
+[52]
+! Preview: Snippet 53 started.
+<-><->
+      
+l.253   \item Normen von \(
+                           V\) und \(Q\) angeben?
+Not a real error.
+
+! Preview: Snippet 53 ended.(490372+0x578082).
+<-><->
+      
+l.253   \item Normen von \(V\)
+                               und \(Q\) angeben?
+Not a real error.
+
+[53]
+! Preview: Snippet 54 started.
+<-><->
+      
+l.253   \item Normen von \(V\) und \(
+                                     Q\) angeben?
+Not a real error.
+
+! Preview: Snippet 54 ended.(490372+139537x567317).
+<-><->
+      
+l.253   \item Normen von \(V\) und \(Q\)
+                                         angeben?
+Not a real error.
+
+[54]
+! Preview: Snippet 55 started.
+<-><->
+      
+l.254   \item Definition von \(
+                               A:B\) angeben?
+Not a real error.
+
+! Preview: Snippet 55 ended.(490372+0x1716548).
+<-><->
+      
+l.254   \item Definition von \(A:B\)
+                                     angeben?
+Not a real error.
+
+[55]
+! Preview: Snippet 56 started.
+<-><->
+      
+l.261 \section
+              {Stabilität der CRFEM für das Stokes Problem}
+Not a real error.
+
+! Preview: Snippet 56 ended.(655359+0x27410796).
+<-><->
+      
+l.261 ...lität der CRFEM für das Stokes Problem}
+                                                  
+Not a real error.
+
+[56
+
+]
+! Preview: Snippet 57 started.
+<-><->
+      
+l.264 \subsection
+                 {Motivation}
+Not a real error.
+
+! Preview: Snippet 57 ended.(546133+0x27410796).
+<-><->
+      
+l.264 \subsection{Motivation}
+                             
+Not a real error.
+
+[57
+
+]
+! Preview: Snippet 58 started.
+<-><->
+      
+l.277 \subsection
+                 {Beschreibung der Diskretisierung}
+Not a real error.
+
+! Preview: Snippet 58 ended.(546133+152917x27410796).
+<-><->
+      
+l.277 ...section{Beschreibung der Diskretisierung}
+                                                  
+Not a real error.
+
+[58
+
+]
+
+LaTeX Warning: Reference `problem:1' on page 4 undefined on input line 282.
+
+! Preview: Snippet 59 started.
+<-><->
+      
+l.285 \noindent Sei dazu \(
+                           \mesh\) ein quasi-uniforme Triangulierung von
+Not a real error.
+
+! Preview: Snippet 59 ended.(490372+116910x744624).
+<-><->
+      
+l.285 \noindent Sei dazu \(\mesh\)
+                                   ein quasi-uniforme Triangulierung von
+Not a real error.
+
+[59]
+! Preview: Snippet 60 started.
+<-><->
+      
+l.286 \(
+        \Omega\). Zur Beschreibung der Triangulierung benutzen wir folgende
+Not a real error.
+
+! Preview: Snippet 60 ended.(490372+0x518281).
+<-><->
+      
+l.286 \(\Omega\)
+                . Zur Beschreibung der Triangulierung benutzen wir folgende
+Not a real error.
+
+[60]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 289.
+
+ (/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 289.
+
+! Preview: Snippet 61 started.
+<-><->
+      
+l.289 \item \(
+              h \coloneqq \max\{h_T\colon T \in \mesh\}\) mit \(h_T \coloneq...
+
+Not a real error.
+
+! Preview: Snippet 61 ended.(538214+179404x7081902).
+<-><->
+      
+l.289 ...\coloneqq \max\{h_T\colon T \in \mesh\}\)
+                                                   mit \(h_T \coloneqq \diam...
+
+Not a real error.
+
+[61]
+! Preview: Snippet 62 started.
+<-><->
+      
+l.289 ...qq \max\{h_T\colon T \in \mesh\}\) mit \(
+                                                  h_T \coloneqq \diam(T)\) f...
+
+Not a real error.
+
+! Preview: Snippet 62 ended.(538214+179404x4588259).
+<-><->
+      
+l.289 ... \mesh\}\) mit \(h_T \coloneqq \diam(T)\)
+                                                   für \(T\in \mesh\)
+Not a real error.
+
+[62]
+! Preview: Snippet 63 started.
+<-><->
+      
+l.289 ...\) mit \(h_T \coloneqq \diam(T)\) für \(
+                                                  T\in \mesh\)
+Not a real error.
+
+! Preview: Snippet 63 ended.(490372+116910x2140737).
+<-><->
+      
+l.289 ... \coloneqq \diam(T)\) für \(T\in \mesh\)
+                                                  
+Not a real error.
+
+[63]
+! Preview: Snippet 64 started.
+<-><->
+      
+l.290 \item \(
+              \edges\) bezeichnet die Menge aller Kanten von \(\mesh\)
+Not a real error.
+
+! Preview: Snippet 64 ended.(490372+0x442930).
+<-><->
+      
+l.290 \item \(\edges\)
+                       bezeichnet die Menge aller Kanten von \(\mesh\)
+Not a real error.
+
+[64]
+! Preview: Snippet 65 started.
+<-><->
+      
+l.290 ... bezeichnet die Menge aller Kanten von \(
+                                                  \mesh\)
+Not a real error.
+
+! Preview: Snippet 65 ended.(490372+116910x744624).
+<-><->
+      
+l.290 ...hnet die Menge aller Kanten von \(\mesh\)
+                                                  
+Not a real error.
+
+[65]
+! Preview: Snippet 66 started.
+<-><->
+      
+l.291 \item \(
+              \midOp(E)\) bezeichnet den Kantenmittelpunkt von \(E \in
+Not a real error.
+
+! Preview: Snippet 66 ended.(538214+179404x2325289).
+<-><->
+      
+l.291 \item \(\midOp(E)\)
+                          bezeichnet den Kantenmittelpunkt von \(E \in
+Not a real error.
+
+[66]
+! Preview: Snippet 67 started.
+<-><->
+      
+l.291 ...) bezeichnet den Kantenmittelpunkt von \(
+                                                  E \in
+Not a real error.
+
+! Preview: Snippet 67 ended.(490372+28057x1891119).
+<-><->
+      
+l.292   \edges\)
+                , \(\midOp(\edges)\) die Menge aller Kantenmittelpunkte in \...
+
+Not a real error.
+
+[67]
+! Preview: Snippet 68 started.
+<-><->
+      
+l.292   \edges\), \(
+                    \midOp(\edges)\) die Menge aller Kantenmittelpunkte in \...
+
+Not a real error.
+
+! Preview: Snippet 68 ended.(538214+179404x2197114).
+<-><->
+      
+l.292   \edges\), \(\midOp(\edges)\)
+                                     die Menge aller Kantenmittelpunkte in \...
+
+Not a real error.
+
+[68]
+! Preview: Snippet 69 started.
+<-><->
+      
+l.292 ... die Menge aller Kantenmittelpunkte in \(
+                                                  \mesh\)
+Not a real error.
+
+! Preview: Snippet 69 ended.(490372+116910x744624).
+<-><->
+      
+l.292 ...nge aller Kantenmittelpunkte in \(\mesh\)
+                                                  
+Not a real error.
+
+[69]
+! Preview: Snippet 70 started.
+<-><->
+      
+l.298 \[
+        P_k(\mesh) \coloneqq \set{v_h \in \Ltwo(\Omega)\colon \forall T \in
+Not a real error.
+
+! Preview: Snippet 70 ended.(885346+0x21287296).
+<-><->
+      
+l.299   \mesh\colon v_h|_T \in P_k(T)}\]
+                                        
+Not a real error.
+
+[70]
+! Preview: Snippet 71 started.
+<-><->
+      
+l.300 ...�ckweiser Polynome vom Grad höchstens \(
+                                                  k\) bezüglich
+Not a real error.
+
+! Preview: Snippet 71 ended.(498346+0x396186).
+<-><->
+      
+l.300 ...weiser Polynome vom Grad höchstens \(k\)
+                                                   bezüglich
+Not a real error.
+
+[71]
+! Preview: Snippet 72 started.
+<-><->
+      
+l.301 der Triangulierung \(
+                           \mesh\). Wir definieren den \emph{Crouzeix-Raviart
+Not a real error.
+
+! Preview: Snippet 72 ended.(490372+116910x744624).
+<-><->
+      
+l.301 der Triangulierung \(\mesh\)
+                                  . Wir definieren den \emph{Crouzeix-Raviart
+Not a real error.
+
+[72]
+! Preview: Snippet 73 started.
+<-><->
+      
+l.303 \begin{equation}
+                      
+Not a real error.
+
+! Preview: Snippet 73 ended.(813579+0x27410796).
+<-><->
+      
+l.306 \end{equation}
+                    
+Not a real error.
+
+[73
+
+]
+
+LaTeX Warning: Reference `problem:1' on page 4 undefined on input line 310.
+
+! Preview: Snippet 74 started.
+<-><->
+      
+l.314   Wir definieren die Ansatzräume \(
+                                          V_h \coloneqq \crfem(\mesh) \times
+Not a real error.
+
+! Preview: Snippet 74 ended.(620716+179404x8078999).
+<-><->
+      
+l.315   \crfem(\mesh)\)
+                        und \(Q_h \coloneqq \Ltwo_0(\Omega) \cap
+Not a real error.
+
+[74]
+! Preview: Snippet 75 started.
+<-><->
+      
+l.315   \crfem(\mesh)\) und \(
+                              Q_h \coloneqq \Ltwo_0(\Omega) \cap
+Not a real error.
+
+! Preview: Snippet 75 ended.(598293+192273x6777669).
+<-><->
+      
+l.316   P_0(\mesh)\)
+                     zusammen mit den Normen
+Not a real error.
+
+[75]
+! Preview: Snippet 76 started.
+<-><->
+      
+l.317   \begin{equation}
+                        
+Not a real error.
+
+! Preview: Snippet 76 ended.(881459+0x27410796).
+<-><->
+      
+l.322   \end{equation}
+                      
+Not a real error.
+
+[76
+
+]
+! Preview: Snippet 77 started.
+<-><->
+      
+l.323 ...ter seien die diskreten Bilinearformen \(
+                                                  a_h\colon V_h \times V_h
+Not a real error.
+
+! Preview: Snippet 77 ended.(490372+116910x5248011).
+<-><->
+      
+l.324   \rightarrow \real\)
+                            und \(b_h\colon V_h \times Q_h \rightarrow
+Not a real error.
+
+[77]
+! Preview: Snippet 78 started.
+<-><->
+      
+l.324   \rightarrow \real\) und \(
+                                  b_h\colon V_h \times Q_h \rightarrow
+Not a real error.
+
+! Preview: Snippet 78 ended.(498346+139537x5325369).
+<-><->
+      
+l.325   \real\)
+                definiert durch
+Not a real error.
+
+[78]
+! Preview: Snippet 79 started.
+<-><->
+      
+l.326   \begin{equation}
+                        
+Not a real error.
+
+! Preview: Snippet 79 ended.(1627494+0x27410796).
+<-><->
+      
+l.330   \end{equation}
+                      
+Not a real error.
+
+[79
+
+]
+! Preview: Snippet 80 started.
+<-><->
+      
+l.331   Für gegebenes \(
+                         f \in \Ltwo(\Omega; \real^2)\) finde \((u_h, p_h)
+Not a real error.
+
+! Preview: Snippet 80 ended.(598293+179404x4270495).
+<-><->
+      
+l.331 ...egebenes \(f \in \Ltwo(\Omega; \real^2)\)
+                                                   finde \((u_h, p_h)
+Not a real error.
+
+[80]
+! Preview: Snippet 81 started.
+<-><->
+      
+l.331 ...\(f \in \Ltwo(\Omega; \real^2)\) finde \(
+                                                  (u_h, p_h)
+Not a real error.
+
+! Preview: Snippet 81 ended.(538214+179404x5804154).
+<-><->
+      
+l.332   \in V_h \times Q_h\)
+                            , sodass folgende Gleichungen gelten:
+Not a real error.
+
+[81]
+! Preview: Snippet 82 started.
+<-><->
+      
+l.333   \begin{equation}
+                        
+Not a real error.
+
+! Preview: Snippet 82 ended.(2152878+0x27410796).
+<-><->
+      
+l.339   \end{equation}
+                      
+Not a real error.
+
+[82
+
+]
+! Preview: Snippet 83 started.
+<-><->
+      
+l.345 \item Definition von \(
+                             \nablah\) und \(\divh\).
+Not a real error.
+
+! Preview: Snippet 83 ended.(490372+116910x918416).
+<-><->
+      
+l.345 \item Definition von \(\nablah\)
+                                       und \(\divh\).
+Not a real error.
+
+[83]
+! Preview: Snippet 84 started.
+<-><->
+      
+l.345 \item Definition von \(\nablah\) und \(
+                                             \divh\).
+Not a real error.
+
+! Preview: Snippet 84 ended.(498346+116910x1319010).
+<-><->
+      
+l.345 ... Definition von \(\nablah\) und \(\divh\)
+                                                  .
+Not a real error.
+
+[84]
+! Preview: Snippet 85 started.
+<-><->
+      
+l.346 \item \(
+              \hnorm{\cdot}\) heißt Energienorm und ist tatsächlich eine
+Not a real error.
+
+! Preview: Snippet 85 ended.(538213+212173x1270736).
+<-><->
+      
+l.346 \item \(\hnorm{\cdot}\)
+                              heißt Energienorm und ist tatsächlich eine
+Not a real error.
+
+[85]
+! Preview: Snippet 86 started.
+<-><->
+      
+l.347   Norm auf \(
+                   V_h\) (siehe Benjamins Vortrag).
+Not a real error.
+
+! Preview: Snippet 86 ended.(490372+116910x772388).
+<-><->
+      
+l.347   Norm auf \(V_h\)
+                         (siehe Benjamins Vortrag).
+Not a real error.
+
+[86]
+! Preview: Snippet 87 started.
+<-><->
+      
+l.348 \item Auf \(
+                  \Hzero(\Omega; \real^2)\) stimmt \(\hnorm{\cdot}\) mit
+Not a real error.
+
+! Preview: Snippet 87 ended.(598293+192273x3131277).
+<-><->
+      
+l.348 \item Auf \(\Hzero(\Omega; \real^2)\)
+                                            stimmt \(\hnorm{\cdot}\) mit
+Not a real error.
+
+[87]
+! Preview: Snippet 88 started.
+<-><->
+      
+l.348 ...Auf \(\Hzero(\Omega; \real^2)\) stimmt \(
+                                                  \hnorm{\cdot}\) mit
+Not a real error.
+
+! Preview: Snippet 88 ended.(538213+212173x1270736).
+<-><->
+      
+l.348 ...mega; \real^2)\) stimmt \(\hnorm{\cdot}\)
+                                                   mit
+Not a real error.
+
+[88]
+! Preview: Snippet 89 started.
+<-><->
+      
+l.349   \(
+          \norm{\cdot}_{\Hzero}\) überein.
+Not a real error.
+
+! Preview: Snippet 89 ended.(538213+379362x1720778).
+<-><->
+      
+l.349   \(\norm{\cdot}_{\Hzero}\)
+                                  überein.
+Not a real error.
+
+[89]
+! Preview: Snippet 90 started.
+<-><->
+      
+l.350 ...e ist nicht-konform, da offensichtlich \(
+                                                  V_h
+Not a real error.
+
+! Preview: Snippet 90 ended.(498346+139535x2307290).
+<-><->
+      
+l.351   \not\subseteq V\)
+                         .
+Not a real error.
+
+[90]
+! Preview: Snippet 91 started.
+<-><->
+      
+l.352 ...Motivation: Warum eigentlich CR-NCFEM? \(
+                                                  \Rightarrow\) einfache Str...
+
+Not a real error.
+
+! Preview: Snippet 91 ended.(263276+0x717621).
+<-><->
+      
+l.352 ...arum eigentlich CR-NCFEM? \(\Rightarrow\)
+                                                   einfache Struktur,
+Not a real error.
+
+[91]
+! Preview: Snippet 92 started.
+<-><->
+      
+l.359 \subsection
+                 {Stabilität der CR-NCFEM}
+Not a real error.
+
+! Preview: Snippet 92 ended.(546133+0x27410796).
+<-><->
+      
+l.359 \subsection{Stabilität der CR-NCFEM}
+                                           
+Not a real error.
+
+[92
+
+]
+
+LaTeX Warning: Reference `problem:3' on page 4 undefined on input line 364.
+
+! Preview: Snippet 93 started.
+<-><->
+      
+l.365 eindeutige Lösung \(
+                           (u_h,p_h)\) exisitiert. \\
+Not a real error.
+
+! Preview: Snippet 93 ended.(538214+179404x2356502).
+<-><->
+      
+l.365 eindeutige Lösung \((u_h,p_h)\)
+                                       exisitiert. \\
+Not a real error.
+
+[93]
+
+LaTeX Warning: Reference `thm:1' on page 4 undefined on input line 368.
+
+! Preview: Snippet 94 started.
+<-><->
+      
+l.369 ...zeugen, dass durch die Wahl der Normen \(
+                                                  \hnorm{\cdot}\) und
+Not a real error.
+
+! Preview: Snippet 94 ended.(538213+212173x1270736).
+<-><->
+      
+l.369 ...rch die Wahl der Normen \(\hnorm{\cdot}\)
+                                                   und
+Not a real error.
+
+[94]
+! Preview: Snippet 95 started.
+<-><->
+      
+l.370 \(
+        \norm{\cdot}\) die Stetigkeit beider Bilinearformen und auch die
+Not a real error.
+
+! Preview: Snippet 95 ended.(538213+179405x916959).
+<-><->
+      
+l.370 \(\norm{\cdot}\)
+                       die Stetigkeit beider Bilinearformen und auch die
+Not a real error.
+
+[95]
+! Preview: Snippet 96 started.
+<-><->
+      
+l.371 Elliptizität von \(
+                          a(\cdot, \cdot)\) auf dem Unterraum \(Z_h \coloneqq
+Not a real error.
+
+! Preview: Snippet 96 ended.(538214+179404x1655094).
+<-><->
+      
+l.371 Elliptizität von \(a(\cdot, \cdot)\)
+                                            auf dem Unterraum \(Z_h \coloneqq
+Not a real error.
+
+[96]
+! Preview: Snippet 97 started.
+<-><->
+      
+l.371 ... \(a(\cdot, \cdot)\) auf dem Unterraum \(
+                                                  Z_h \coloneqq
+Not a real error.
+
+! Preview: Snippet 97 ended.(538214+179405x13158456).
+<-><->
+      
+l.372 ...ll q_h \in Q_h\colon b_h(v_h, q_h) = 0}\)
+                                                  
+Not a real error.
+
+[97]
+! Preview: Snippet 98 started.
+<-><->
+      
+l.373 (mit einer von \(
+                       h\) unabhängingen Konstante) gewährleistet ist. \\
+Not a real error.
+
+! Preview: Snippet 98 ended.(498346+0x413462).
+<-><->
+      
+l.373 (mit einer von \(h\)
+                           unabhängingen Konstante) gewährleistet ist. \\
+Not a real error.
+
+[98]
+! Preview: Snippet 99 started.
+<-><->
+      
+l.382   Eine FE-Diskretisierung \(
+                                  V_h\times Q_h\) für das Modellproblem
+Not a real error.
+
+! Preview: Snippet 99 ended.(490372+139537x2570568).
+<-><->
+      
+l.382   Eine FE-Diskretisierung \(V_h\times Q_h\)
+                                                  für das Modellproblem
+Not a real error.
+
+[99]
+
+LaTeX Warning: Reference `problem:1' on page 5 undefined on input line 383.
+
+! Preview: Snippet 100 started.
+<-><->
+      
+l.385   d.h. es existiert \(
+                            \beta > 0\) (unabhänging von der Gitterweite
+Not a real error.
+
+! Preview: Snippet 100 ended.(498346+139537x1759408).
+<-><->
+      
+l.385   d.h. es existiert \(\beta > 0\)
+                                        (unabhänging von der Gitterweite
+Not a real error.
+
+[100]
+! Preview: Snippet 101 started.
+<-><->
+      
+l.386   \(
+          h\)), sodass
+Not a real error.
+
+! Preview: Snippet 101 ended.(498346+0x413462).
+<-><->
+      
+l.386   \(h\)
+             ), sodass
+Not a real error.
+
+[101]
+! Preview: Snippet 102 started.
+<-><->
+      
+l.387   \begin{equation}
+                        
+Not a real error.
+
+! Preview: Snippet 102 ended.(1805332+0x27410796).
+<-><->
+      
+l.390   \end{equation}
+                      
+Not a real error.
+
+[102
+
+]
+! Preview: Snippet 103 started.
+<-><->
+      
+l.400   \(\Ltwo\)-Projektion]
+                              \label{def:2}
+Not a real error.
+
+! Preview: Snippet 103 ended.(598293+0x799680).
+<-><->
+      
+l.400   \(\Ltwo\)-Projektion]
+                              \label{def:2}
+Not a real error.
+
+[103]
+! Preview: Snippet 104 started.
+<-><->
+      
+l.402 ...nicht-konformen Interpolationsoperator \(
+                                                  \intOp\colon
+Not a real error.
+
+! Preview: Snippet 104 ended.(620716+192273x7449210).
+<-><->
+      
+l.403 ...Hzero(\Omega) \rightarrow \crfem(\mesh)\)
+                                                   ist definiert durch
+Not a real error.
+
+[104]
+! Preview: Snippet 105 started.
+<-><->
+      
+l.404     \begin{equation}
+                          
+Not a real error.
+
+! Preview: Snippet 105 ended.(1627494+0x27410796).
+<-><->
+      
+l.407     \end{equation}
+                        
+Not a real error.
+
+[105
+
+]
+! Preview: Snippet 106 started.
+<-><->
+      
+l.408   \item Wir definieren \(
+                               \LtwoOp \colon \Ltwo(\Omega) \rightarrow
+Not a real error.
+
+! Preview: Snippet 106 ended.(598293+179404x6434987).
+<-><->
+      
+l.409     P_0(\mesh)\)
+                       durch
+Not a real error.
+
+[106]
+! Preview: Snippet 107 started.
+<-><->
+      
+l.410     \begin{equation}
+                          
+Not a real error.
+
+! Preview: Snippet 107 ended.(1627494+0x27410796).
+<-><->
+      
+l.413     \end{equation}
+                        
+Not a real error.
+
+[107
+
+]
+! Preview: Snippet 108 started.
+<-><->
+      
+l.417 Die Besonderheit von \(
+                             \intOp\) und \(\LtwoOp\) liegt vor allem
+Not a real error.
+
+! Preview: Snippet 108 ended.(490372+111084x1111484).
+<-><->
+      
+l.417 Die Besonderheit von \(\intOp\)
+                                      und \(\LtwoOp\) liegt vor allem
+Not a real error.
+
+[108]
+! Preview: Snippet 109 started.
+<-><->
+      
+l.417 Die Besonderheit von \(\intOp\) und \(
+                                            \LtwoOp\) liegt vor allem
+Not a real error.
+
+! Preview: Snippet 109 ended.(490372+107642x849515).
+<-><->
+      
+l.417 ...sonderheit von \(\intOp\) und \(\LtwoOp\)
+                                                   liegt vor allem
+Not a real error.
+
+[109]
+! Preview: Snippet 110 started.
+<-><->
+      
+l.421 ...nschaften von \(\intOp\) und \(\LtwoOp\)]
+                                                   \label{lem:1}
+Not a real error.
+
+! Preview: Snippet 110 ended.(490372+111084x1111484).
+<-><->
+      
+l.421 ...nschaften von \(\intOp\) und \(\LtwoOp\)]
+                                                   \label{lem:1}
+Not a real error.
+
+[110]
+! Preview: Snippet 111 started.
+<-><->
+      
+l.421 ...nschaften von \(\intOp\) und \(\LtwoOp\)]
+                                                   \label{lem:1}
+Not a real error.
+
+! Preview: Snippet 111 ended.(490372+107642x849515).
+<-><->
+      
+l.421 ...nschaften von \(\intOp\) und \(\LtwoOp\)]
+                                                   \label{lem:1}
+Not a real error.
+
+[111]
+! Preview: Snippet 112 started.
+<-><->
+      
+l.424     \(
+            T\in\mesh\) und \(v\in V\), \(f\in\Ltwo(\Omega)\):
+Not a real error.
+
+! Preview: Snippet 112 ended.(490372+116910x2140737).
+<-><->
+      
+l.424     \(T\in\mesh\)
+                        und \(v\in V\), \(f\in\Ltwo(\Omega)\):
+Not a real error.
+
+[112]
+! Preview: Snippet 113 started.
+<-><->
+      
+l.424     \(T\in\mesh\) und \(
+                              v\in V\), \(f\in\Ltwo(\Omega)\):
+Not a real error.
+
+! Preview: Snippet 113 ended.(490372+28057x1828760).
+<-><->
+      
+l.424     \(T\in\mesh\) und \(v\in V\)
+                                      , \(f\in\Ltwo(\Omega)\):
+Not a real error.
+
+[113]
+! Preview: Snippet 114 started.
+<-><->
+      
+l.424     \(T\in\mesh\) und \(v\in V\), \(
+                                          f\in\Ltwo(\Omega)\):
+Not a real error.
+
+! Preview: Snippet 114 ended.(598293+179404x3181775).
+<-><->
+      
+l.424 ...h\) und \(v\in V\), \(f\in\Ltwo(\Omega)\)
+                                                  :
+Not a real error.
+
+[114]
+! Preview: Snippet 115 started.
+<-><->
+      
+l.425     \begin{equation}
+                          
+Not a real error.
+
+! Preview: Snippet 115 ended.(1627494+0x27410796).
+<-><->
+      
+l.429     \end{equation}
+                        
+Not a real error.
+
+[115
+
+]
+! Preview: Snippet 116 started.
+<-><->
+      
+l.430   \item Seien \(
+                      v\in V\) und \(f\in \Ltwo(\Omega)\) gegeben. Dann gilt
+Not a real error.
+
+! Preview: Snippet 116 ended.(490372+28057x1828760).
+<-><->
+      
+l.430   \item Seien \(v\in V\)
+                               und \(f\in \Ltwo(\Omega)\) gegeben. Dann gilt
+Not a real error.
+
+[116]
+! Preview: Snippet 117 started.
+<-><->
+      
+l.430   \item Seien \(v\in V\) und \(
+                                     f\in \Ltwo(\Omega)\) gegeben. Dann gilt
+Not a real error.
+
+! Preview: Snippet 117 ended.(598293+179404x3181775).
+<-><->
+      
+l.430 ...ien \(v\in V\) und \(f\in \Ltwo(\Omega)\)
+                                                   gegeben. Dann gilt
+Not a real error.
+
+[117]
+! Preview: Snippet 118 started.
+<-><->
+      
+l.431     für alle \(
+                      w\in P_0(\mesh)^2\) und alle \(g\in P_0(\mesh)\):
+Not a real error.
+
+! Preview: Snippet 118 ended.(598293+179404x3796245).
+<-><->
+      
+l.431     für alle \(w\in P_0(\mesh)^2\)
+                                          und alle \(g\in P_0(\mesh)\):
+Not a real error.
+
+[118]
+! Preview: Snippet 119 started.
+<-><->
+      
+l.431 ...�r alle \(w\in P_0(\mesh)^2\) und alle \(
+                                                  g\in P_0(\mesh)\):
+Not a real error.
+
+! Preview: Snippet 119 ended.(538214+179404x3319907).
+<-><->
+      
+l.431 ...0(\mesh)^2\) und alle \(g\in P_0(\mesh)\)
+                                                  :
+Not a real error.
+
+[119]
+! Preview: Snippet 120 started.
+<-><->
+      
+l.432     \begin{equation}
+                          
+Not a real error.
+
+! Preview: Snippet 120 ended.(717619+0x27410796).
+<-><->
+      
+l.436     \end{equation}
+                        
+Not a real error.
+
+[120
+
+]
+
+LaTeX Warning: Reference `eq:16' on page 5 undefined on input line 442.
+
+! Preview: Snippet 121 started.
+<-><->
+      
+l.443     \(
+            \LtwoOp\) direkt aus der Definition. Für \(\intOp\) erhält man...
+
+Not a real error.
+
+! Preview: Snippet 121 ended.(490372+107642x849515).
+<-><->
+      
+l.443     \(\LtwoOp\)
+                      direkt aus der Definition. Für \(\intOp\) erhält man...
+
+Not a real error.
+
+[121]
+! Preview: Snippet 122 started.
+<-><->
+      
+l.443 ...woOp\) direkt aus der Definition. Für \(
+                                                  \intOp\) erhält man die
+Not a real error.
+
+! Preview: Snippet 122 ended.(490372+111084x1111484).
+<-><->
+      
+l.443 ...irekt aus der Definition. Für \(\intOp\)
+                                                   erhält man die
+Not a real error.
+
+[122]
+! Preview: Snippet 123 started.
+<-><->
+      
+l.446 ...gen die Approximationseigenschaft für \(
+                                                  \intOp\): Sei
+Not a real error.
+
+! Preview: Snippet 123 ended.(490372+111084x1111484).
+<-><->
+      
+l.446 ...Approximationseigenschaft für \(\intOp\)
+                                                  : Sei
+Not a real error.
+
+[123]
+! Preview: Snippet 124 started.
+<-><->
+      
+l.447     \(
+            v \in V\), \(w\in P_0(\mesh)^2\). Dann gilt:
+Not a real error.
+
+! Preview: Snippet 124 ended.(490372+28057x1828760).
+<-><->
+      
+l.447     \(v \in V\)
+                     , \(w\in P_0(\mesh)^2\). Dann gilt:
+Not a real error.
+
+[124]
+! Preview: Snippet 125 started.
+<-><->
+      
+l.447     \(v \in V\), \(
+                         w\in P_0(\mesh)^2\). Dann gilt:
+Not a real error.
+
+! Preview: Snippet 125 ended.(598293+179404x3796245).
+<-><->
+      
+l.447     \(v \in V\), \(w\in P_0(\mesh)^2\)
+                                            . Dann gilt:
+Not a real error.
+
+[125]
+! Preview: Snippet 126 started.
+<-><->
+      
+l.448     \begin{align}
+                       
+Not a real error.
+
+! Preview: Snippet 126 ended.(3517132+0x22337773).
+<-><->
+      
+l.451     \end{align}
+                     
+Not a real error.
+
+[126]
+! Preview: Snippet 127 started.
+<-><->
+      
+l.452     Da aber \(
+                    \left(\nablah \intOp v - w\right)\) stückweise konstant
+Not a real error.
+
+! Preview: Snippet 127 ended.(538213+179405x4610998).
+<-><->
+      
+l.452 ...ber \(\left(\nablah \intOp v - w\right)\)
+                                                   stückweise konstant
+Not a real error.
+
+[127]
+
+LaTeX Warning: Reference `eq:16' on page 5 undefined on input line 453.
+
+! Preview: Snippet 128 started.
+<-><->
+      
+l.455     Die Ungleichung für \(
+                                 \LtwoOp\) geht analog.
+Not a real error.
+
+! Preview: Snippet 128 ended.(490372+107642x849515).
+<-><->
+      
+l.455     Die Ungleichung für \(\LtwoOp\)
+                                           geht analog.
+Not a real error.
+
+[128]
+
+LaTeX Warning: Reference `lem:1' on page 5 undefined on input line 464.
+
+! Preview: Snippet 129 started.
+<-><->
+      
+l.468 ...nicht-konformen Interpolationsoperator \(
+                                                  \intOp\)
+Not a real error.
+
+! Preview: Snippet 129 ended.(490372+111084x1111484).
+<-><->
+      
+l.468 ...nformen Interpolationsoperator \(\intOp\)
+                                                  
+Not a real error.
+
+[129]
+! Preview: Snippet 130 started.
+<-><->
+      
+l.472 ...rt Diskretisierung des Stokes Problems \(
+                                                  V_h \times Q_h =
+Not a real error.
+
+! Preview: Snippet 130 ended.(620716+192273x12682783).
+<-><->
+      
+l.473 ...\times (\Ltwo_0(\Omega)\cap P_0(\mesh))\)
+                                                   aus
+Not a real error.
+
+[130]
+
+LaTeX Warning: Reference `problem:3' on page 5 undefined on input line 474.
+
+! Preview: Snippet 131 started.
+<-><->
+      
+l.481  \begin{align}
+                    
+Not a real error.
+
+! Preview: Snippet 131 ended.(1979187+0x24174038).
+<-><->
+      
+l.486   \end{align}
+                   
+Not a real error.
+
+[131]
+! Preview: Snippet 132 started.
+<-><->
+      
+l.488   Da \(
+             \nablah (\intOp v)\) stückweise konstant ist, folgt mit
+Not a real error.
+
+! Preview: Snippet 132 ended.(538214+179404x3081245).
+<-><->
+      
+l.488   Da \(\nablah (\intOp v)\)
+                                  stückweise konstant ist, folgt mit
+Not a real error.
+
+[132]
+
+LaTeX Warning: Reference `eq:16' on page 6 undefined on input line 489.
+
+! Preview: Snippet 133 started.
+<-><->
+      
+l.490   \begin{equation}
+                        
+Not a real error.
+
+! Preview: Snippet 133 ended.(1627494+0x27410796).
+<-><->
+      
+l.494   \end{equation}
+                      
+Not a real error.
+
+[133
+
+]
+! Preview: Snippet 134 started.
+<-><->
+      
+l.496   der Mittelwerteigenschaft, da \(
+                                        q_h \in Q_h\) stückweise konstant
+Not a real error.
+
+! Preview: Snippet 134 ended.(490372+139537x2472310).
+<-><->
+      
+l.496 ...Mittelwerteigenschaft, da \(q_h \in Q_h\)
+                                                   stückweise konstant
+Not a real error.
+
+[134]
+! Preview: Snippet 135 started.
+<-><->
+      
+l.498   Sei nun \(
+                  q_h \in Q_h\) beliebig. Dann erhält man aus der
+Not a real error.
+
+! Preview: Snippet 135 ended.(490372+139537x2472310).
+<-><->
+      
+l.498   Sei nun \(q_h \in Q_h\)
+                                beliebig. Dann erhält man aus der
+Not a real error.
+
+[135]
+! Preview: Snippet 136 started.
+<-><->
+      
+l.499   inf-sup-Bedingung von \(
+                                b(\cdot, \cdot)\) und \emph{(i), (ii)}:
+Not a real error.
+
+! Preview: Snippet 136 ended.(538214+179404x1583746).
+<-><->
+      
+l.499   inf-sup-Bedingung von \(b(\cdot, \cdot)\)
+                                                  und \emph{(i), (ii)}:
+Not a real error.
+
+[136]
+! Preview: Snippet 137 started.
+<-><->
+      
+l.500   \begin{align}
+                     
+Not a real error.
+
+! Preview: Snippet 137 ended.(1913813+0x26267104).
+<-><->
+      
+l.506   \end{align}
+                   
+Not a real error.
+
+[137]
+! Preview: Snippet 138 started.
+<-><->
+      
+l.511   bestmöglichen Konstante \(
+                                   c=1\) für den nicht-konformen
+Not a real error.
+
+! Preview: Snippet 138 ended.(462465+0x1626184).
+<-><->
+      
+l.511   bestmöglichen Konstante \(c=1\)
+                                         für den nicht-konformen
+Not a real error.
+
+[138]
+! Preview: Snippet 139 started.
+<-><->
+      
+l.512   Interpolationsoperator \(
+                                 \intOp\) gilt. Dies ist auch Hinweis
+Not a real error.
+
+! Preview: Snippet 139 ended.(490372+111084x1111484).
+<-><->
+      
+l.512   Interpolationsoperator \(\intOp\)
+                                          gilt. Dies ist auch Hinweis
+Not a real error.
+
+[139]
+! Preview: Snippet 140 started.
+<-><->
+      
+l.519 \section
+              {Medius Analyse der CRFEM für das Stokes Problem}
+Not a real error.
+
+! Preview: Snippet 140 ended.(655359+183500x27410796).
+<-><->
+      
+l.519 ...nalyse der CRFEM für das Stokes Problem}
+                                                  
+Not a real error.
+
+[140
+
+]
+! Preview: Snippet 141 started.
+<-><->
+      
+l.522 \subsection
+                 {Motivation}
+Not a real error.
+
+! Preview: Snippet 141 ended.(546133+0x27410796).
+<-><->
+      
+l.522 \subsection{Motivation}
+                             
+Not a real error.
+
+[141
+
+]
+! Preview: Snippet 142 started.
+<-><->
+      
+l.536 Vorteil, dass für die Lösung \(
+                                       (u,p)\) des Stokes Problems keine
+Not a real error.
+
+! Preview: Snippet 142 ended.(538214+179404x1648948).
+<-><->
+      
+l.536 Vorteil, dass für die Lösung \((u,p)\)
+                                               des Stokes Problems keine
+Not a real error.
+
+[142]
+! Preview: Snippet 143 started.
+<-><->
+      
+l.543 \subsection
+                 {Notation und konforme Begleitabbildungen}
+Not a real error.
+
+! Preview: Snippet 143 ended.(546133+152917x27410796).
+<-><->
+      
+l.543 ...Notation und konforme Begleitabbildungen}
+                                                  
+Not a real error.
+
+[143
+
+]
+! Preview: Snippet 144 started.
+<-><->
+      
+l.546 \paragraph
+                {Notation}
+Not a real error.
+
+! Preview: Snippet 144 ended.(498346+0x2902383).
+<-><->
+      
+l.546 \paragraph{Notation}
+                          
+Not a real error.
+
+[144
+
+]
+! Preview: Snippet 145 started.
+<-><->
+      
+l.551 \item Wir schreiben \(
+                            a \lesssim b\), falls es eine von der
+Not a real error.
+
+! Preview: Snippet 145 ended.(523561+164751x1644124).
+<-><->
+      
+l.551 \item Wir schreiben \(a \lesssim b\)
+                                          , falls es eine von der
+Not a real error.
+
+[145]
+! Preview: Snippet 146 started.
+<-><->
+      
+l.552   Gitterweite \(
+                      h\) unabhänginge Konstante \(C > 0\) gibt, sodass \(a
+Not a real error.
+
+! Preview: Snippet 146 ended.(498346+0x413462).
+<-><->
+      
+l.552   Gitterweite \(h\)
+                          unabhänginge Konstante \(C > 0\) gibt, sodass \(a
+Not a real error.
+
+[146]
+! Preview: Snippet 147 started.
+<-><->
+      
+l.552 ...terweite \(h\) unabhänginge Konstante \(
+                                                  C > 0\) gibt, sodass \(a
+Not a real error.
+
+! Preview: Snippet 147 ended.(490372+28057x1879856).
+<-><->
+      
+l.552 ...e \(h\) unabhänginge Konstante \(C > 0\)
+                                                   gibt, sodass \(a
+Not a real error.
+
+[147]
+! Preview: Snippet 148 started.
+<-><->
+      
+l.552 ...ginge Konstante \(C > 0\) gibt, sodass \(
+                                                  a
+Not a real error.
+
+! Preview: Snippet 148 ended.(498346+97575x2208350).
+<-><->
+      
+l.553   \leq C b\)
+                  .
+Not a real error.
+
+[148]
+
+LaTeX Warning: Reference `problem:3' on page 6 undefined on input line 554.
+
+! Preview: Snippet 149 started.
+<-><->
+      
+l.555   Bezeichnungen \(
+                        V_h \coloneqq \crfem(\mesh)\times\crfem(\mesh)\) und...
+
+Not a real error.
+
+! Preview: Snippet 149 ended.(620716+179404x8078999).
+<-><->
+      
+l.555 ...loneqq \crfem(\mesh)\times\crfem(\mesh)\)
+                                                   und \(Q_h
+Not a real error.
+
+[149]
+! Preview: Snippet 150 started.
+<-><->
+      
+l.555 ...\crfem(\mesh)\times\crfem(\mesh)\) und \(
+                                                  Q_h
+Not a real error.
+
+! Preview: Snippet 150 ended.(598293+192273x6777669).
+<-><->
+      
+l.556   \coloneqq P_0(\mesh)\cap\Ltwo_0(\Omega)\)
+                                                  und definieren auf diesen
+Not a real error.
+
+[150]
+! Preview: Snippet 151 started.
+<-><->
+      
+l.558   \[
+          \norm{f} \coloneqq \norm{f}_{\Ltwo(\Omega;\real^m)} \quad \text{
+Not a real error.
+
+! Preview: Snippet 151 ended.(977419+0x25661143).
+<-><->
+      
+l.560 ...\in\Ltwo(\Omega; \real^m), v_h \in V_h.\]
+                                                  
+Not a real error.
+
+[151]
+! Preview: Snippet 152 started.
+<-><->
+      
+l.561 \item Mit \(
+                  \LtwoOp\) und \(\intOp\) bezeichnen wir die
+Not a real error.
+
+! Preview: Snippet 152 ended.(490372+107642x849515).
+<-><->
+      
+l.561 \item Mit \(\LtwoOp\)
+                            und \(\intOp\) bezeichnen wir die
+Not a real error.
+
+[152]
+! Preview: Snippet 153 started.
+<-><->
+      
+l.561 \item Mit \(\LtwoOp\) und \(
+                                  \intOp\) bezeichnen wir die
+Not a real error.
+
+! Preview: Snippet 153 ended.(490372+111084x1111484).
+<-><->
+      
+l.561 \item Mit \(\LtwoOp\) und \(\intOp\)
+                                           bezeichnen wir die
+Not a real error.
+
+[153]
+! Preview: Snippet 154 started.
+<-><->
+      
+l.562   \(
+          \Ltwo\)-Projektion und den nicht-konformen Interpolationsoperator
+Not a real error.
+
+! Preview: Snippet 154 ended.(598293+0x799680).
+<-><->
+      
+l.562   \(\Ltwo\)
+                 -Projektion und den nicht-konformen Interpolationsoperator
+Not a real error.
+
+[154]
+
+LaTeX Warning: Reference `def:2' on page 6 undefined on input line 563.
+
+! Preview: Snippet 155 started.
+<-><->
+      
+l.566 \paragraph
+                {Konforme Begleitabbildungen}
+Not a real error.
+
+! Preview: Snippet 155 ended.(498346+139537x9710824).
+<-><->
+      
+l.566 \paragraph{Konforme Begleitabbildungen}
+                                             
+Not a real error.
+
+[155
+
+]
+! Preview: Snippet 156 started.
+<-><->
+      
+l.572 \[
+         J_k \colon \crfem(\mesh) \rightarrow
+Not a real error.
+
+! Preview: Snippet 156 ended.(813578+0x18781632).
+<-><->
+      
+l.573 P_k(\mesh)\cap\czero(\Omega).\]
+                                     
+Not a real error.
+
+[156]
+! Preview: Snippet 157 started.
+<-><->
+      
+l.576 Polynome vom Grad höchstens \(
+                                     k\) her. Eine
+Not a real error.
+
+! Preview: Snippet 157 ended.(498346+0x396186).
+<-><->
+      
+l.576 Polynome vom Grad höchstens \(k\)
+                                         her. Eine
+Not a real error.
+
+[157]
+! Preview: Snippet 158 started.
+<-><->
+      
+l.577 solche Abbildung \(
+                         J_k\) werden wir im Folgenden \emph{(konforme)
+Not a real error.
+
+! Preview: Snippet 158 ended.(490372+116910x734715).
+<-><->
+      
+l.577 solche Abbildung \(J_k\)
+                               werden wir im Folgenden \emph{(konforme)
+Not a real error.
+
+[158]
+! Preview: Snippet 159 started.
+<-><->
+      
+l.580 eine Begleitabbildungen vom Grad \(
+                                         k=3\) benötigen, die wir nun in
+Not a real error.
+
+! Preview: Snippet 159 ended.(498346+0x1711816).
+<-><->
+      
+l.580 eine Begleitabbildungen vom Grad \(k=3\)
+                                               benötigen, die wir nun in
+Not a real error.
+
+[159]
+! Preview: Snippet 160 started.
+<-><->
+      
+l.583 ...ition}[Konforme Begleitabbildung \(J_3\)]
+                                                  \label{def:3}
+Not a real error.
+
+! Preview: Snippet 160 ended.(490372+107642x709229).
+<-><->
+      
+l.583 ...ition}[Konforme Begleitabbildung \(J_3\)]
+                                                  \label{def:3}
+Not a real error.
+
+[160]
+! Preview: Snippet 161 started.
+<-><->
+      
+l.584   Sei \(
+              \mesh\) eine quasi-uniforme Triangulierung von \(\Omega\). Es
+Not a real error.
+
+! Preview: Snippet 161 ended.(490372+116910x744624).
+<-><->
+      
+l.584   Sei \(\mesh\)
+                      eine quasi-uniforme Triangulierung von \(\Omega\). Es
+Not a real error.
+
+[161]
+! Preview: Snippet 162 started.
+<-><->
+      
+l.584 ...eine quasi-uniforme Triangulierung von \(
+                                                  \Omega\). Es
+Not a real error.
+
+! Preview: Snippet 162 ended.(490372+0x518281).
+<-><->
+      
+l.584 ...si-uniforme Triangulierung von \(\Omega\)
+                                                  . Es
+Not a real error.
+
+[162]
+! Preview: Snippet 163 started.
+<-><->
+      
+l.587   \item \(
+                \varphi_z\) die konforme nodale Basisfunktion bezüglich
+Not a real error.
+
+! Preview: Snippet 163 ended.(308974+139537x783472).
+<-><->
+      
+l.587   \item \(\varphi_z\)
+                            die konforme nodale Basisfunktion bezüglich
+Not a real error.
+
+[163]
+! Preview: Snippet 164 started.
+<-><->
+      
+l.588     eines Knotens \(
+                          z\in\mathcal{N}\),
+Not a real error.
+
+! Preview: Snippet 164 ended.(490372+28057x1936920).
+<-><->
+      
+l.588     eines Knotens \(z\in\mathcal{N}\)
+                                           ,
+Not a real error.
+
+[164]
+! Preview: Snippet 165 started.
+<-><->
+      
+l.589   \item \(
+                b_E \coloneqq 6\varphi_a\varphi_b\) die Blasenfunktion
+Not a real error.
+
+! Preview: Snippet 165 ended.(498346+139537x3784122).
+<-><->
+      
+l.589 ...tem \(b_E \coloneqq 6\varphi_a\varphi_b\)
+                                                   die Blasenfunktion
+Not a real error.
+
+[165]
+! Preview: Snippet 166 started.
+<-><->
+      
+l.590     bezüglich der Kante \(
+                                 E \coloneqq
+Not a real error.
+
+! Preview: Snippet 166 ended.(538214+179404x6168508).
+<-><->
+      
+l.591     \conv\{a,b\} \in \edges\)
+                                    und
+Not a real error.
+
+[166]
+! Preview: Snippet 167 started.
+<-><->
+      
+l.592   \item \(
+                b_T \coloneqq 60\varphi_a\varphi_b\varphi_c\) die
+Not a real error.
+
+! Preview: Snippet 167 ended.(498346+139537x4850462).
+<-><->
+      
+l.592 ...\coloneqq 60\varphi_a\varphi_b\varphi_c\)
+                                                   die
+Not a real error.
+
+[167]
+! Preview: Snippet 168 started.
+<-><->
+      
+l.593     Blasenfunktion für das Element \(
+                                            T \coloneqq \conv\{a,b,c\} \in
+Not a real error.
+
+! Preview: Snippet 168 ended.(538214+179404x7047620).
+<-><->
+      
+l.594     \mesh\)
+                 .
+Not a real error.
+
+[168]
+! Preview: Snippet 169 started.
+<-><->
+      
+l.596 ...n wir die konformen Begleitabbildungen \(
+                                                  J_k \colon
+Not a real error.
+
+! Preview: Snippet 169 ended.(620716+179404x9953128).
+<-><->
+      
+l.597 ...rightarrow P_k(\mesh)\cap\czero(\Omega)\)
+                                                   für
+Not a real error.
+
+[169]
+! Preview: Snippet 170 started.
+<-><->
+      
+l.598   \(
+          k=1,2,3\) wie folgt für \(v_h \in \crfem(\mesh)\):
+Not a real error.
+
+! Preview: Snippet 170 ended.(498346+139537x3067316).
+<-><->
+      
+l.598   \(k=1,2,3\)
+                    wie folgt für \(v_h \in \crfem(\mesh)\):
+Not a real error.
+
+[170]
+! Preview: Snippet 171 started.
+<-><->
+      
+l.598   \(k=1,2,3\) wie folgt für \(
+                                     v_h \in \crfem(\mesh)\):
+Not a real error.
+
+! Preview: Snippet 171 ended.(620716+179404x4239311).
+<-><->
+      
+l.598 ... wie folgt für \(v_h \in \crfem(\mesh)\)
+                                                  :
+Not a real error.
+
+[171]
+! Preview: Snippet 172 started.
+<-><->
+      
+l.600   \item \(
+                J_1 v_h \coloneqq \sum_{z \in
+Not a real error.
+
+! Preview: Snippet 172 ended.(825267+466460x14950959).
+<-><->
+      
+l.602 ...{T}(z)} v_h\vert_T(z) \varphi_z \right)\)
+                                                  
+Not a real error.
+
+[172]
+! Preview: Snippet 173 started.
+<-><->
+      
+l.603   \item \(
+                J_2 v_h \coloneqq J_1 v_h + \sum_{E\in\edges(\Omega)}
+Not a real error.
+
+! Preview: Snippet 173 ended.(609979+343250x14443232).
+<-><->
+      
+l.604 ...(\fint_E (v_h - J_1 v_h) \,ds\right)b_E\)
+                                                  
+Not a real error.
+
+[173]
+! Preview: Snippet 174 started.
+<-><->
+      
+l.605   \item \(
+                J_3 v_h \coloneqq J_2 v_h + \sum_{T\in\mesh}\left(\fint_T(v_h
+Not a real error.
+
+! Preview: Snippet 174 ended.(609979+304657x13859703).
+<-><->
+      
+l.606       - J_2 v_h)\dx \right)b_T\)
+                                      
+Not a real error.
+
+[174]
+! Preview: Snippet 175 started.
+<-><->
+      
+l.612   \item Definiere, was \(
+                               \mathcal{N}(\Omega)\) und \(\edges(\Omega)\) ...
+
+Not a real error.
+
+! Preview: Snippet 175 ended.(538214+179404x1770978).
+<-><->
+      
+l.612 ...em Definiere, was \(\mathcal{N}(\Omega)\)
+                                                   und \(\edges(\Omega)\) ist!!
+
+Not a real error.
+
+[175]
+! Preview: Snippet 176 started.
+<-><->
+      
+l.612 ...niere, was \(\mathcal{N}(\Omega)\) und \(
+                                                  \edges(\Omega)\) ist!!
+Not a real error.
+
+! Preview: Snippet 176 ended.(538214+179404x1519361).
+<-><->
+      
+l.612 ...thcal{N}(\Omega)\) und \(\edges(\Omega)\)
+                                                   ist!!
+Not a real error.
+
+[176]
+! Preview: Snippet 177 started.
+<-><->
+      
+l.617 ... komponentenweise Anwendung definieren \(
+                                                  J_k\) auf natürliche
+Not a real error.
+
+! Preview: Snippet 177 ended.(490372+116910x734715).
+<-><->
+      
+l.617 ...onentenweise Anwendung definieren \(J_k\)
+                                                   auf natürliche
+Not a real error.
+
+[177]
+! Preview: Snippet 178 started.
+<-><->
+      
+l.618   Weise Abbildungen auf \(
+                                V_h\). \\
+Not a real error.
+
+! Preview: Snippet 178 ended.(490372+116910x772388).
+<-><->
+      
+l.618   Weise Abbildungen auf \(V_h\)
+                                     . \\
+Not a real error.
+
+[178]
+! Preview: Snippet 179 started.
+<-><->
+      
+l.619 ...s der Bestapproximation werden wir nur \(
+                                                  J_3\)
+Not a real error.
+
+! Preview: Snippet 179 ended.(490372+107642x709229).
+<-><->
+      
+l.619 ... Bestapproximation werden wir nur \(J_3\)
+                                                  
+Not a real error.
+
+[179]
+! Preview: Snippet 180 started.
+<-><->
+      
+l.627 \begin{lemma}[Eigenschaften von \(J_3\)]
+                                              \label{lem:2}
+Not a real error.
+
+! Preview: Snippet 180 ended.(490372+107642x709229).
+<-><->
+      
+l.627 \begin{lemma}[Eigenschaften von \(J_3\)]
+                                              \label{lem:2}
+Not a real error.
+
+[180]
+! Preview: Snippet 181 started.
+<-><->
+      
+l.628   Die konforme Begleitabbildung \(
+                                        \J3\colon \crfem(\mesh) \rightarrow
+Not a real error.
+
+! Preview: Snippet 181 ended.(620716+179404x9902156).
+<-><->
+      
+l.629   P_3(\mesh)\cap\czero(\Omega)\)
+                                       hat folgende Eigenschaften:
+Not a real error.
+
+[181]
+! Preview: Snippet 182 started.
+<-><->
+      
+l.631   \item \(
+                \int_T \nablah(v_h - \J3 v_h)\dx = 0 \quad\) für \(v_h \in
+Not a real error.
+
+! Preview: Snippet 182 ended.(578085+252045x8311504).
+<-><->
+      
+l.631 ...t_T \nablah(v_h - \J3 v_h)\dx = 0 \quad\)
+                                                   für \(v_h \in
+Not a real error.
+
+[182]
+! Preview: Snippet 183 started.
+<-><->
+      
+l.631 ...lah(v_h - \J3 v_h)\dx = 0 \quad\) für \(
+                                                  v_h \in
+Not a real error.
+
+! Preview: Snippet 183 ended.(620716+179404x6698988).
+<-><->
+      
+l.632     \crfem(\mesh), T\in \mesh\)
+                                     ,
+Not a real error.
+
+[183]
+! Preview: Snippet 184 started.
+<-><->
+      
+l.633   \item \(
+                \int_T v_h - \J3 v_h \dx = 0 \quad\) für \(v_h \in
+Not a real error.
+
+! Preview: Snippet 184 ended.(578085+252045x6834938).
+<-><->
+      
+l.633 ...em \(\int_T v_h - \J3 v_h \dx = 0 \quad\)
+                                                   für \(v_h \in
+Not a real error.
+
+[184]
+! Preview: Snippet 185 started.
+<-><->
+      
+l.633 ...t_T v_h - \J3 v_h \dx = 0 \quad\) für \(
+                                                  v_h \in
+Not a real error.
+
+! Preview: Snippet 185 ended.(620716+179404x6698988).
+<-><->
+      
+l.634     \crfem(\mesh), T\in \mesh\)
+                                     ,
+Not a real error.
+
+[185]
+! Preview: Snippet 186 started.
+<-><->
+      
+l.635   \item \(
+                \norm{\nablah (v_h - \J3 v_h)} \lesssim \norm{h^{-1}(v_h -
+Not a real error.
+
+! Preview: Snippet 186 ended.(609979+251171x15791315).
+<-><->
+      
+l.636 ...v_h)} \lesssim \norm{\nablah v_h} \quad\)
+                                                   für alle \(v_h \in
+Not a real error.
+
+[186]
+! Preview: Snippet 187 started.
+<-><->
+      
+l.636 ...m \norm{\nablah v_h} \quad\) für alle \(
+                                                  v_h \in
+Not a real error.
+
+! Preview: Snippet 187 ended.(620716+179404x4239311).
+<-><->
+      
+l.637     \crfem(\mesh)\)
+                         .
+Not a real error.
+
+[187]
+! Preview: Snippet 188 started.
+<-><->
+      
+l.650 \subsection
+                 {Bestapproximation der CRFEM für das Stokes Problem}
+Not a real error.
+
+! Preview: Snippet 188 ended.(546133+152917x27410796).
+<-><->
+      
+l.650 ...mation der CRFEM für das Stokes Problem}
+                                                  
+Not a real error.
+
+[188
+
+]
+! Preview: Snippet 189 started.
+<-><->
+      
+l.661   Sei \(
+              (u,p) \in V\times Q\) die Lösung von Problem \ref{problem:1}
+Not a real error.
+
+! Preview: Snippet 189 ended.(538214+179404x4548517).
+<-><->
+      
+l.661   Sei \((u,p) \in V\times Q\)
+                                    die Lösung von Problem \ref{problem:1}
+Not a real error.
+
+[189]
+
+LaTeX Warning: Reference `problem:1' on page 8 undefined on input line 661.
+
+! Preview: Snippet 190 started.
+<-><->
+      
+l.662   und \(
+              (u_h,p_h) \in V_h\times Q_h\) die Lösung von Problem
+Not a real error.
+
+! Preview: Snippet 190 ended.(538214+179404x5804154).
+<-><->
+      
+l.662   und \((u_h,p_h) \in V_h\times Q_h\)
+                                            die Lösung von Problem
+Not a real error.
+
+[190]
+
+LaTeX Warning: Reference `problem:3' on page 8 undefined on input line 663.
+
+! Preview: Snippet 191 started.
+<-><->
+      
+l.663   \ref{problem:3}. Dann gilt für alle \(
+                                               v_h \in V_h\) und \(q_h \in
+Not a real error.
+
+! Preview: Snippet 191 ended.(490372+116910x2351096).
+<-><->
+      
+l.663 ...m:3}. Dann gilt für alle \(v_h \in V_h\)
+                                                   und \(q_h \in
+Not a real error.
+
+[191]
+! Preview: Snippet 192 started.
+<-><->
+      
+l.663 ...ann gilt für alle \(v_h \in V_h\) und \(
+                                                  q_h \in
+Not a real error.
+
+! Preview: Snippet 192 ended.(490372+139537x2472310).
+<-><->
+      
+l.664   Q_h\)
+             
+Not a real error.
+
+[192]
+! Preview: Snippet 193 started.
+<-><->
+      
+l.665   \begin{equation}
+                        
+Not a real error.
+
+! Preview: Snippet 193 ended.(750387+0x27410796).
+<-><->
+      
+l.668   \end{equation}
+                      
+Not a real error.
+
+[193
+
+]
+! Preview: Snippet 194 started.
+<-><->
+      
+l.669   wobei die Oszillation durch  \(
+                                       \osc(f, h) \coloneqq \norm{h(f -
+Not a real error.
+
+! Preview: Snippet 194 ended.(538214+179405x8140990).
+<-><->
+      
+l.670     \LtwoOp f)}\)
+                        definiert ist.
+Not a real error.
+
+[194]
+! Preview: Snippet 195 started.
+<-><->
+      
+l.675 ...Abschätzung des Geschwindigkeitsterms \(
+                                                  \hnorm{u -
+Not a real error.
+
+! Preview: Snippet 195 ended.(538213+212173x3123872).
+<-><->
+      
+l.676     u_h}\)
+                 verwenden wir die Eigenschaften der Begleitabbildungen
+Not a real error.
+
+[195]
+! Preview: Snippet 196 started.
+<-><->
+      
+l.677   \(
+          \J3\) und nutzen aus, dass die nicht-konforme Interpolation
+Not a real error.
+
+! Preview: Snippet 196 ended.(490372+107642x709229).
+<-><->
+      
+l.677   \(\J3\)
+                und nutzen aus, dass die nicht-konforme Interpolation
+Not a real error.
+
+[196]
+! Preview: Snippet 197 started.
+<-><->
+      
+l.678   \(
+          \intOp\) die Bestapproximation an \(u\) im Raum \(V_h\) darstellt.
+Not a real error.
+
+! Preview: Snippet 197 ended.(490372+111084x1111484).
+<-><->
+      
+l.678   \(\intOp\)
+                   die Bestapproximation an \(u\) im Raum \(V_h\) darstellt.
+Not a real error.
+
+[197]
+! Preview: Snippet 198 started.
+<-><->
+      
+l.678   \(\intOp\) die Bestapproximation an \(
+                                              u\) im Raum \(V_h\) darstellt.
+Not a real error.
+
+! Preview: Snippet 198 ended.(308974+0x410806).
+<-><->
+      
+l.678   \(\intOp\) die Bestapproximation an \(u\)
+                                                  im Raum \(V_h\) darstellt.
+Not a real error.
+
+[198]
+! Preview: Snippet 199 started.
+<-><->
+      
+l.678 ...die Bestapproximation an \(u\) im Raum \(
+                                                  V_h\) darstellt.
+Not a real error.
+
+! Preview: Snippet 199 ended.(490372+116910x772388).
+<-><->
+      
+l.678 ...estapproximation an \(u\) im Raum \(V_h\)
+                                                   darstellt.
+Not a real error.
+
+[199]
+! Preview: Snippet 200 started.
+<-><->
+      
+l.679 \item Die Abschätzung des Druckterms \(
+                                              \norm{p - p_h}\) leitet sich
+Not a real error.
+
+! Preview: Snippet 200 ended.(538213+179405x2670587).
+<-><->
+      
+l.679 ...ätzung des Druckterms \(\norm{p - p_h}\)
+                                                   leitet sich
+Not a real error.
+
+[200]
+! Preview: Snippet 201 started.
+<-><->
+      
+l.685   Wir wollen den Term den Fehler \(
+                                         \hnorm{u - u_h}\) gegen \(\hnorm{u
+Not a real error.
+
+! Preview: Snippet 201 ended.(538213+212173x3123872).
+<-><->
+      
+l.685 ...n den Term den Fehler \(\hnorm{u - u_h}\)
+                                                   gegen \(\hnorm{u
+Not a real error.
+
+[201]
+! Preview: Snippet 202 started.
+<-><->
+      
+l.685 ...m den Fehler \(\hnorm{u - u_h}\) gegen \(
+                                                  \hnorm{u
+Not a real error.
+
+! Preview: Snippet 202 ended.(538213+212173x4001180).
+<-><->
+      
+l.686     - \intOp u}\)
+                        abschätzen. Aus der Definition von \(a_h(\cdot,
+Not a real error.
+
+[202]
+! Preview: Snippet 203 started.
+<-><->
+      
+l.686 ...\) abschätzen. Aus der Definition von \(
+                                                  a_h(\cdot,
+Not a real error.
+
+! Preview: Snippet 203 ended.(538214+179404x2008871).
+<-><->
+      
+l.687   \cdot)\)
+                 folgt
+Not a real error.
+
+[203]
+! Preview: Snippet 204 started.
+<-><->
+      
+l.688   \begin{equation}
+                        
+Not a real error.
+
+! Preview: Snippet 204 ended.(880730+0x27410796).
+<-><->
+      
+l.691   \end{equation}
+                      
+Not a real error.
+
+[204
+
+]
+! Preview: Snippet 205 started.
+<-><->
+      
+l.692   Wir setzen \(
+                     w_h \coloneqq \intOp u - u_h \in V_h\). Aus \(\divOp u
+Not a real error.
+
+! Preview: Snippet 205 ended.(490372+116910x6908884).
+<-><->
+      
+l.692 ... \(w_h \coloneqq \intOp u - u_h \in V_h\)
+                                                  . Aus \(\divOp u
+Not a real error.
+
+[205]
+! Preview: Snippet 206 started.
+<-><->
+      
+l.692 ...coloneqq \intOp u - u_h \in V_h\). Aus \(
+                                                  \divOp u
+Not a real error.
+
+! Preview: Snippet 206 ended.(498346+0x2832765).
+<-><->
+      
+l.693   = 0\)
+              und \(\divh u_h = 0\) erhält man mit der Mittelwerteigenschaft
+Not a real error.
+
+[206]
+! Preview: Snippet 207 started.
+<-><->
+      
+l.693   = 0\) und \(
+                    \divh u_h = 0\) erhält man mit der Mittelwerteigenschaft
+Not a real error.
+
+! Preview: Snippet 207 ended.(498346+116910x3518824).
+<-><->
+      
+l.693   = 0\) und \(\divh u_h = 0\)
+                                    erhält man mit der Mittelwerteigenschaft
+Not a real error.
+
+[207]
+! Preview: Snippet 208 started.
+<-><->
+      
+l.694   von \(
+              \intOp\), dass auch \(div_h w_h = 0\) punktweise gilt.
+Not a real error.
+
+! Preview: Snippet 208 ended.(490372+111084x1111484).
+<-><->
+      
+l.694   von \(\intOp\)
+                      , dass auch \(div_h w_h = 0\) punktweise gilt.
+Not a real error.
+
+[208]
+! Preview: Snippet 209 started.
+<-><->
+      
+l.694   von \(\intOp\), dass auch \(
+                                    div_h w_h = 0\) punktweise gilt.
+Not a real error.
+
+! Preview: Snippet 209 ended.(498346+116910x3505527).
+<-><->
+      
+l.694 ...n \(\intOp\), dass auch \(div_h w_h = 0\)
+                                                   punktweise gilt.
+Not a real error.
+
+[209]
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 117.38377pt have occurred.
+
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 982 strings out of 488735
+ 15851 string characters out of 6072694
+ 170467 words of memory out of 5000000
+ 8864 multiletter control sequences out of 15000+600000
+ 16104 words of font info for 66 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 47i,15n,40p,246b,392s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pf
+b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb
+></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
+sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
+ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loca
+l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
+exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/
+texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
+exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
+live/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texl
+ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texliv
+e/2013/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/local/texliv
+e/2013/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on _region_.pdf (209 pages, 204944 bytes).
+PDF statistics:
+ 742 PDF objects out of 1000 (max. 8388607)
+ 509 compressed objects within 6 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

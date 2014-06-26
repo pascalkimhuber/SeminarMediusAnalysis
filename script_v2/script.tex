@@ -1,0 +1,635 @@
+\documentclass[a4paper]{scrartcl}
+
+% --------------------------------------- Packages
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{bbold}
+\usepackage{draftwatermark}
+\usepackage{xcolor}
+\usepackage{esint}
+
+% --------------------------------------- Definitions
+
+\newcommand{\real}{\mathbb{R}}
+
+\newcommand{\ubold}{\boldsymbol{u}}
+\newcommand{\fbold}{\boldsymbol{f}}
+
+\newcommand{\Hzero}{H_0^1}
+\newcommand{\Ltwo}{L^2}
+\newcommand{\crfem}{\operatorname{CR}_0^1}
+\newcommand{\czero}{\operatorname{C}_0}
+\newcommand{\J}[1]{J_{#1}}
+
+
+\newcommand{\mesh}{\mathcal{T}_h}
+\newcommand{\edges}{\mathcal{E}}
+\newcommand{\nodes}{\mathcal{N}}
+
+\newcommand{\dx}{\,dx}
+\newcommand{\vnorm}[1]{\left\lVert#1\right\rVert_V}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\hnorm}[1]{\left\lVert#1\right\rVert_h}
+\newcommand{\scpr}[2]{\left\langle#1,#2\right\rangle_{L^2}}
+\newcommand{\set}[1]{\left\{#1\right\}}
+
+\newcommand{\black}{\color{black}}
+\newcommand{\blue}{\color{blue}}
+\newcommand{\red}{\color{red}}
+
+\DeclareMathOperator{\divOp}{div}
+\DeclareMathOperator{\divh}{div_h}
+\DeclareMathOperator{\nablah}{\nabla_{\textit{h}}}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\midOp}{mid}
+\DeclareMathOperator{\intOp}{I_{NC}}
+\DeclareMathOperator{\LtwoOp}{\Pi_0}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\osc}{osc}
+
+
+% --------------------------------------- Environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Satz}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{modellproblem}{Modellproblem}
+\theoremstyle{remark}
+\newtheorem*{remark*}{Bemerkung}
+
+% --------------------------------------- Some settings
+\SetWatermarkScale{4}
+
+% --------------------------------------- Document
+\begin{document}
+\title{\textsc{Eine CRFEM für das Stokes Problem}}
+\author{Pascal Huber}
+\date{30. Juni 2014}
+\maketitle
+
+\section{Motivation und Einleitung}
+\label{sec:motiv-und-einl}
+
+\blue 
+Nachdem wir in den letzten Vorträgen die nicht-konforme
+Crouzeix-Raviart Diskretisierung für die Poissongleichung näher
+beleuchtet haben, wollen wir in diesem Vortrag das Crouzeix-Raviart
+Element zur numerischen Lösung der Stokes Gleichung
+\black
+\begin{equation}
+  \label{eq:1}
+  -\Delta u + \nabla p = f \text{ in } \Omega \quad \text{ und }
+  \quad \divOp u = 0 \text{ in } \Omega
+\end{equation}
+\blue
+verwenden. Im Gegensatz zur Poissongleichung ist für die Stokes
+Gleichung eine Diskretisierung mit Hilfe von konformen \(P_1\)
+Elementen nicht möglich, sodass eine einfache nicht-konforme Methode
+durchaus ihre Daseinsberechtigung hat.  \\
+
+\noindent Im Folgenden wollen wir zunächst die schwache Formulierung
+des Stokes Problems, sowie die Bedingungen zur eindeutigen Existenz von
+Lösungen wiederholen. \\
+Anschließend definieren wir eine Finite Elemente
+Methode (FEM) für das Problem mit Hilfe von nicht-konformen
+Crouzeix-Raviart Elementen und zeigen, dass diese so definierte
+Diskretisierung stabil ist, d.h. eine bestimmte \emph{inf-sup-Bedingung}
+erfüllt ist. \\
+Dies ermöglicht uns dann auch im letzten Teil eine
+Fehlerabschätzung zur Bestapproximation dieser FEM mittels \emph{Medius
+Analyse} durchzuführen. 
+
+
+
+\section{Das Stokes Problem}
+\label{sec:das-stokes-problem}
+
+\paragraph{Schwache Formulierung des Stokes Problems}
+\label{sec:schw-form-des}
+
+Das Stokes Problem beschreibt den Druck und das Geschwindigkeitsfeld
+von  inkompressiblen Flüssigkeiten mit hoher Viskosität (und ist damit
+eine linearisierte Vereinfachung der Navier-Stokes-Gleichungen).\\ 
+
+\noindent Die schwache Formulierung des Stokes Problem führt
+mathematisch zu einem Sattelpunktproblem. Wir betrachten das folgende Modellproblem:
+
+\black
+\begin{modellproblem}[Schwache Formulierung] \label{problem:1}
+  Sei \(\Omega \subset \real^2\) ein polygonales beschränktes
+  Lipschitz-Gebiet und  
+  \[V \coloneqq \Hzero(\Omega; \real^2) \text{ und } Q \coloneqq
+  \Ltwo_0(\Omega) \coloneqq \{q \in \Ltwo(\Omega): \int_\Omega q(x)
+  \dx = 0\}.\]
+  Wir definieren die Bilinearformen \(a \colon V\times V \rightarrow \real\)
+  und \(b \colon V\times Q \rightarrow \real\) durch
+  \begin{equation}
+    \label{eq:2}
+    a(u,v) \coloneqq \int_\Omega \nabla u : \nabla v \dx 
+    \text{ und }
+    b(v,q) \coloneqq \int_\Omega \divOp v \cdot q \dx \nonumber
+  \end{equation}
+  und die Normen \(\vnorm{\cdot} \coloneqq \norm{\cdot}_{H^1(\Omega;
+    \real^2)}\) und \(\norm{\cdot} \coloneqq \norm{\cdot}_{\Ltwo(\Omega)}\).\\
+  Für \(f\in \Ltwo(\Omega; \real^2)\) finde \((u,p) \in V\times Q\), sodass folgende Gleichungen erfüllt sind: 
+  \begin{equation}
+    \label{eq:3}
+    \begin{cases}
+      a(u,v) - b(v,p) = \langle f, v \rangle_{\Ltwo(\Omega;\real^2)} &
+      \text{ für alle } v \in V \\
+      b(u,q) = 0 & \text{ für alle } q \in Q.
+    \end{cases}
+  \end{equation}
+\end{modellproblem}
+
+\blue
+\noindent Hierbei bezeichnet \(u \in V\) das Geschwindigkeitsfeld der
+Flüssigkeit und \(p\in Q\) deren Druck. In der Definition von
+\(a(\cdot, \cdot)\) bezeichnet \(A:B\) das Skalarprodukt für Matrizen
+aus \(\real^{2\times 2}\): 
+\black
+\[ A:B \coloneqq \sum_{i,j = 1}^2 A_{i,j}B_{i,j}.\]
+
+
+
+\paragraph{Existenz und Eindeutigkeit von Lösungen des Stokes Problems}
+\label{sec:exist-und-eind}
+
+\blue
+\noindent Bevor wir uns der Diskretisierung des Problems zuwenden, bleibt
+noch die Frage nach Existenz und Eindeutigkeit der Lösung von
+Problem \ref{problem:1} zu klären. \\
+
+\noindent Da es sich hier um ein ``gemischtes Problem'' mit zwei
+Unbekannten handelt, ist der gewöhnliche Ansatz für den Existenzbeweis
+mit dem Lemma von Lax-Milgram nicht möglich. Stattdessen verwendet man das
+\emph{Splitting-Theorem von Brezzi}, das  die Existenz und Eindeutigkeit von
+Lösungen für allgemeine Sattelpunktprobleme liefert. \\
+\black
+Dazu muss gezeigt werden, dass zum einen die Bilinearform \(a(\cdot,
+\cdot)\) auf dem Unterraum 
+\begin{equation}
+  \label{eq:29}
+  Z \coloneqq \set{v \in V: \forall q \in Q: b(v,q) = 0}
+\end{equation}
+elliptisch ist und dass \(b(\cdot, \cdot)\) die folgende
+inf-sup-Bedingung erfüllt: 
+\begin{equation}
+  \label{eq:30}
+  \exists \beta > 0:\qquad \inf_{q\in Q} \sup_{v \in V} \frac{b(v,q)}{\vnorm{v}\norm{q}} \geq \beta. 
+\end{equation}
+Im Fall der Stokes Gleichung sind beide Bedingungen erfüllt, was die
+eindeutige Existenz der Lösung \((u,p) \in V\times Q\) liefert. 
+
+
+
+\section{CR-Diskretisierung und Stabilität}
+\label{sec:cr-diskr-und}
+
+\subsection{Motivation}
+\label{sec:motivation}
+
+\blue
+Die Schwierigkeiten bei der Wahl geeigneter FE-Räume für das Stokes
+Problem bestehen nicht nur darin gute Konvergenzraten der diskreten
+Lösung zu erreichen, sondern auch schon in der Frage nach der
+eindeutigen Existenz dieser Lösungen. \\
+
+\noindent Wie schon bei der Untersuchung der Existenz und
+Eindeutigkeit von Lösungen für das kontinuierliche Stokes Problem müssen
+bei der Diskretisierung zwei Unbekannte bestimmt werden. Dies
+erfordert zum einen die Wahl von gemischen Finiten Elementen und zum
+anderen muss für diese FE-Räume wieder eine (diskrete)
+inf-sup-Bedingung erfüllt sein, um die eindeutige Existenz der
+Approximation sicherzustellen. Man spricht dabei auch von
+\emph{inf-sup-Stabilität}. \\ 
+
+\noindent Es stellt sich zum Beispiel heraus, dass die Diskretisierung des
+Stokes Problems mit Hilfe von konformen \(P_1\)-Elementen für die
+Geschwindigkeit und \(P_0\)-Elementen für den Druck nicht
+inf-sup-stabil sind. Stattdessen erhält man durch das Hinzufügen von
+sog. \emph{bubble}-Funktionen zum Geschwindigkeitsraum das strukturell
+einfachste konforme FE-Paar. \\ 
+
+\black
+\noindent Aus diesem Grund ist die Frage nach einfachen
+nicht-konformen FEM für das Stokes Problem durchaus berechtigt. Einen
+Hinweis darauf, dass Crouzeix-Raviart-Elemente (CRFEM) zusammen mit
+stückweise konstanten Druckfunktionen das Stokes Problem gut
+diskretisieren gibt die Tatsache, dass das diskrete Analogon zur Menge
+\(Z\) in (\ref{eq:29}) 
+\begin{equation}
+  \label{eq:31}
+  Z_h \coloneqq \set{v_h \in V_h\colon \forall q_h \in Q_h\colon b_h(v_h, q_h) = 0} 
+\end{equation}
+im Fall der CRFEM nicht trivial ist (im Gegensatz zur konformen
+\(P_1\)-\(P_0\)-Diskretisierung). Die Lösungsräume \(V_h\) und \(Q_h\)
+scheinen also für das Crouzeix-Raviart Element gut ausgewogen zu sein. 
+
+
+\subsection{Beschreibung der Diskretisierung}
+\label{sec:beschr-der-diskr}
+
+Zur Diskretisierung von Modellproblem \ref{problem:1} verwenden wir
+eine quasi-uniforme Triangulierung \(\mesh\) des Gebiets \(\Omega\)
+und führen die folgenden Bezeichungen ein: 
+
+\begin{itemize}
+\item \(h \coloneqq \max\{h_T\colon T \in \mesh\}\) mit \(h_T \coloneqq \diam(T)\) für \(T\in \mesh\)
+\item \(\edges\) und \(\nodes\):  Menge aller Kanten
+  bzw. Knoten von \(\mesh\)
+\item \(\midOp(E)\): Kantenmittelpunkt von \(E \in \edges\), analog \(\midOp(\edges)\)
+\item \(\nablah\) und \(\divh\): Elementweiser Gradient bzw. Divergenz
+\end{itemize}
+
+\noindent Desweiteren definieren wir die Funktionenräume
+\begin{align}
+  \label{al:2}
+P_k(\mesh) &\coloneqq \set{v_h \in \Ltwo(\Omega)\colon \forall T \in
+  \mesh\colon v_h|_T \in P_k(T)} \\
+  \crfem(\mesh) &\coloneqq \set{v_h \in P_1(\mesh)\colon v_h \text{ stetig in } \midOp(\edges), v_h(\midOp(E)) = 0 \text{ für } E \in \partial\Omega\cap\edges}
+\end{align}
+und die Normen
+  \begin{equation}
+    \label{eq:10}
+    \norm{f} \coloneqq \norm{f}_{\Ltwo(\Omega)} \quad \text{ und } \quad
+    \hnorm{v} \coloneqq \norm{\nablah v}  
+  \end{equation}
+für \(f\in \Ltwo(\Omega)\) und \(v \in \crfem(\Omega) +
+\Hzero(\Omega)\). (Analog für vektorwertige Funktionen.)
+
+
+\noindent Mit diesen Bezeichnungen können wir nun das diskrete
+Modellproblem zu (\ref{eq:3}) formulieren: 
+
+\begin{modellproblem}[CR-Diskretisierung] \label{problem:3}
+  Seien \(Q_h \coloneqq \Ltwo_0(\Omega) \cap
+  P_0(\mesh)\) und \(V_h \coloneqq \crfem(\mesh) \times \crfem(\mesh)\).
+  Weiter seien die diskreten Bilinearformen \(a_h\colon V_h \times V_h
+  \rightarrow \real\) und \(b_h\colon V_h \times Q_h \rightarrow
+  \real\) definiert durch
+  \begin{equation}
+    \label{eq:11}
+    a_h(u_h, v_h) \coloneqq \int_\Omega \nablah u : \nablah v \dx
+    \quad \text{ und } \quad b_h(v_h, q_h) \coloneqq \int_\Omega q_h\divh v_h \dx. 
+  \end{equation}
+  Für gegebenes \(f \in \Ltwo(\Omega; \real^2)\) finde \((u_h, p_h)
+  \in V_h \times Q_h\), sodass 
+  \begin{equation}
+    \label{eq:12}
+    \begin{cases}
+      a_h(u_h, v_h) - b_h(v_h, p_h) = \langle f, v_h \rangle_{\Ltwo(\Omega; \real^2)} & \text{ für alle } v_h \in V_h \\
+      b_h(u_h, q_h) = 0 & \text{ für alle } q_h \in Q_h. 
+    \end{cases}
+  \end{equation}
+\end{modellproblem}
+
+\noindent Die Methode ist offensichtlich nicht-konform, da offensichtlich \(V_h \not\subseteq V\).
+
+
+
+\subsection{Stabilität der CR-NCFEM}
+\label{sec:stabilitat-der-cr}
+
+Wie bereits erwähnt, zeigt man die Existenz und Eindeutigkeit der
+diskreten Lösung \((u_h, p_h)\) in Modellproblem \ref{problem:3}
+wieder mit Hilfe des Brezzi-Splitting Theorems.\\ 
+
+\noindent Die Definition der Normen \(\norm{\cdot}_h\) und
+\(\hnorm{\cdot}\) stellt die Stetigkeit der Bilienarformen, sowie die
+Elliptizität von \(a(\cdot, \cdot)\) sicher. Das eigentliche Kriterium
+für die Existenz und Eindeutigkeit ist also wieder die
+inf-sup-Bedingung. 
+
+\begin{definition}[Stabilität von FEM] \label{def:1}
+  Eine FE-Diskretisierung \(V_h\times Q_h\) für das Modellproblem
+  \ref{problem:1} heißt \emph{(inf-sup-)stabil}, falls \(\beta > 0\)
+  unabhänging von \(h\) exisitiert, sodass  
+  \begin{equation}
+    \label{eq:14}
+    \inf_{q_h \in Q_h} \sup_{v_h \in V_h} \frac{b_h(v_h, q_h)}{\hnorm{v_h} \norm{q_h}} \geq \beta. 
+  \end{equation}
+  \end{definition}
+
+\noindent Die inf-sup-Stabilität ist darüber hinaus auch für die
+Stabilität der numerischen Berechnung wichtig. 
+
+\begin{theorem}[Stabilität von CR-NCFEM]\label{thm:3}
+  Die Crouzeix-Raviart Diskretisierung des Stokes Problems \(V_h \times Q_h =
+  \crfem(\mesh)^2 \times (\Ltwo_0(\Omega)\cap P_0(\mesh))\) aus
+  Modellproblem \ref{problem:3}  ist stabil. 
+\end{theorem}
+
+\noindent Für den Beweis der Stabilität definieren wir einen
+nicht-konformen Interpolationsoperator, der auch noch später für die
+Medius Analyse eine Rolle spielen wird.  
+
+\begin{definition}[Nicht-konformer Interpolationsoperator und
+  \(\Ltwo\)-Projektion] \label{def:2}
+  Wir definieren: 
+  \begin{enumerate}[label=\emph{(\roman*)}]
+  \item \( \intOp\colon \Hzero(\Omega) \rightarrow \crfem(\mesh), \quad
+      (\intOp v)(\midOp(E)) \coloneqq \fint_E v \,ds \qquad \text{für } E \in \edges.\)  
+    %\end{equation}
+  \item \(\LtwoOp \colon \Ltwo(\Omega) \rightarrow P_0(\mesh), \quad 
+      (\LtwoOp f)|_T \coloneqq \fint_T f \dx \qquad \text{für } T\in \mesh.\) 
+    \end{enumerate}
+\end{definition}
+
+\noindent Die Definition von \(\intOp\) und \(\LtwoOp\) können auf natürliche
+Weise auf vektorwertige Funktionen erweitert werden. \\ 
+
+\noindent Die Motivation für Definition \ref{def:2} von \(\intOp\) und
+\(\LtwoOp\) besteht darin, dass sie jeweils eine Bestapproximation
+ihres Arguments darstellen. 
+
+\begin{lemma}[Eigenschaften von \(\intOp\) und \(\LtwoOp\)] \label{lem:1}
+  \begin{enumerate}[label=(\roman*)]
+  \item Für alle \(v\in V\) und \(T\in \mesh\) gilt \(\fint_T \nabla v
+    \dx = \fint_T \nabla(\intOp v) \dx\) und 
+    \begin{equation}
+      \label{eq:16}
+      \norm{\nablah(v-\intOp v)} \leq \inf_{w\in P_0{\mesh}^2} \norm{\nablah v - w}.
+    \end{equation}
+  \item Für alle \(f\in \Ltwo(\Omega\) und \(T\in \mesh\) gilt
+    \(\fint_T f \dx = \fint_T \LtwoOp f \dx\) und 
+    \begin{equation}
+      \label{eq:17}
+      \norm{f-\LtwoOp f} \leq \inf_{g\in P_0(\mesh)}\norm{f-g}. 
+    \end{equation}
+  \end{enumerate}
+\end{lemma}
+
+% \begin{proof}[Beweis.]
+%   \begin{enumerate}[label=\emph{(\roman*)}]
+%   \item Mit partieller Integration gilt und der Definition von
+%     \(\intOp\) folgt:  
+%     \[\int_T \nabla(v - \intOp v)\dx = \sum_{E\in\edges(T)} \int_E (v - \intOp v)\otimes \nu_T \,ds = 0\]
+%     Für (\ref{eq:16}) rechnen wir: 
+%     \(v \in V\), \(w\in P_0(\mesh)^2\). Dann gilt: 
+%     \begin{align}
+%       \norm{\nablah v - w}^2 =& \norm{\nablah (v - \intOp v)}^2 + \norm{\nablah \intOp v - w}^2 \\ \nonumber 
+%       & + \int_\Omega \left(\nablah(v - \intOp v)\right) \cdot \left(\nablah \intOp v - w\right) \dx. \nonumber
+%     \end{align}
+%     Der letzte Summand verschwindet wegen der Mittelwerteigenschaft
+%     von \(\intOp\). Der Beweis für \(\LtwoOp\) geht analog. 
+% \end{enumerate}
+% \end{proof}
+
+\noindent Wir können nun den nicht-konformen Interpolationsoperator \(\intOp\)
+verwenden, um die Stabilität der Crouzeix-Raviart FE-Räume zu zeigen. 
+
+\begin{proof}[Beweis von Satz \ref{thm:3}.]
+  Für den Beweis zeigen, wir dass der nicht-konforme
+  Interpolationsoperator ein \emph{Fortin-Operator} ist, d.h. wir
+  zeigen: 
+ \begin{align}     
+   &(i) \quad \exists c > 0 \text{ (unabhängig von } h\text{)} \colon
+   \hnorm{\intOp v} \leq c \vnorm{v} \text{ für alle } v \in V \nonumber\\ 
+   &(ii) \quad \forall v \in V, \forall q_h \in Q_h\colon b_h(\intOp v, q_h) = b(v, q_h) \nonumber
+   \label{align:2} 
+  \end{align}
+  Da \(\nablah (\intOp v)\) stückweise konstant ist, folgt mit
+  (\ref{eq:16})
+  \begin{equation}
+    \label{eq:18}
+    \int_\Omega \nablah (\intOp v) : \nablah (\intOp v) \dx = 
+    \int_\Omega \nabla v : \nablah (\intOp v) \dx \leq \norm{\nabla v}\hnorm{\intOp v}
+  \end{equation}
+  und damit \emph{(i)} mit \(c=1\). Auch \emph{(ii)} folgt aus der
+  Mittelwerteigenschaft, da \(q_h \in Q_h\) stückweise konstant ist. \\ 
+  Sei nun \(q_h \in Q_h\) beliebig. Dann erhält man aus der
+  inf-sup-Bedingung von \(b(\cdot, \cdot)\) und \emph{(i), (ii)}: 
+  \begin{align}
+    \beta \norm{q_h} 
+    &\leq \sup_{v\in V} \frac{b(v,q_h)}{\vnorm{v}}
+    \overset{\emph(ii)}{=} \sup_{v\in V} \frac{b_h(\intOp v,q_h)}{\vnorm{v}}
+    \overset{\emph(i)}{\leq} \sup_{v\in V} \frac{b_h(\intOp v,q_h)}{\hnorm{\intOp v}} \nonumber 
+    \leq \sup_{v_h\in V_h} \frac{b_h(v_h,q_h)}{\hnorm{v_h}}. \nonumber
+  \end{align}
+\end{proof}
+
+\begin{remark*}
+  Wir haben gesehen, dass die Ungleichung in \emph{(i)} mit der
+  bestmöglichen Konstante \(c=1\) für den nicht-konformen
+  Interpolationsoperator \(\intOp\) gilt. 
+\end{remark*}
+
+
+
+\section{Medius Analyse der CRFEM für das Stokes Problem}
+\label{sec:medius-analyse-der}
+
+\blue
+In den vorangegangen Abschnitten haben wir gesehen, dass die
+Crouzeix-Raviart Diskretisierung eine relativ einfache FEM für das
+Stokes Problem darstellt, die zudem sehr gute Stabilitätseigenschaften
+aufweist. \\
+Zum Abschluss des Vortrags wollen wir für die Fehleranalyse ein
+Resultat zur Best-Approximation der Crouzeix-Raviart Diskretisierung
+angeben und mit Hilfe einer Medius Analyse beweisen. 
+
+\black
+\begin{theorem}[Best-Approximation der CRFEM]\label{thm:4}
+  Sei \((u,p) \in V\times Q\) die Lösung von (\ref{eq:3}) und
+  \((u_h,p_h) \in  V_h\times Q_h\) die Lösung von (\ref{eq:12}). Dann
+  gilt: 
+  \begin{equation}
+    \label{eq:19}
+    \hnorm{u - u_h} + \norm{p - p_h} \lesssim \inf_{v_h \in V_h} \hnorm{u - v_h} + \inf_{q_h \in Q_h} \norm{p - q_h} + \osc(f,h), 
+  \end{equation}
+  wobei die Oszillation von \(f\) durch  \(\osc(f, h) \coloneqq
+  \norm{h(f - \LtwoOp f)}\) definiert ist. 
+\end{theorem}
+
+\begin{remark*}
+  Man beachte, dass für dieses Resultat keine weiteren
+  Regularitätsannahmen an die Lösung \((u,p)\) gemacht werden muss. 
+\end{remark*}
+
+\subsection{Konforme Begleitabbildungen}
+\label{sec:konf-begl}
+
+\blue
+Für den Beweis von Satz \ref{thm:4} verwenden wir wie schon im
+letzten Vortag sogenannte \emph{konforme Begleitabbildungen} der Form 
+\[ J_k \colon \crfem(\mesh) \rightarrow
+P_k(\mesh)\cap\czero(\Omega).\] 
+Dadurch können wir einen Zusammenhang zwischen dem nicht-konformen
+Crouzeix-Raviart FE-Raum und konformen Räumen herstellen. \\
+
+\noindent Wir definieren eine konforme Begleitabbildung von der
+Ordnung \(k = 3\) wie folgt: 
+
+\black
+\begin{definition}[Konforme Begleitabbildung \(J_3\)]\label{def:3}
+  Wir definieren wir die konformen Begleitabbildungen \(J_k \colon
+  \crfem(\mesh) \rightarrow P_k(\mesh)\cap\czero(\Omega)\) für
+  \(k=1,2,3\) wie folgt für \(v_h \in \crfem(\mesh)\): 
+  \begin{enumerate}[label=\textit{(\roman*)}]
+  \item \(J_1 v_h \coloneqq \sum_{z \in
+      \nodes(\Omega)}\left(\left\lvert \mathcal{T}(z)\right\rvert^{-1}
+      \sum_{T\in \mathcal{T}(z)} v_h\vert_T(z) \varphi_z \right)\)
+  \item \(J_2 v_h \coloneqq J_1 v_h + \sum_{E\in\edges(\Omega)} 
+    \left(\fint_E (v_h - J_1 v_h) \,ds\right)b_E\)
+  \item \(J_3 v_h \coloneqq J_2 v_h + \sum_{T\in\mesh}\left(\fint_T(v_h
+      - J_2 v_h)\dx \right)b_T\). 
+  \end{enumerate}
+  Dabei bezeichnen \(\nodes(\Omega)\) und \(\edges(\Omega)\) die Menge
+  allere inneren Knoten bzw. Kanten und weiter \(\varphi_z\) die
+  konforme nodale Basisfunktion bzgl. \(z \in \nodes\), \(b_E
+  \coloneqq 6\varphi_a\varphi_b\) die Bubble-Funktion bzgl. der Kante
+  \(E \coloneqq \conv\{a,b\} \in \edges\) und \(b_T \coloneqq
+  60\varphi_a\varphi_b\varphi_c\) die Bubble-Funktion für das Element
+  \(T \coloneqq \conv\{a,b,c\} \in \mesh\).
+\end{definition}
+
+\begin{remark*}
+  Auf \(V_h\) ist \(J_k\) komponentenweise definiert.
+\end{remark*}
+
+\blue
+\noindent Die Motivation für die Definition von \(\J3\) ist im
+Wesentlichen durch das folgende Lemma gegeben. Es besagt, dass die
+Begleitabbildung gewisse Mittelwerteigenschaften erfüllen, was wir im
+Hauptbeweis mehrmals ausnutzen werden. 
+
+\black
+\begin{lemma}[Eigenschaften von \(J_3\)]\label{lem:2}
+  Die konforme Begleitabbildung \(\J3\colon \crfem(\mesh) \rightarrow
+  P_3(\mesh)\cap\czero(\Omega)\) hat folgende Eigenschaften: 
+  \begin{enumerate}[label=(\roman*)]
+  \item \(\int_T \nablah(v_h - \J3 v_h)\dx = 0\) und \(\int_T
+    v_h - \J3 v_h \dx = 0 \) für \(v_h \in
+    \crfem(\mesh) \text{ und } T\in \mesh\),
+  \item \(\norm{\nablah (v_h - \J3 v_h)} \lesssim \norm{h^{-1}(v_h -
+      \J3 v_h)} \lesssim \norm{\nablah v_h} \quad\) für alle \(v_h \in
+    \crfem(\mesh)\).
+  \end{enumerate}
+\end{lemma}
+
+{\red
+Übersicht zu den verwendeten Relationen! 
+}
+
+\subsection{Beweis der Best-Approximation}
+\label{sec:beweis-der-best}
+
+\blue
+Mit Hilfe von Lemma \ref{lem:2} sind wir nun in der Lage Satz
+\ref{thm:4} in zwei Schritten zu beweisen: 
+
+\begin{enumerate}
+\item Für die Abschätzung von \(\hnorm{u - u_h}\) nutzen wir die
+  Eigenschaften von \(\J3\) aus. 
+\item Die Abschätzung des Druckterms \(\norm{p - p_h}\) leitet sich
+  Wesentlichen aus der Stabilität des Crouzeix-Raviart Elements her. 
+\end{enumerate}
+
+\black
+\begin{proof}[Beweis von Satz \ref{thm:4}.]
+  \textit{\\Teil 1: Abschätzung für die Geschwindigkeit:}\\
+  Wegen Lemma \ref{lem:1} genügt es
+  \begin{equation}
+    \label{eq:21}
+    \hnorm{u - u_h} \lesssim \hnorm{u - \intOp u} + \norm{p - \LtwoOp p} + \osc(f, h)
+  \end{equation}
+  zu zeigen. Aus der Definition von \(a_h(\cdot,
+  \cdot)\) folgt
+  \begin{equation}
+    \label{eq:20}
+    \hnorm{u - u_h}^2 = a_h(u - u_h, u - \intOp u) + a_h(u - u_h, \intOp u - u_h). 
+  \end{equation}
+  Wir schätzen den zweiten Term in (\ref{eq:20}) ab. Dazu setzen wir \(w_h
+  \coloneqq \intOp u - u_h \in V_h\). Aus \(\divOp u = 0\) und \(\divh
+  u_h = 0\) erhält man mit der Mittelwerteigenschaft von \(\intOp\),
+  dass auch \(\divh w_h = 0\) punktweise gilt. Damit folgt
+  \begin{align}
+    a_h(u &- u_h, w_h) \nonumber \\
+    &= a_h(u,  w_h - \J3 w_h) + a(u, \J3 w_h) - a_h(u_h, w_h) \nonumber \\
+    &= a_h(u,  w_h - \J3 w_h) + b(\J3 w_h, p) + \scpr{f}{\J3 w_h} \nonumber 
+    - b_h(w_h, p_h) - \scpr{f}{w_h}. 
+  \end{align}
+  Wegen der Mittelwerteigenschaft von \(\J3\) gilt für alle \(g \in
+  P_0(\mesh)^{2\times 2}\)
+  \begin{equation}
+    \label{eq:22}
+    \int_\Omega g : \nablah (w_h - \J3 w_h) \dx = 0. 
+  \end{equation}
+  Mit \(\LtwoOp \nabla u = \nablah \intOp u\) erhält man deshalb durch
+  Anwendung der Cauchy-Schwarz Ungleichung
+  \begin{align} \label{al:1}
+    a_h(u &- u_h, w_h) \nonumber \\
+    =& a_h(u - \intOp u, w_h - \J3 w_h) + b(\J3 w_h, p - \LtwoOp p) + \scpr{f - \LtwoOp f}{\J3 w_h - w_h} \nonumber \\
+    \leq& \hnorm{u - \intOp u}\hnorm{w_h - \J3 w_h} +\norm{p - \LtwoOp p}\hnorm{\J3 w_h} \nonumber \\
+    & + \norm{h(f - \LtwoOp f)}\norm{h^{-1}(\J3 w_h - w_h)} \nonumber \\
+    \overset{(ii)}{\lesssim}& \left(\hnorm{u - \intOp u} + \norm{p + \LtwoOp p} + \osc(f, h)\right) \hnorm{w_h}. 
+  \end{align}
+  Aus der Mittelwerteigenschaft von \(\intOp\) erhält man 
+  \begin{equation}
+    \label{eq:23}
+    \hnorm{w_h} = (a_h(\intOp u - u_h, w_h))^{1/2} = (a_h( u - u_h, w_h))^{1/2}.
+  \end{equation}
+  Eingesetzt in (\ref{al:1}) ergibt das schließlich für den zweiten
+  Summanden aus (\ref{eq:20})
+  \begin{equation}
+    \label{eq:24}
+    a_h(u - u_h, \intOp u - u_h) \lesssim \hnorm{u - \intOp u} + \norm{p - \LtwoOp p} + \osc(f, h). 
+  \end{equation}
+  Für den ersten Summanden folgt mit der Youngschen Ungleichung
+  \begin{equation}
+    \label{eq:25}
+    a_h(u - u_h, u - \intOp u) \leq \frac{1}{2}\left(\hnorm{u - u_h}^2 + \hnorm{u - \intOp u}^2 \right), 
+  \end{equation}
+  woraus schließlich zusammen mit (\ref{eq:24}) die Abschätzung
+  (\ref{eq:21}) folgt. 
+
+  \textit{\\Teil 2: Abschätzung für den Druck:}\\
+  Es genügt wieder nur
+  \begin{equation}
+    \label{eq:26}
+    \norm{p - p_h} \lesssim \hnorm{u_h - u} + \norm{p - \LtwoOp p} + \osc(f,h)
+  \end{equation}
+  zu zeigen. Dazu verwenden wir die inf-sup-Stabilität des
+  Elementpaares \(V_h \times Q_h\). Da \((p_h - \LtwoOp p) \in Q_h\), gibt es ein Element
+  \(v_h \in V_h\) mit \(\hnorm{v_h} = 1\), so dass 
+  \begin{equation}
+    \label{eq:27}
+    \norm{p_h - \LtwoOp p} \lesssim b_h(v_h, p_h - \LtwoOp p). 
+  \end{equation}
+  Da \(p_h\) die Lösung des diskreten Problems ist gilt mit \(\LtwoOp
+  v_h = \LtwoOp \J3 v_h\)
+  \begin{equation}
+    \label{eq:28}
+    \norm{p_h - \LtwoOp p} \lesssim a_h(u_h, v_h) - \scpr{f}{v_h} - b_h(\J3 v_h,\LtwoOp p). 
+  \end{equation}
+  Durch Addition von \(0 = b(\J3 v_h, p) - a(u, \J3 v_h) +
+  \scpr{f}{\J3 v_h}\) erhält man unter Ausnutzung der
+  Mittelwerteigenschaft von \(\J3\): 
+  \begin{align}
+    &\norm{p_h - \LtwoOp p} \\
+    &\qquad\lesssim a_h(u_h, v_h) - a(u, \J3 v_h) + b(\J3 v_h, p - \LtwoOp p) + \scpr{f}{\J3 v_h - v_h} \nonumber \\
+    &\qquad= a_h(u_h - u, v_h) - a(u, v_h - \J3 v_h) + b(\J3 v_h, p - \LtwoOp p) + \scpr{f}{\J3 v_h - v_h} \nonumber \\
+    &\qquad= a_h(u_h - u, v_h) - a(u - \intOp u, v_h - \J3 v_h) \nonumber \\
+    &\qquad \quad+ b(\J3 v_h, p - \LtwoOp p) + \scpr{f - \LtwoOp f}{\J3 v_h - v_h}. \nonumber 
+  \end{align}
+  Mit der Cauchy-Schwarz Ungleichung und Lemma \ref{lem:2}, sowie
+  \(\hnorm{u - \intOp u} \leq \hnorm{u - u_h}\) (siehe Lemma
+  \ref{lem:1}) erhält man schließlich wegen \(\hnorm{v_h} = 1\)
+  \begin{align}
+    \norm{p_h - \LtwoOp p} \lesssim
+    & \hnorm{u_h - u}\hnorm{v_h} + \hnorm{u - \intOp u}\hnorm{v_h - \J3 v_h} \nonumber \\
+    &+ \norm{p - \LtwoOp p}\hnorm{\J3 v_h} \norm{h(f - \LtwoOp f)}\hnorm{h^{-1}(\J3 v_h - v_h)} \nonumber \\
+    \lesssim& \left(\hnorm{u_h - u} + \norm{p - \LtwoOp p} + \osc(f,h)\right) \hnorm{v_h} \nonumber \\
+    \lesssim& \hnorm{u_h - u} + \norm{p - \LtwoOp p} + \osc(f,h). 
+  \end{align}
+  Mit der Dreiecksungleichung erhält man dann die Abschätzung
+  (\ref{eq:26}) und damit letztendlich die Behauptung von Satz
+  \ref{thm:4}. 
+\end{proof}
+
+\end{document}

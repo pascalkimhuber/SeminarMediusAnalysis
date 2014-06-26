@@ -1,4 +1,4 @@
-\documentclass[a4paper]{scrartcl}
+\message{ !name(script.tex)}\documentclass[a4paper]{scrartcl}
 
 % --------------------------------------- Packages
 \usepackage[utf8]{inputenc}
@@ -33,7 +33,6 @@
 \newcommand{\vnorm}[1]{\left\lVert#1\right\rVert_V}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\hnorm}[1]{\left\lVert#1\right\rVert_h}
-\newcommand{\scpr}[2]{\left\langle#1,#2\right\rangle_{L^2}}
 \newcommand{\set}[1]{\left\{#1\right\}}
 
 \DeclareMathOperator{\divOp}{div}
@@ -62,6 +61,9 @@
 
 % --------------------------------------- Document
 \begin{document}
+
+\message{ !name(script.tex) !offset(-3) }
+
 \title{\textsc{CRFEM for the Stokes Problem}}
 \author{Pascal Huber}
 \date{June, 30, 2014}
@@ -679,111 +681,18 @@ Den Beweis führen wir in zwei Schritten:
 \end{enumerate}
 
 \begin{proof}[Beweis.]
-  \textsf{\textbf{\\Teil 1: Abschätzung für die Geschwindigkeit:}}\\
-  Wegen Lemma \ref{lem:1} genügt es
-  \begin{equation}
-    \label{eq:21}
-    \hnorm{u - u_h} \lesssim \hnorm{u - \intOp u} + \norm{p - \LtwoOp p} + \osc(f, h)
-  \end{equation}
-  zu zeigen. Aus der Definition von \(a_h(\cdot,
+  \textsf{\textbf{\\Teil 1:}}\\
+  Wir wollen den Term den Fehler \(\hnorm{u - u_h}\) gegen \(\hnorm{u
+    - \intOp u}\) abschätzen. Aus der Definition von \(a_h(\cdot,
   \cdot)\) folgt
   \begin{equation}
     \label{eq:20}
     \hnorm{u - u_h}^2 = a_h(u - u_h, u - \intOp u) + a_h(u - u_h, \intOp u - u_h). 
   \end{equation}
-  Wir schätzen den zweiten Term in (\ref{eq:20}) ab. Wir setzen \(w_h
-  \coloneqq \intOp u - u_h \in V_h\). Aus \(\divOp u = 0\) und \(\divh
-  u_h = 0\) erhält man mit der Mittelwerteigenschaft von \(\intOp\),
-  dass auch \(div_h w_h = 0\) punktweise gilt. Damit folgt
-  \begin{align}
-    a_h(u &- u_h, w_h) \nonumber \\
-    &= a_h(u,  w_h - \J3 w_h) + a(u, \J3 w_h) - a_h(u_h, w_h) \nonumber \\
-    &= a_h(u,  w_h - \J3 w_h) + b(\J3 w_h, p) + \scpr{f}{\J3 w_h} \nonumber 
-    - b_h(w_h, p_h) - \scpr{f}{w_h}. 
-  \end{align}
-  Wegen der Mittelwerteigenschaft von \(\J3\) gilt für alle \(g \in
-  P_0(\mesh)^{2\times 2}\)
-  \begin{equation}
-    \label{eq:22}
-    \int_\Omega g : \nablah (w_h - \J3 w_h) \dx = 0. 
-  \end{equation}
-  Mit \(\LtwoOp \nabla u = \nablah \intOp u\) erhält man deshalb durch
-  Anwendung der Cauchy-Schwarz Ungleichung
-  \begin{align} \label{al:1}
-    a_h(u &- u_h, w_h) \nonumber \\
-    =& a_h(u - \intOp u, w_h - \J3 w_h) + b(\J3 w_h, p - \LtwoOp p) + \scpr{f - \LtwoOp f}{\J3 w_h - w_h} \nonumber \\
-    \leq& \hnorm{u - \intOp u}\hnorm{w_h - \J3 w_h} +\norm{p - \LtwoOp p}\hnorm{\J3 w_h} \nonumber \\
-    & + \norm{h(f - \LtwoOp f)}\norm{h^{-1}(\J3 w_h - w_h)} \nonumber \\
-    \overset{(iii)}{\lesssim}& \left(\hnorm{u - \intOp u} + \norm{p + \LtwoOp p} + \osc(f, h)\right) \hnorm{w_h}. 
-  \end{align}
-  Aus der Mittelwerteigenschaft von \(\intOp\) erhält man 
-  \begin{equation}
-    \label{eq:23}
-    \hnorm{w_h} = (a_h(\intOp u - u_h, w_h))^{1/2} = (a_h( u - u_h, w_h))^{1/2}.
-  \end{equation}
-  Eingesetzt in (\ref{al:1}) ergibt das schließlich für den zweiten
-  Summanden aus (\ref{eq:20})
-  \begin{equation}
-    \label{eq:24}
-    a_h(u - u_h, \intOp u - u_h) \lesssim \hnorm{u - \intOp u} + \norm{p - \LtwoOp p} + \osc(f, h). 
-  \end{equation}
-  Für den ersten Summanden folgt mit der Youngschen Ungleichung
-  \begin{equation}
-    \label{eq:25}
-    a_h(u - u_h, u - \intOp u) \leq \frac{1}{2}\left(\hnorm{u - u_h}^2 + \hnorm{u - \intOp u}^2 \right), 
-  \end{equation}
-  woraus schließlich zusammen mit (\ref{eq:24}) die Abschätzung
-  (\ref{eq:21}) folgt. 
-
-  \textsf{\textbf{\\Teil 2: Abschätzung für den Druck:}}\\
-  Es genügt 
-  \begin{equation}
-    \label{eq:26}
-    \norm{p - p_h} \lesssim \hnorm{u_h - u} + \norm{p - \LtwoOp p} + \osc(f,h)
-  \end{equation}
-  zu zeigen. Dazu verwenden wir die inf-sup-Stabilität des
-  Elementpaares. Da \((p_h - \LtwoOp p) \in Q_h\), gibt es ein Element
-  \(v_h \in V_h\) mit \(\hnorm{v_h} = 1\), so dass 
-  \begin{equation}
-    \label{eq:27}
-    \norm{p_h - \LtwoOp p} \lesssim b_h(v_h, p_h - \LtwoOp p). 
-  \end{equation}
-  Da \(p_h\) die Lösung des diskreten Problems ist gilt mit \(\LtwoOp
-  v_h = \LtwoOp \J3 v_h\)
-  \begin{equation}
-    \label{eq:28}
-    \norm{p_h - \LtwoOp p} \lesssim a_h(u_h, v_h) - \scpr{f}{v_h} - b_h(\J3 v_h,\LtwoOp p). 
-  \end{equation}
-  Durch Addition von \(0 = b(\J3 v_h, p) - a(u, \J3 v_h) +
-  \scpr{f}{\J3 v_h}\) erhält man unter Ausnutzung der
-  Mittelwerteigenschaft von \(\J3\): 
-  \begin{align}
-    &\norm{p_h - \LtwoOp p} \\
-    &\qquad\lesssim a_h(u_h, v_h) - a(u, \J3 v_h) + b(\J3 v_h, p - \LtwoOp p) + \scpr{f}{\J3 v_h - v_h} \nonumber \\
-    &\qquad= a_h(u_h - u, v_h) - a(u, v_h - \J3 v_h) + b(\J3 v_h, p - \LtwoOp p) + \scpr{f}{\J3 v_h - v_h} \nonumber \\
-    &\qquad= a_h(u_h - u, v_h) - a(u - \intOp u, v_h - \J3 v_h) \nonumber \\
-    &\qquad \quad+ b(\J3 v_h, p - \LtwoOp p) + \scpr{f - \LtwoOp f}{\J3 v_h - v_h}. \nonumber 
-  \end{align}
-  Mit der Cauchy-Schwarz Ungleichung und Lemma \ref{lem:2}, sowie
-  \(\hnorm{u - \intOp u} \leq \hnorm{u - u_h}\) erhält man schließlich
-  (\(\hnorm{v_h} = 1\))
-  \begin{align}
-    \norm{p_h - \LtwoOp p} \lesssim
-    & \hnorm{u_h - u}\hnorm{v_h} + \hnorm{u - \intOp u}\hnorm{v_h - \J3 v_h} \nonumber \\
-    &+ \norm{p - \LtwoOp p}\hnorm{\J3 v_h} \norm{h(f - \LtwoOp f)}\hnorm{h^{-1}(\J3 v_h - v_h)} \nonumber \\
-    \lesssim& \left(\hnorm{u_h - u} + \norm{p - \LtwoOp p} + \osc(f,h)\right) \hnorm{v_h} \nonumber \\
-    \lesssim& \hnorm{u_h - u} + \norm{p - \LtwoOp p} + \osc(f,h). 
-  \end{align}
-  Mit der Dreiecksungleichung erhält man dann die Abschätzung
-  (\ref{eq:26}) und damit letztendlich die Behauptung von Theorem
-  \ref{thm:4}. 
+  Wir setzen \(w_h \coloneqq \intOp u - u_h \in V_h\). Aus \(\divOp u
+  = 0\) und \(\divh u_h = 0\) erhält man mit der Mittelwerteigenschaft
+  von \(\intOp\), dass auch \(div_h w_h = 0\) punktweise gilt. 
 \end{proof}
-
-{\color{red}
-  \begin{itemize}
-  \item Ich muss \(\divOp u = 0\) und \(\divh u_h = 0\) erwähnen.
-  \end{itemize}
-}
 
 
 
@@ -871,3 +780,5 @@ Den Beweis führen wir in zwei Schritten:
 
 
 \end{document}
+
+\message{ !name(script.tex) !offset(-784) }
