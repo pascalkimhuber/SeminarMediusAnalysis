@@ -1,0 +1,272 @@
+\documentclass[a4paper, 10pt]{article}
+
+% Packages
+% ---------------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{esint}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+
+
+% Commands
+% ---------------------------------------------------------------------------
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\norm}[1][\cdot]{\left\lVert#1\right\rVert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\dx}{\,dx}
+\newcommand{\aop}[2]{a\left(#1, #2 \right)}
+\newcommand{\bop}[2]{b\left(#1, #2 \right)}
+\newcommand{\lprod}[2]{\left\langle#1, #2 \right\rangle_{L^2}}
+\newcommand{\mesh}{\mathcal{T}_h}
+\newcommand{\edges}{\mathcal{E}_h}
+\newcommand{\nodes}{\mathcal{N}_h}
+\newcommand{\crs}{CR_0^1}
+\newcommand{\nci}{I_{NC}}
+\newcommand{\lpo}{\Pi_0}
+
+\DeclareMathOperator{\divop}{div}
+\DeclareMathOperator{\diamop}{diam}
+\DeclareMathOperator{\midop}{mid}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\osc}{osc}
+
+
+% Environments
+% ---------------------------------------------------------------------------
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{plain}
+\newtheorem{satz}{Satz}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{satz*}{Satz}
+
+% Margin
+% ---------------------------------------------------------------------------
+\geometry{a4paper, left=34mm, right=34mm, bottom=34mm, top=30mm}
+
+
+% Header
+% ---------------------------------------------------------------------------
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[L]{{\large \textbf{Handout: CRFEM für das Stokes
+    Problem}}\\S5E1: Medius Analyse für nicht-konforme FEM} %Kopfzeile links
+\fancyhead[C]{} %zentrierte Kopfzeile
+\fancyhead[R]{Pascal Huber\\30.6.2014} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{\thepage} %Seitennummer
+\renewcommand{\footrulewidth}{0.0pt} %untere Trennlinie
+
+
+
+% Document
+% ---------------------------------------------------------------------------
+
+
+\begin{document}
+\section{Das Stokes Problem}
+\label{sec:das-stokes-problem}
+
+\subsubsection*{Notation}
+\label{sec:notation}
+
+\begin{itemize}
+\item \(\Omega \subseteq \real^2\) beschränktes polygonales
+  Lipschitz-Gebiet, \(f \in L^2(\Omega; \real^2)\) 
+\item \(V\coloneqq H^1_0(\Omega; \real^2)\) mit Norm \(\norm_V
+  \coloneqq \norm_{H^1(\Omega; \real^2)}\)\\
+  \(Q\coloneqq L^2_0(\Omega) \coloneqq  \set{q \in L^2(\Omega):
+    \int_\Omega q \dx = 0}\) mit Norm \(\norm \coloneqq \norm_{L^2(\Omega)}\)
+\item \(a\colon V\times V \to \real\) Bilinearform definiert durch \((u,v) \mapsto \int_\Omega
+  \nabla{u} : \nabla{v}\dx \) \\(mit \(A:B = \sum_{i,j = 1}^2 A_{ij}B_{ij}\) für \(A,B \in \real^{2\times2}\))
+\item \(b\colon V\times Q \to \real\) Bilinearform definiert durch \((v,q) \mapsto \int_\Omega q
+  \divop v\dx\)
+\end{itemize}
+
+\begin{problem}[Schwache Formulierung] \label{pro:1}
+  Finde \((u,p)\in V\times Q\), sodass 
+  \begin{equation}
+    \label{eq:1}
+    \begin{cases}
+      \aop{u}{v} - \bop{v}{p} = \lprod{f}{v} & \text{für alle } v\in V, \\
+      \qquad\qquad\; \bop{u}{q} = 0          & \text{für alle } q\in Q. 
+    \end{cases}
+  \end{equation}
+\end{problem}
+
+\begin{satz*}[Brezzis Splitting-Theorem] \label{thm:1}
+  Ein Problem der Form (\ref{eq:1}) hat genau dann eine eindeutige
+  Lösung \((u,p) \in V\times Q\), falls folgende Bedingungen erfüllt
+  sind: 
+  \begin{enumerate}[label=(\roman*)]
+  \item Die Bilinearform \(a(\cdot, \cdot)\) ist elliptisch auf \(Z
+    \coloneqq \set{v \in V\colon \forall q \in Q\colon \bop{v}{q} = 0}\).
+  \item Die Bilinearform \(\bop{\cdot}{\cdot}\) erfüllt die
+    \emph{inf-sup-Bedingung}: 
+    \[
+      \exists\, \beta > 0: \inf_{q\in Q} \sup_{v\in V} \frac{\bop{v}{q}} {\norm[v]_V\norm[q]} \geq \beta.
+      \]
+  \end{enumerate}
+\end{satz*}
+
+
+
+\section{CRFEM für das Stokes Problem}
+\label{sec:crfem-fur-das}
+
+\subsubsection*{Notation}
+\label{sec:notation-1}
+
+\begin{itemize}
+\item \(\mesh\) quasi-uniforme Triangulierung von \(\Omega\), \(h \coloneqq \max\set{\diamop(T)\colon T \in \mesh}\)
+\item \(\edges, (\edges^i/\edges^b)\) Menge aller (inneren/äußeren)
+  Kanten von \(\mesh\)\\
+  analog \(\nodes, (\nodes^i/\nodes^b)\) für die Knoten von \(\mesh\)
+\item \(\midop(E)\) Mittelpunkt von \(E \in \edges\),
+  \(\midop(\edges)\) Menge aller Kantenmittelpunkte
+\item \(\nabla_h\) stückweiser Gradient: \((\nabla_h v)\vert_T = \nabla
+  (v\vert_T)\) für \(T\in \mesh\) und geeignetes \(v\colon \Omega \to
+  \real^2\), analog \(\divop_h\)
+\end{itemize}
+
+\subsubsection*{Crouzeix-Raviart Diskretisierung}
+\label{sec:crouz-ravi-diskr}
+
+\noindent Definiere die Räume
+\begin{itemize}
+\item \(P_k(\mesh) \coloneqq \set{v_h \in L^2(\Omega)\colon \forall T
+    \in \mesh\colon v_h\vert_T \in P_k(T)}\),\\
+  \(\crs(\mesh) \coloneqq \set{v_h \in P_1(\mesh)\colon v_h \text{
+      stetig in } \midop(\edges^i), v_h(\midop(\edges^b)) = \set{0}}\),
+\item \(V_h \coloneqq \left(\crs(\mesh)\right)^2\) mit Norm
+  \(\norm[v]_h \coloneqq \norm[\nabla_h v]\) für \(v \in V + V_h\),\\
+  \(Q_h \coloneqq P_0(\mesh) \cap L^2_0(\Omega)\) mit Norm
+  \(\norm\), 
+\end{itemize}
+
+\noindent und die Bilinarformen \(a_h\colon V_h \times V_h \to \real\)
+und \(b_h \colon V_h \times Q_h \to \real\) durch 
+\[
+    a_h(u_h, v_h) \coloneqq \int_\Omega \nabla_h u_h : \nabla_h v_h \dx
+    \quad \text{ und } \quad b_h(v_h, q_h) \coloneqq \int_\Omega q_h\divop_h v_h \dx. 
+\]
+
+\begin{problem}[Diskretes Problem] \label{pro:2}
+  Finde \((u_h, p_h) \in V_h \times Q_h\), sodass 
+  \begin{equation}
+    \label{eq:2}
+    \begin{cases}
+      a_h(u_h, v_h) - b_h(v_h, p_h) = \lprod{f}{v_h}   & \text{ für alle } v_h \in V_h, \\
+      \qquad\qquad\quad\;\; b_h(u_h, q_h) = 0          & \text{ für alle } q_h \in Q_h. 
+    \end{cases}
+  \end{equation}
+\end{problem}
+
+\subsubsection*{Stabilität der CRFEM}
+\label{sec:stabilitat-der-crfem}
+
+\begin{definition}[Nicht-konformer Interpolationsoperator und
+  \(L^2\)-Projektion] \label{def:2}
+  Wir definieren 
+  \begin{enumerate}[label=\emph{(\roman*)}]
+  \item den \emph{nicht-konformen Interpolationsoperator} \(\nci\colon
+    V \to V_h\), durch 
+    \[
+    (\nci v)(\midop(E)) \coloneqq \fint_E v \,ds \quad \text{für } E \in \edges
+    \]
+  \item die \emph{\(L^2\)-Projektion} durch \(\lpo \colon L^2(\Omega) \to
+    P_0(\mesh)\),  
+    \[
+    (\lpo f)|_T \coloneqq \fint_T f \dx \quad \text{für } T\in \mesh. 
+    \]
+  \end{enumerate}
+\end{definition}
+
+\begin{lemma}[Eigenschaften von \(\nci\) und \(\lpo\)] \label{lem:1}
+  \begin{enumerate}[label=(\roman*)]
+  \item Für alle \(v\in V\) und \(T\in \mesh\) gilt \(\fint_T \nabla v
+    \dx = \fint_T \nabla_h(\nci v) \dx\) und 
+    \[
+    \norm[v-\nci v]_h \leq \inf_{w_h \in V_h} \norm[v - w_h]_h.
+    \]
+  \item Für alle \(f\in L^2(\Omega)\) und \(T\in \mesh\) gilt
+    \(\fint_T f \dx = \fint_T \lpo f \dx\) und 
+    \[
+    \norm[f-\lpo f] \leq \inf_{g\in P_0(\mesh)}\norm[f-g]. 
+    \]
+  \end{enumerate}
+\end{lemma}
+
+\begin{satz}[Stabilität von CR-NCFEM]\label{thm:3}
+  Die Crouzeix-Raviart Diskretisierung des Stokes Problems \(V_h
+  \times Q_h\) aus Problem \ref{pro:2} ist stabil, d.h. es gibt
+  \(\beta > 0\) unabhängig von \(h\), so dass die \emph{diskrete
+  inf-sup-Bedingung} erfüllt ist:
+  \[
+  \inf_{q_h \in Q_h} \sup_{v_h \in V_h} \frac{b_h(v_h, q_h)}{\norm[v_h]_h \norm[q_h]} \geq \beta. 
+  \]
+\end{satz}
+
+\thispagestyle{plain}
+
+
+\section{Fehlerabschätzung der CRFEM}
+\label{sec:fehl-der-crfem}
+
+\begin{definition}[Konforme Begleitabbildung \(J_k\)]\label{def:3}
+  Wir definieren die \emph{konformen Begleitabbildungen} \(J_k \colon
+  \crs(\mesh) \to P_k(\mesh)\cap C_0(\Omega)\) für
+  \(k=1,2,3\) wie folgt für \(v_h \in \crs(\mesh)\): 
+  \begin{enumerate}[label=\textit{(\roman*)}]
+  \item \(J_1 v_h \coloneqq \sum_{z \in
+      \nodes^i}\left(\left\lvert \mathcal{T}(z)\right\rvert^{-1}
+      \sum_{T\in \mathcal{T}(z)} v_h\vert_T(z) \varphi_z \right)\)
+  \item \(J_2 v_h \coloneqq J_1 v_h + \sum_{E\in\edges^i} 
+    \left(\fint_E (v_h - J_1 v_h) \,ds\right)b_E\)
+  \item \(J_3 v_h \coloneqq J_2 v_h + \sum_{T\in\mesh}\left(\fint_T(v_h
+      - J_2 v_h)\dx \right)b_T\). 
+  \end{enumerate}
+  Dabei bezeichnet \(\varphi_z\) die konforme nodale Basisfunktion
+  bzgl. \(z \in \nodes\), \(b_E \coloneqq 6\varphi_a\varphi_b\) die
+  Bubble-Funktion bzgl. der Kante \(E \coloneqq \conv\{a,b\} \in
+  \edges\) und \(b_T \coloneqq 60\varphi_a\varphi_b\varphi_c\) die
+  Bubble-Funktion für das Element \(T \coloneqq \conv\{a,b,c\} \in
+  \mesh\). 
+\end{definition}
+
+\vspace{3mm}
+
+\begin{lemma}[Eigenschaften von \(J_3\)]\label{lem:2}
+  Die konforme Begleitabbildung \(J_3\colon \crs(\mesh) \to
+  P_3(\mesh)\cap C_0(\Omega)\) hat folgende Eigenschaften: 
+  \begin{enumerate}[label=(\roman*)]
+  \item \(\int_T \nabla_h(v_h - J_3 v_h)\dx = 0\) und \(\int_T
+    v_h - J_3 v_h \dx = 0 \) für \(v_h \in
+    \crs(\mesh) \text{ und } T\in \mesh\),
+  \item \(\norm[\nabla_h (v_h - J_3 v_h)] \lesssim \norm[h^{-1}(v_h -
+      J_3 v_h)] \lesssim \norm[\nabla_h v_h] \quad\) für alle \(v_h \in
+    \crs(\mesh)\).
+  \end{enumerate}
+\end{lemma}
+
+\vspace{3mm}
+
+\begin{satz}[Best-Approximation der CRFEM]\label{thm:4}
+  Sei \((u,p) \in V\times Q\) die Lösung von (\ref{eq:1}) und
+  \((u_h,p_h) \in  V_h\times Q_h\) die Lösung von (\ref{eq:2}). Dann
+  gilt: 
+  \begin{equation}
+    \label{eq:3}
+    \norm[u - u_h]_h + \norm[p - p_h] \lesssim \inf_{v_h \in V_h} \norm[u - v_h]_h + \inf_{q_h \in Q_h} \norm[p - q_h] + \osc(f,h), 
+  \end{equation}
+  wobei die Oszillation von \(f\) durch  \(\osc(f, h) \coloneqq
+  \norm[h(f - \lpo f)]\) definiert ist. 
+\end{satz}
+
+\end{document}
